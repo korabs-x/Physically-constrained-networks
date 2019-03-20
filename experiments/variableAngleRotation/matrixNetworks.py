@@ -7,9 +7,11 @@
 #SBATCH --time=18:00:00
 
 
-# In[50]:
+# In[18]:
 
 
+import sys 
+sys.path.append('../helper')
 import pandas as pd
 import torch.nn as nn
 import random
@@ -26,13 +28,13 @@ from sklearn.model_selection import KFold
 tqdm = lambda x: x
 
 
-# In[51]:
+# In[3]:
 
 
-points = pd.read_csv("rotated_points_angle.csv")
+points = pd.read_csv("../data/rotated_points_angle.csv")
 
 
-# In[52]:
+# In[4]:
 
 
 class Net(nn.Module):
@@ -51,7 +53,7 @@ class Net(nn.Module):
 
 # ## Check if model can learn sine function
 
-# In[53]:
+# In[5]:
 
 
 def train_sin():
@@ -70,7 +72,7 @@ def train_sin():
     return model
 
 
-# In[54]:
+# In[6]:
 
 
 def plot_sin_model(model):
@@ -82,7 +84,7 @@ def plot_sin_model(model):
     plt.show()
 
 
-# In[55]:
+# In[7]:
 
 
 # plot_sin_model(train_sin())
@@ -90,28 +92,28 @@ def plot_sin_model(model):
 
 # # Train nets for matrix
 
-# In[56]:
+# In[8]:
 
 
 def get_loader(data):
     X = torch.FloatTensor(data[["x1", "y1", "alpha"]].values)
     y = torch.FloatTensor(data[["x2", "y2"]].values)
     torch_data = TensorDataset(X, y)
-    loader = DataLoader(torch_data, batch_size=5, shuffle=False)
+    loader = DataLoader(torch_data, batch_size=5, shuffle=True)
     return loader
 
 
-# In[57]:
+# In[9]:
 
 
-def loss_fn(pred_x, pred_y, true_x, true_y):
-    return (pred_x - true_x) ** 2 + (pred_y - true_y) ** 2
+def l2_loss(y_pred, y_true, rotation_matrix):
+    return (y_pred[0] - y_true[0]) ** 2 + (y_pred[1] - y_true[1]) ** 2
 
 
-# In[58]:
+# In[10]:
 
 
-def calc_pred_loss(x_batch, y_batch, nets):
+def calc_pred_loss(x_batch, y_batch, nets, loss_fn):
     alphas = x_batch[:, [2]]
     matrix_entries = [model(alphas) for model in nets]
     loss = 0
@@ -119,44 +121,37 @@ def calc_pred_loss(x_batch, y_batch, nets):
     for i in range(len(alphas)):
         predx = matrix_entries[0][i] * x_batch[i][0] + matrix_entries[1][i] * x_batch[i][1]
         predy = matrix_entries[2][i] * x_batch[i][0] + matrix_entries[3][i] * x_batch[i][1]
-        loss += loss_fn(predx, predy, y_batch[i][0], y_batch[i][1])
+        loss += loss_fn((predx, predy), y_batch[i], [[matrix_entries[0][i], matrix_entries[1][i]], [matrix_entries[2][i], matrix_entries[3][i]]])
         preds.append((predx.item(), predy.item()))
     loss /= len(alphas)
     return {"loss": loss, "preds": preds}
 
 
-# In[59]:
+# In[11]:
 
 
-def calc_loss(x_batch, y_batch, nets):
-    return calc_pred_loss(x_batch, y_batch, nets)["loss"]
+def calc_loss(x_batch, y_batch, nets, loss_fn):
+    return calc_pred_loss(x_batch, y_batch, nets, loss_fn)["loss"]
 
 
-# In[60]:
+# In[12]:
 
 
-# build test set
-n_test = 16
-test = []
-for alpha in np.linspace(0, 2*math.pi, n_test+1)[:-1]:
-    x1, y1 = RotationMatrix.apply_rotation(1, 0, alpha)
-    x2, y2 = RotationMatrix.apply_rotation(x1, y1, alpha)
-    test.append([alpha, x1, y1, x2, y2])
-test = pd.DataFrame(test, columns=['alpha', 'x1', 'y1', 'x2', 'y2'])
-test_loader = get_loader(test)
+test_data = pd.read_csv("../data/test.csv")
+test_loader = get_loader(test_data)
 
 
-# In[61]:
+# In[13]:
 
 
-def test(net_ensemble):
+def test(net_ensemble, loss_fn=l2_loss):
     test_preds = []
     test_true = []
     all_model_preds = []
     for nets in net_ensemble:
         model_preds = []
         for x_batch, y_batch in test_loader:
-            result = calc_pred_loss(x_batch, y_batch, nets)
+            result = calc_pred_loss(x_batch, y_batch, nets, loss_fn)
             model_preds += result["preds"]
             test_true += list(y_batch)
         all_model_preds.append(model_preds)
@@ -171,22 +166,22 @@ def test(net_ensemble):
         test_preds.append((predx, predy))
     test_loss = 0
     for y_pred, y_true in zip(test_preds, test_true):
-        test_loss += loss_fn(y_pred[0], y_pred[1], y_true[0], y_true[1])
+        test_loss += loss_fn(y_pred, y_true, [[float('NaN'), float('NaN')], [float('NaN'), float('NaN')]])
     test_loss /= len(test_preds)
     return {"loss": test_loss.item(), "preds": test_preds}
 
 
-# In[ ]:
+# In[14]:
 
 
-def train(n_points_train_val, includeTests=False, prints=False):
+def train(n_points_train_val, loss_fn, includeTests=False, prints=False):
     train_val_points = points.head(n_points_train_val)
     n_folds = min(n_points_train_val, 5)
     fold_indices = [([0], [0])]
     if n_points_train_val > 1:
         kf = KFold(n_folds)
         fold_indices = kf.split(train_val_points)
-        
+
     train_loader = []
     val_loader = []
     for train_index, val_index in fold_indices:
@@ -211,7 +206,7 @@ def train(n_points_train_val, includeTests=False, prints=False):
             for model in nets[fold]:
                 model.train()
             for x_batch, y_batch in train_loader[fold]:
-                loss = calc_loss(x_batch, y_batch, nets[fold])
+                loss = calc_loss(x_batch, y_batch, nets[fold], loss_fn)
                 for opt in opts[fold]:
                     opt.zero_grad()
                 loss.backward()
@@ -224,9 +219,9 @@ def train(n_points_train_val, includeTests=False, prints=False):
                 val_loss = 0
                 train_loss = 0
                 for x_batch, y_batch in val_loader[fold]:
-                    val_loss += calc_loss(x_batch, y_batch, nets[fold])
+                    val_loss += calc_loss(x_batch, y_batch, nets[fold], l2_loss)
                 for x_batch, y_batch in train_loader[fold]:
-                    train_loss += calc_loss(x_batch, y_batch, nets[fold])
+                    train_loss += calc_loss(x_batch, y_batch, nets[fold], loss_fn)
                 val_loss /= len(val_loader[fold])
                 train_loss /= len(train_loader[fold])
                 epoch_val_loss += val_loss
@@ -259,29 +254,30 @@ def train(n_points_train_val, includeTests=False, prints=False):
            }
 
 
-# In[63]:
+# In[15]:
 
 
-def visualize_train(train_result):
-    plt.plot(train_result["epochs"], train_result["val_loss"], label='Validation')
-    plt.plot(train_result["epochs"], train_result["train_loss"], label='Training')
-    if len(train_result["test_loss"]):
-        plt.plot(train_result["epochs"], train_result["test_loss"], label='Test')
+def visualize_train(train_results):
+    for i, train_result in enumerate(train_results):
+        plt.plot(train_result["epochs"], train_result["train_loss"], label='Training{}'.format(i))
+        plt.plot(train_result["epochs"], train_result["val_loss"], label='Validation{}'.format(i))
+        if len(train_result["test_loss"]):
+            plt.plot(train_result["epochs"], train_result["test_loss"], label='Test{}'.format(i))
     plt.xlabel('epoch')
     plt.ylabel('loss')
     plt.legend(loc='best')
     plt.show()
 
 
-# In[72]:
+# In[17]:
 
 
 results = []
-for n_points_train_val in range(1, 36):
+for n_points_train_val in range(1, 41):
     print("Start calculation for {} points.".format(n_points_train_val))
     starttime = time.time()
-    train_result = train(n_points_train_val, includeTests=True, prints=False)
-    # visualize_train(train_result)
+    train_result = train(n_points_train_val, l2_loss, includeTests=True, prints=True)
+    # visualize_train([train_result])
     del train_result["nets"]
     results.append([n_points_train_val, str(train_result), time.time() - starttime])
     if n_points_train_val >= 10 and n_points_train_val % 5 == 0:
@@ -289,8 +285,52 @@ for n_points_train_val in range(1, 36):
         df.to_csv("train_limited_data_results_{}.csv".format(n_points_train_val), index=False)
 
 
-# In[73]:
+# ## Add different loss functions
+
+# In[ ]:
 
 
-print("Finished")
+def norm_loss(y_pred, y_true, rotation_matrix):
+    return (l2_loss(y_pred, (0,0), np.zeros((2,2))) - 1) ** 2
+
+
+# In[ ]:
+
+
+def det_loss(y_pred, y_true, rotation_matrix):
+    det = rotation_matrix[0][0] * rotation_matrix[1][1] - rotation_matrix[0][1] * rotation_matrix[1][0]
+    return (det - 1) ** 2
+
+
+# In[ ]:
+
+
+# first weight is for l2_loss, second weight for det_loss, third for norm loss
+def get_mixed_lossfn(weigths):
+    def mixed_loss(y_pred, y_true, rotation_matrix):
+        l0 = l2_loss(y_pred, y_true, rotation_matrix)
+        l1 = det_loss(y_pred, y_true, rotation_matrix)
+        l2 = norm_loss(y_pred, y_true, rotation_matrix)
+        return weigths[0] * l0 + weigths[1] * l1 + weigths[2] * l2
+    return mixed_loss
+
+
+# In[ ]:
+
+
+if False:
+    n_points_train_val = 5
+    train_result_mixed = train(n_points_train_val, get_mixed_lossfn((1, 2, 4)), includeTests=True, prints=True)
+    visualize_train([train_result, train_result_mixed])
+
+
+# Results: 
+# (1, 2, 0.2) is more consistent throughout training
+# (1, 2, 8) is worse
+# (1, 4, 0.2) really bad
+
+# In[ ]:
+
+
+
 
