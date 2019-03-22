@@ -7,7 +7,7 @@
 #SBATCH --time=18:00:00
 
 
-# In[18]:
+# In[2]:
 
 
 import sys 
@@ -92,14 +92,14 @@ def plot_sin_model(model):
 
 # # Train nets for matrix
 
-# In[8]:
+# In[31]:
 
 
-def get_loader(data):
+def get_loader(data, shuffle=True):
     X = torch.FloatTensor(data[["x1", "y1", "alpha"]].values)
     y = torch.FloatTensor(data[["x2", "y2"]].values)
     torch_data = TensorDataset(X, y)
-    loader = DataLoader(torch_data, batch_size=5, shuffle=True)
+    loader = DataLoader(torch_data, batch_size=5, shuffle=shuffle)
     return loader
 
 
@@ -134,27 +134,36 @@ def calc_loss(x_batch, y_batch, nets, loss_fn):
     return calc_pred_loss(x_batch, y_batch, nets, loss_fn)["loss"]
 
 
-# In[12]:
+# In[122]:
 
 
 test_data = pd.read_csv("../data/test.csv")
-test_loader = get_loader(test_data)
+test_data = test_data[test_data.index % 20 == 0]
+test_loader = get_loader(test_data, shuffle=False)
 
 
-# In[13]:
+# In[245]:
 
 
-def test(net_ensemble, loss_fn=l2_loss):
+def test(net_ensemble, loss_fn=l2_loss, visualizePreds=False):
     test_preds = []
     test_true = []
     all_model_preds = []
+    avg_test_loss = 0.0
     for nets in net_ensemble:
         model_preds = []
+        for model in nets:
+            model.eval()
         for x_batch, y_batch in test_loader:
             result = calc_pred_loss(x_batch, y_batch, nets, loss_fn)
             model_preds += result["preds"]
+            avg_test_loss += result["loss"]
             test_true += list(y_batch)
         all_model_preds.append(model_preds)
+        if visualizePreds:
+            print("model preds:")
+            plot_predictions(model_preds)
+    avg_test_loss /= len(test_loader) * len(net_ensemble)
     for i in range(len(all_model_preds[0])):
         predx = 0
         predy = 0
@@ -164,6 +173,9 @@ def test(net_ensemble, loss_fn=l2_loss):
         predx /= len(all_model_preds)
         predy /= len(all_model_preds)
         test_preds.append((predx, predy))
+    if visualizePreds:
+        print("total preds:")
+        plot_predictions(test_preds)
     test_loss = 0
     for y_pred, y_true in zip(test_preds, test_true):
         test_loss += loss_fn(y_pred, y_true, [[float('NaN'), float('NaN')], [float('NaN'), float('NaN')]])
@@ -171,14 +183,14 @@ def test(net_ensemble, loss_fn=l2_loss):
     return {"loss": test_loss.item(), "preds": test_preds}
 
 
-# In[14]:
+# In[246]:
 
 
 def train(n_points_train_val, loss_fn, includeTests=False, prints=False):
     train_val_points = points.head(n_points_train_val)
-    n_folds = min(n_points_train_val, 5)
-    fold_indices = [([0], [0])]
-    if n_points_train_val > 1:
+    n_folds = min(n_points_train_val, 10)
+    fold_indices = [(range(n_points_train_val), range(n_points_train_val))]
+    if n_folds > 1:
         kf = KFold(n_folds)
         fold_indices = kf.split(train_val_points)
 
@@ -189,7 +201,12 @@ def train(n_points_train_val, loss_fn, includeTests=False, prints=False):
         val_loader.append(get_loader(points.loc[val_index]))
     
     nets = [[Net() for _ in range(4)] for _ in range(n_folds)]
-    opts = [[Adam(model.parameters()) for model in matrixnets] for matrixnets in nets]
+    opts = []
+    for matrixnets in nets:
+        optrow = []
+        for model in matrixnets:
+            optrow.append(Adam(model.parameters()))
+        opts.append(optrow)
     val_losses = []
     train_losses = []
     test_losses = []
@@ -219,7 +236,7 @@ def train(n_points_train_val, loss_fn, includeTests=False, prints=False):
                 val_loss = 0
                 train_loss = 0
                 for x_batch, y_batch in val_loader[fold]:
-                    val_loss += calc_loss(x_batch, y_batch, nets[fold], l2_loss)
+                    val_loss += calc_loss(x_batch, y_batch, nets[fold], loss_fn)
                 for x_batch, y_batch in train_loader[fold]:
                     train_loss += calc_loss(x_batch, y_batch, nets[fold], loss_fn)
                 val_loss /= len(val_loader[fold])
@@ -234,7 +251,7 @@ def train(n_points_train_val, loss_fn, includeTests=False, prints=False):
             val_losses.append(epoch_val_loss.item())
             train_losses.append(epoch_train_loss.item())
             if includeTests:
-                test_result = test(nets)
+                test_result = test(nets, visualizePreds=False)#(epoch%1000 == 0))
                 test_losses.append(test_result["loss"])
                 if len(val_losses) > 1 and (best_test_preds is None or val_losses[-1] < min(val_losses[1:-1])):
                     best_test_preds = test_result["preds"]
@@ -242,7 +259,7 @@ def train(n_points_train_val, loss_fn, includeTests=False, prints=False):
             print("Epoch {}:\tTrain {}\tVal {}\tTest {}".format(epoch, train_losses[-1], val_losses[-1], test_losses[-1]))
         epoch += 1
         reference_loss_index = 1000 // epochs_per_validation
-        if epoch > max(n_points_train_val * 200, 2000) and val_losses[-1] >= val_losses[-reference_loss_index]:
+        if epoch > max(n_points_train_val * 200, 8000) and val_losses[-1] >= val_losses[-reference_loss_index]:
             break
     
     return {"nets": nets, 
@@ -254,7 +271,7 @@ def train(n_points_train_val, loss_fn, includeTests=False, prints=False):
            }
 
 
-# In[15]:
+# In[247]:
 
 
 def visualize_train(train_results):
@@ -269,15 +286,31 @@ def visualize_train(train_results):
     plt.show()
 
 
-# In[17]:
+# In[248]:
+
+
+def plot_predictions(preds):
+    plt.figure()
+    plt.gca().set_aspect('equal', adjustable='box')
+    plt.ylim(-1.2, 1.2)
+    plt.xlim(-1.2, 1.2)
+    for i, pred in enumerate(preds):
+        test_point = test_data.iloc[i]
+        plt.plot([test_point["x1"], test_point["x2"]], [test_point["y1"], test_point["y2"]], color="green", linewidth=0.5)
+        plt.plot([pred[0], test_point["x2"]], [pred[1], test_point["y2"]], color="red", linewidth=0.5)
+
+    plt.show()
+
+
+# In[249]:
 
 
 results = []
 for n_points_train_val in range(1, 41):
     print("Start calculation for {} points.".format(n_points_train_val))
     starttime = time.time()
-    train_result = train(n_points_train_val, l2_loss, includeTests=True, prints=True)
-    # visualize_train([train_result])
+    train_result = train(n_points_train_val, l2_loss, includeTests=True, prints=False)
+    visualize_train([train_result])
     del train_result["nets"]
     results.append([n_points_train_val, str(train_result), time.time() - starttime])
     if n_points_train_val >= 10 and n_points_train_val % 5 == 0:
