@@ -40,7 +40,7 @@ points = pd.read_csv("../data/rotated_points_angle.csv")
 class Net(nn.Module):
     def __init__(self):
         super().__init__()
-        hidden_nodes = 5
+        hidden_nodes = 50
         self.ff = nn.Sequential(
             nn.Linear(1, hidden_nodes),
             nn.Sigmoid(),
@@ -310,7 +310,7 @@ for n_points_train_val in range(1, 41):
     print("Start calculation for {} points.".format(n_points_train_val))
     starttime = time.time()
     train_result = train(n_points_train_val, l2_loss, includeTests=True, prints=False)
-    visualize_train([train_result])
+    # visualize_train([train_result])
     del train_result["nets"]
     results.append([n_points_train_val, str(train_result), time.time() - starttime])
     if n_points_train_val >= 10 and n_points_train_val % 5 == 0:
