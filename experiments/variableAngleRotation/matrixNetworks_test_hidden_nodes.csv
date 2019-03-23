@@ -1,3 +1,8 @@
+
+# coding: utf-8
+
+# In[1]:
+
 #!/usr/bin/env python3
 #SBATCH --cpus=1
 #SBATCH --gres=gpu:1
@@ -7,8 +12,7 @@
 #SBATCH --time=45:00:00
 
 
-# In[132]:
-
+# In[2]:
 
 import sys 
 sys.path.append('../helper')
@@ -28,14 +32,12 @@ from sklearn.model_selection import KFold
 tqdm = lambda x: x
 
 
-# In[44]:
-
+# In[3]:
 
 points = pd.read_csv("../data/rotated_points_angle.csv")
 
 
-# In[134]:
-
+# In[4]:
 
 class Net(nn.Module):
     def __init__(self, n_hidden=None):
@@ -53,8 +55,7 @@ class Net(nn.Module):
 
 # ## Check if model can learn sine function
 
-# In[46]:
-
+# In[5]:
 
 def train_sin():
     random.seed(234)
@@ -72,8 +73,7 @@ def train_sin():
     return model
 
 
-# In[47]:
-
+# In[6]:
 
 def plot_sin_model(model):
     test = np.linspace(0, 2*math.pi, 100)
@@ -84,8 +84,7 @@ def plot_sin_model(model):
     plt.show()
 
 
-# In[86]:
-
+# In[7]:
 
 def plot_matrix_nets(nets):
     test = np.linspace(0, 2*math.pi, 100)
@@ -103,16 +102,14 @@ def plot_matrix_nets(nets):
     plt.show()
 
 
-# In[48]:
-
+# In[8]:
 
 # plot_sin_model(train_sin())
 
 
 # # Train nets for matrix
 
-# In[89]:
-
+# In[5]:
 
 def get_loader(data, shuffle=True):
     X = torch.FloatTensor(data[["x1", "y1", "alpha"]].values)
@@ -122,15 +119,13 @@ def get_loader(data, shuffle=True):
     return loader
 
 
-# In[90]:
-
+# In[6]:
 
 def l2_loss(y_pred, y_true, rotation_matrix):
     return (y_pred[0] - y_true[0]) ** 2 + (y_pred[1] - y_true[1]) ** 2
 
 
-# In[91]:
-
+# In[7]:
 
 def calc_pred_loss(x_batch, y_batch, nets, loss_fn):
     alphas = x_batch[:, [2]]
@@ -146,23 +141,20 @@ def calc_pred_loss(x_batch, y_batch, nets, loss_fn):
     return {"loss": loss, "preds": preds}
 
 
-# In[92]:
-
+# In[8]:
 
 def calc_loss(x_batch, y_batch, nets, loss_fn):
     return calc_pred_loss(x_batch, y_batch, nets, loss_fn)["loss"]
 
 
-# In[93]:
-
+# In[9]:
 
 test_data = pd.read_csv("../data/test.csv")
 # test_data = test_data[test_data.index % 20 == 0]
 test_loader = get_loader(test_data, shuffle=False)
 
 
-# In[94]:
-
+# In[10]:
 
 def test(net_ensemble, loss_fn=l2_loss, visualizePreds=False):
     test_preds = []
@@ -202,15 +194,15 @@ def test(net_ensemble, loss_fn=l2_loss, visualizePreds=False):
     return {"loss": test_loss.item(), "preds": test_preds}
 
 
-# In[109]:
+# In[11]:
 
-
-def train(n_points_train_val, loss_fn, includeTests=False, prints=False, lastTrainResult=None, nEpochs=None, hidden_nodes=None):
+def train(n_points_train_val, loss_fn, includeTests=False, prints=False, lastTrainResult=None, nEpochs=None, minEpochs=8000, hidden_nodes=None):
+    torch.manual_seed(0)
     train_val_points = points.head(n_points_train_val)
     n_folds = min(n_points_train_val, 10)
     fold_indices = [(range(n_points_train_val), range(n_points_train_val))]
     if n_folds > 1:
-        kf = KFold(n_folds)
+        kf = KFold(n_folds, random_state=0)
         fold_indices = kf.split(train_val_points)
 
     train_loader = []
@@ -236,7 +228,7 @@ def train(n_points_train_val, loss_fn, includeTests=False, prints=False, lastTra
     epochs = [] if lastTrainResult is None else lastTrainResult["epochs"]
     epoch = 0 if lastTrainResult is None else (epochs[-1] + 1)
     start_epoch = epoch
-    epochs_per_validation = 100 if n_points_train_val > 10 else (10 if n_points_train_val > 5 else 3)
+    epochs_per_validation = 500#100 if n_points_train_val > 10 else (10 if n_points_train_val > 5 else 3)
     while True:
         epoch_val_loss = 0
         epoch_train_loss = 0
@@ -282,7 +274,7 @@ def train(n_points_train_val, loss_fn, includeTests=False, prints=False, lastTra
             print("Epoch {}:\tTrain {}\tVal {}\tTest {}".format(epoch, train_losses[-1], val_losses[-1], test_losses[-1]))
         epoch += 1
         reference_loss_index = 1000 // epochs_per_validation
-        if (nEpochs is None and epoch > max(n_points_train_val * 200, 8000) and val_losses[-1] >= val_losses[-reference_loss_index]) or (nEpochs is not None and epoch - start_epoch > nEpochs):
+        if (nEpochs is None and epoch > max(n_points_train_val * 200, minEpochs) and val_losses[-1] >= val_losses[-reference_loss_index]) or (nEpochs is not None and epoch - start_epoch > nEpochs):
             break
     
     return {"nets": nets, 
@@ -295,8 +287,7 @@ def train(n_points_train_val, loss_fn, includeTests=False, prints=False, lastTra
            }
 
 
-# In[119]:
-
+# In[12]:
 
 def visualize_train(train_results, keys=["train_loss", "val_loss", "test_loss"]):
     for i, train_result in enumerate(train_results):
@@ -308,8 +299,7 @@ def visualize_train(train_results, keys=["train_loss", "val_loss", "test_loss"])
     plt.show()
 
 
-# In[111]:
-
+# In[13]:
 
 def plot_predictions(preds):
     plt.figure()
@@ -328,55 +318,68 @@ def plot_predictions(preds):
 
 # ### Compare different numbers of hidden nodes
 
-# In[115]:
+# In[15]:
 
+n_points_train_val = 10
+
+
+# In[18]:
 
 results_hidden_nodes = []
-n_points_train_val = 10
 for n_hidden in [5, 10, 20, 50, 100]:
     print("Start calculation for {} hidden nodes.".format(n_hidden))
-    nEpochs = 20000 if n_hidden < 50 else 70000
+    nEpochs = 30000 if n_hidden < 50 else 70000
     train_result = train(n_points_train_val, l2_loss, includeTests=True, prints=True, nEpochs=nEpochs, hidden_nodes=n_hidden)
-    results_hidden_nodes.append([n_hidden, train_result])
+    del train_result["nets"]
+    del train_result["opts"]
+    results_hidden_nodes.append([n_hidden, str(train_result)])
 results_hidden_nodes = pd.DataFrame(results_hidden_nodes, columns=["n_hidden", "train_result"])
 results_hidden_nodes.to_csv("results_hidden_nodes.csv", index=False)
 
 
 # In[ ]:
 
-
-# results_hidden_nodes = pd.read_csv("results_hidden_nodes.csv")
-# df["train_result"] = df.apply(lambda row: eval(row["train_result"]), axis=1)
-
-
-# In[129]:
-
-
-# visualize_train(results_hidden_nodes["train_result"], keys=["val_loss"])
-
-
-# Result: Choose 50 hidden nodes (almost same validation loss with much less epochs)
-
-# ### Calculate for different numbers of points and save results
-
-# In[103]:
-
-
-results_limited_data = []
-for n_points_train_val in range(1, 36):
-    print("Start calculation for {} points.".format(n_points_train_val))
-    starttime = time.time()
-    train_result = train(n_points_train_val, l2_loss, includeTests=True, prints=True)
-    results_limited_data.append([n_points_train_val, str(train_result.drop(columns=["nets", "opts"])), time.time() - starttime])
-    if n_points_train_val >= 20 and n_points_train_val % 5 == 0:
-        df = pd.DataFrame(results_limited_data, columns=["n_points_train_val", "train_result", "execution_time"])
-        df.to_csv("train_limited_data_results_{}.csv".format(n_points_train_val), index=False)
-results_limited_data = pd.DataFrame(results_limited_data, columns=["n_points_train_val", "train_result", "execution_time"])
-results_limited_data.to_csv("results_limited_data.csv", index=False)
+exit(0)
 
 
 # In[ ]:
 
+# results_hidden_nodes = pd.read_csv("results_hidden_nodes.csv")
+
+
+# In[ ]:
+
+results_hidden_nodes["train_result"] = results_hidden_nodes.apply(lambda row: eval(row["train_result"]), axis=1)
+
+
+# In[129]:
+
+# visualize_train(results_hidden_nodes["train_result"], keys=["val_loss"])
+# visualize_train(results_hidden_nodes["train_result"], keys=["val_loss", "test_loss"])
+
+
+# Result: Choose 50 hidden nodes (almost same validation loss with much less epochs)
+# Difficulty: Validation loss with few data is unreliable
+
+# ### Calculate for different numbers of points and save results
+
+# In[17]:
+
+results_limited_data = []
+for n_points_train_val in range(1, 36):
+    print("Start calculation for {} points.".format(n_points_train_val))
+    train_result = train(n_points_train_val, l2_loss, includeTests=True, prints=True, minEpochs=12000)
+    del train_result["nets"]
+    del train_result["opts"]
+    results_limited_data.append([n_points_train_val, str(train_result)])
+    if n_points_train_val >= 20 and n_points_train_val % 5 == 0:
+        df = pd.DataFrame(results_limited_data, columns=["n_points_train_val", "train_result"])
+        df.to_csv("train_limited_data_results_{}.csv".format(n_points_train_val), index=False)
+results_limited_data = pd.DataFrame(results_limited_data, columns=["n_points_train_val", "train_result"])
+results_limited_data.to_csv("results_limited_data.csv", index=False)
+
+
+# In[ ]:
 
 # results_limited_data = pd.read_csv("train_limited_data_results_{}.csv", index_col="n_points_train_val")
 # results_limited_data["train_result"] = results.apply(lambda row: eval(row["train_result"]), axis=1)
@@ -384,23 +387,27 @@ results_limited_data.to_csv("results_limited_data.csv", index=False)
 
 # ## Add different loss functions
 
-# In[64]:
+# In[159]:
 
+# Choose a specific number of points to further experiment with
+n_points_train_val = 10
+train_result = results_limited_data["train_result"][n_points_train_val]
+
+
+# In[156]:
 
 def norm_loss(y_pred, y_true, rotation_matrix):
     return (l2_loss(y_pred, (0,0), np.zeros((2,2))) - 1) ** 2
 
 
-# In[65]:
-
+# In[157]:
 
 def det_loss(y_pred, y_true, rotation_matrix):
     det = rotation_matrix[0][0] * rotation_matrix[1][1] - rotation_matrix[0][1] * rotation_matrix[1][0]
     return (det - 1) ** 2
 
 
-# In[66]:
-
+# In[158]:
 
 # first weight is for l2_loss, second weight for det_loss, third for norm loss
 def get_mixed_lossfn(weigths):
@@ -412,23 +419,24 @@ def get_mixed_lossfn(weigths):
     return mixed_loss
 
 
-# In[ ]:
+# In[19]:
 
-
-# Choose a specific number of points to further experiment with
-n_points_train_val = 11
-
-
-# In[34]:
-
-
-# train_result_mixed = train(n_points_train_val, get_mixed_lossfn((1, 2, 0.2)), includeTests=True, prints=True)
+train_result_mixed = train(n_points_train_val, get_mixed_lossfn((1, 0, 0)), includeTests=True, prints=True, nEpochs=30000)
 
 
 # In[ ]:
 
+train_result_mixed = train(n_points_train_val, get_mixed_lossfn((1, 2, 0.2)), includeTests=True, prints=True, nEpochs=30000)
 
-visualize_train([results["train_result"][n_points_train_val], train_result_mixed])
+
+# In[ ]:
+
+train_result_mixed = train(n_points_train_val, get_mixed_lossfn((1, 0.2, 0.1)), includeTests=True, prints=True, nEpochs=30000)
+
+
+# In[ ]:
+
+#visualize_train([train_result, train_result_mixed])
 
 
 # Results: 
