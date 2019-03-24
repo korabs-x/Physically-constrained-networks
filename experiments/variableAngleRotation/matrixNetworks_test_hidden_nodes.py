@@ -194,7 +194,7 @@ def test(net_ensemble, loss_fn=l2_loss, visualizePreds=False):
 def train(n_points_train_val, loss_fn, includeTests=False, prints=False, lastTrainResult=None, nEpochs=None, minEpochs=8000, hidden_nodes=None):
     torch.manual_seed(0)
     train_val_points = points.head(n_points_train_val)
-    n_folds = min(n_points_train_val, 10)
+    n_folds = min(n_points_train_val, 4)
     fold_indices = [(range(n_points_train_val), range(n_points_train_val))]
     if n_folds > 1:
         kf = KFold(n_folds, random_state=0)
@@ -323,7 +323,7 @@ n_points_train_val = 10
 results_hidden_nodes = []
 for n_hidden in [5, 10, 20, 50, 100]:
     print("Start calculation for {} hidden nodes.".format(n_hidden))
-    nEpochs = 30000 if n_hidden < 50 else 70000
+    nEpochs = 70000 if n_hidden < 50 else 100000
     train_result = train(n_points_train_val, l2_loss, includeTests=True, prints=True, nEpochs=nEpochs, hidden_nodes=n_hidden)
     del train_result["nets"]
     del train_result["opts"]
