@@ -7,7 +7,7 @@
 #SBATCH --time=45:00:00
 
 
-# In[43]:
+# In[2]:
 
 
 import sys 
@@ -28,13 +28,13 @@ from sklearn.model_selection import KFold
 tqdm = lambda x: x
 
 
-# In[44]:
+# In[3]:
 
 
 points = pd.read_csv("../data/rotated_points_angle.csv")
 
 
-# In[45]:
+# In[4]:
 
 
 class Net(nn.Module):
@@ -53,7 +53,7 @@ class Net(nn.Module):
 
 # ## Check if model can learn sine function
 
-# In[46]:
+# In[5]:
 
 
 def train_sin():
@@ -72,7 +72,7 @@ def train_sin():
     return model
 
 
-# In[47]:
+# In[6]:
 
 
 def plot_sin_model(model):
@@ -84,7 +84,7 @@ def plot_sin_model(model):
     plt.show()
 
 
-# In[48]:
+# In[7]:
 
 
 def plot_matrix_nets(nets):
@@ -103,7 +103,7 @@ def plot_matrix_nets(nets):
     plt.show()
 
 
-# In[49]:
+# In[8]:
 
 
 # plot_sin_model(train_sin())
@@ -111,7 +111,7 @@ def plot_matrix_nets(nets):
 
 # # Train nets for matrix
 
-# In[50]:
+# In[9]:
 
 
 def get_loader(data, shuffle=True):
@@ -122,14 +122,14 @@ def get_loader(data, shuffle=True):
     return loader
 
 
-# In[51]:
+# In[10]:
 
 
 def l2_loss(y_pred, y_true, rotation_matrix):
     return (y_pred[0] - y_true[0]) ** 2 + (y_pred[1] - y_true[1]) ** 2
 
 
-# In[52]:
+# In[11]:
 
 
 def calc_pred_loss(x_batch, y_batch, nets, loss_fn):
@@ -146,14 +146,14 @@ def calc_pred_loss(x_batch, y_batch, nets, loss_fn):
     return {"loss": loss, "preds": preds}
 
 
-# In[53]:
+# In[12]:
 
 
 def calc_loss(x_batch, y_batch, nets, loss_fn):
     return calc_pred_loss(x_batch, y_batch, nets, loss_fn)["loss"]
 
 
-# In[54]:
+# In[13]:
 
 
 test_data = pd.read_csv("../data/test.csv")
@@ -161,7 +161,7 @@ test_data = pd.read_csv("../data/test.csv")
 test_loader = get_loader(test_data, shuffle=False)
 
 
-# In[55]:
+# In[14]:
 
 
 def test(net_ensemble, loss_fn=l2_loss, visualizePreds=False):
@@ -202,7 +202,7 @@ def test(net_ensemble, loss_fn=l2_loss, visualizePreds=False):
     return {"loss": test_loss.item(), "preds": test_preds}
 
 
-# In[56]:
+# In[15]:
 
 
 def train(n_points_train_val, loss_fn, includeTests=False, prints=False, lastTrainResult=None, nEpochs=None, minEpochs=8000, hidden_nodes=None):
@@ -296,7 +296,7 @@ def train(n_points_train_val, loss_fn, includeTests=False, prints=False, lastTra
            }
 
 
-# In[57]:
+# In[16]:
 
 
 def visualize_train(train_results, keys=["train_loss", "val_loss", "test_loss"]):
@@ -309,7 +309,7 @@ def visualize_train(train_results, keys=["train_loss", "val_loss", "test_loss"])
     plt.show()
 
 
-# In[58]:
+# In[17]:
 
 
 def plot_predictions(preds):
@@ -329,13 +329,13 @@ def plot_predictions(preds):
 
 # ### Compare different numbers of hidden nodes
 
-# In[59]:
+# In[18]:
 
 
 n_points_train_val = 10
 
 
-# In[60]:
+# In[19]:
 
 
 def try_different_hidden_nodes():
@@ -351,20 +351,20 @@ def try_different_hidden_nodes():
     results_hidden_nodes.to_csv("results_hidden_nodes.csv", index=False)
 
 
-# In[ ]:
+# In[20]:
 
 
 # try_different_hidden_nodes()
 
 
-# In[61]:
+# In[21]:
 
 
-#results_hidden_nodes = pd.read_csv("results_hidden_nodes.csv")
-#results_hidden_nodes["train_result"] = results_hidden_nodes.apply(lambda row: eval(row["train_result"]), axis=1)
+results_hidden_nodes = pd.read_csv("results_hidden_nodes.csv")
+results_hidden_nodes["train_result"] = results_hidden_nodes.apply(lambda row: eval(row["train_result"]), axis=1)
 
 
-# In[63]:
+# In[22]:
 
 
 # visualize_train(results_hidden_nodes["train_result"], keys=["val_loss"])
@@ -375,7 +375,7 @@ def try_different_hidden_nodes():
 
 # ### Calculate for different numbers of points and save results
 
-# In[65]:
+# In[23]:
 
 
 def try_different_n_data():
@@ -393,27 +393,27 @@ def try_different_n_data():
     results_limited_data.to_csv("results_limited_data.csv", index=False)
 
 
-# In[ ]:
+# In[24]:
 
 
 # try_different_n_data()
 
 
-# In[66]:
+# In[25]:
 
 
-#results_limited_data = pd.read_csv("train_limited_data_results_35.csv", index_col="n_points_train_val")
-#results_limited_data["train_result"] = results_limited_data.apply(lambda row: eval(row["train_result"]), axis=1)
+results_limited_data = pd.read_csv("train_limited_data_results_35.csv", index_col="n_points_train_val")
+results_limited_data["train_result"] = results_limited_data.apply(lambda row: eval(row["train_result"]), axis=1)
 
 
-# In[67]:
+# In[26]:
 
 
 # plt.plot(results_limited_data.index, results_limited_data.apply(lambda x: min(x["train_result"]["test_loss"]), axis=1))
 # plt.show()
 
 
-# In[68]:
+# In[27]:
 
 
 # plt.plot(results_limited_data.index, results_limited_data.apply(lambda x: min(x["train_result"]["val_loss"]), axis=1))
@@ -424,22 +424,22 @@ def try_different_n_data():
 
 # ## Add different loss functions
 
-# In[69]:
+# In[28]:
 
 
 # Choose a specific number of points to further experiment with
 n_points_train_val = 10
-#train_result = results_limited_data["train_result"][n_points_train_val]
+train_result = results_limited_data["train_result"][n_points_train_val]
 
 
-# In[70]:
+# In[29]:
 
 
 def norm_loss(y_pred, y_true, rotation_matrix):
     return (l2_loss(y_pred, (0,0), np.zeros((2,2))) - 1) ** 2
 
 
-# In[71]:
+# In[30]:
 
 
 def det_loss(y_pred, y_true, rotation_matrix):
@@ -447,7 +447,7 @@ def det_loss(y_pred, y_true, rotation_matrix):
     return (det - 1) ** 2
 
 
-# In[72]:
+# In[31]:
 
 
 # first weight is for l2_loss, second weight for det_loss, third for norm loss
@@ -460,7 +460,7 @@ def get_mixed_lossfn(weigths):
     return mixed_loss
 
 
-# In[ ]:
+# In[32]:
 
 
 def try_different_det_loss():
@@ -476,7 +476,7 @@ def try_different_det_loss():
     results_det_loss.to_csv("results_det_loss.csv", index=False)
 
 
-# In[ ]:
+# In[34]:
 
 
 # try_different_det_loss()
@@ -485,23 +485,49 @@ def try_different_det_loss():
 # In[ ]:
 
 
-def try_different_norm_loss():
-    results_det_loss = []
-    for norm_loss_weight in [0.03, 0.1, 0.2, 0.4]:
-        weights = (1, 0, norm_loss_weight)
-        print("Start calculation for weights = {}.".format(weights))
-        train_result_tmp = train(n_points_train_val, get_mixed_lossfn(weights), includeTests=True, prints=True, nEpochs=40000)
-        del train_result_tmp["nets"]
-        del train_result_tmp["opts"]
-        results_det_loss.append([weights, str(train_result_tmp)])
-    results_det_loss = pd.DataFrame(results_det_loss, columns=["loss_weights", "train_result"])
-    results_det_loss.to_csv("results_norm_loss.csv", index=False)
+results_det_loss = pd.read_csv("results_det_loss.csv")
+results_det_loss["train_result"] = results_det_loss.apply(lambda row: eval(row["train_result"]), axis=1)
 
 
 # In[ ]:
 
 
+# visualize_train(results_det_loss["train_result"], keys=["val_loss"])
+
+
+# In[35]:
+
+
+def try_different_norm_loss():
+    results_norm_loss = []
+    for norm_loss_weight in [0, 0.2, 0.3, 0.4, 0.6, 0.8, 1, 1.5, 2, 2.5]:
+        weights = (1, 0, norm_loss_weight)
+        print("Start calculation for weights = {}.".format(weights))
+        train_result_tmp = train(n_points_train_val, get_mixed_lossfn(weights), includeTests=True, prints=True, nEpochs=40000)
+        del train_result_tmp["nets"]
+        del train_result_tmp["opts"]
+        results_norm_loss.append([weights, str(train_result_tmp)])
+    results_norm_loss = pd.DataFrame(results_norm_loss, columns=["loss_weights", "train_result"])
+    results_norm_loss.to_csv("results_norm_loss.csv", index=False)
+
+
+# In[36]:
+
+
 try_different_norm_loss()
+
+
+# In[61]:
+
+
+# results_norm_loss = pd.read_csv("results_norm_loss.csv")
+# results_norm_loss["train_result"] = results_norm_loss.apply(lambda row: eval(row["train_result"]), axis=1)
+
+
+# In[62]:
+
+
+# visualize_train(results_norm_loss["train_result"], keys=["val_loss"])
 
 
 # In[75]:
