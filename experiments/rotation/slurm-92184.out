@@ -1,0 +1,38 @@
+Model save: checkpoints/checkpoints-detweight/checkpoints_detweight-1e-05_dim-2_ntrain-10_seed-1683/best.pkl
+Epoch 0	Iteration 0
+Train score = 10.0	Test score = 1.1183878183364868
+Model save: checkpoints/checkpoints-detweight/checkpoints_detweight-1e-05_dim-2_ntrain-10_seed-1683/best.pkl
+Epoch 200	Iteration 200
+Train score = 0.2032378911972046	Test score = 0.7211534380912781
+Model save: checkpoints/checkpoints-detweight/checkpoints_detweight-1e-05_dim-2_ntrain-10_seed-1683/best.pkl
+Epoch 400	Iteration 400
+Train score = 0.08962447941303253	Test score = 0.46339327096939087
+Model save: checkpoints/checkpoints-detweight/checkpoints_detweight-1e-05_dim-2_ntrain-10_seed-1683/best.pkl
+Epoch 600	Iteration 600
+Train score = 0.024739932268857956	Test score = 0.24395616352558136
+Model save: checkpoints/checkpoints-detweight/checkpoints_detweight-1e-05_dim-2_ntrain-10_seed-1683/best.pkl
+Epoch 800	Iteration 800
+Train score = 0.009258357807993889	Test score = 0.17804275453090668
+Model save: checkpoints/checkpoints-detweight/checkpoints_detweight-1e-05_dim-2_ntrain-10_seed-1683/best.pkl
+Epoch 1000	Iteration 1000
+Train score = 0.004520312882959843	Test score = 0.17260874807834625
+Model save: checkpoints/checkpoints-detweight/checkpoints_detweight-1e-05_dim-2_ntrain-10_seed-1683/final.pkl
+Model save: checkpoints/checkpoints-detweight/checkpoints_detweight-1e-05_dim-2_ntrain-11_seed-1683/best.pkl
+Epoch 0	Iteration 0
+Train score = 10.0	Test score = 1.0806838274002075
+Model save: checkpoints/checkpoints-detweight/checkpoints_detweight-1e-05_dim-2_ntrain-11_seed-1683/best.pkl
+Epoch 200	Iteration 200
+Train score = 0.16402499377727509	Test score = 0.5769111514091492
+Model save: checkpoints/checkpoints-detweight/checkpoints_detweight-1e-05_dim-2_ntrain-11_seed-1683/best.pkl
+Epoch 400	Iteration 400
+Train score = 0.032056860625743866	Test score = 0.24602016806602478
+Model save: checkpoints/checkpoints-detweight/checkpoints_detweight-1e-05_dim-2_ntrain-11_seed-1683/best.pkl
+Epoch 600	Iteration 600
+Train score = 0.013400149531662464	Test score = 0.18557782471179962
+Model save: checkpoints/checkpoints-detweight/checkpoints_detweight-1e-05_dim-2_ntrain-11_seed-1683/best.pkl
+Epoch 800	Iteration 800
+Train score = 0.008426910266280174	Test score = 0.17272359132766724
+Model save: checkpoints/checkpoints-detweight/checkpoints_detweight-1e-05_dim-2_ntrain-11_seed-1683/best.pkl
+Epoch 1000	Iteration 1000
+Train score = 0.005352173466235399	Test score = 0.1631760150194168
+Model save: checkpoints/checkpoints-detweight/checkpoints_detweight-1e-05_dim-2_ntrain-11_seed-1683/final.pkl

@@ -3,11 +3,19 @@
 # SBATCH --mem=12GB
 # SBATCH --time=120:00:00
 # SBATCH --mail-user=abstreik
-
-# comment: SmyBATCH --mail-type=ALL
+# SBATCH --mail-type=ALL
 
 import os
 import multiprocessing
+from solver import Solver
+from model import Net
+from dataset import RotationDataset
+import lossfn
+from torch.utils.data import DataLoader
+import torch
+import numpy as np
+import math
+import argparse
 
 det_weights = [1e-5, 1e-4, 1e-3, 1e-2, 0.1, 0.2][:1]
 # [:]
@@ -27,7 +35,7 @@ def get_data_loader(dim, n, seed=SEED_TEST, shuffle=False, batch_size=512):
 def mp_worker(data):
     det_weight = data
     for n_train in train_range:
-        train_loader = get_data_loader(dim, n_train, seed=train_seed, shuffle=True, batch_size=512)
+        train_loader = get_data_loader(dim, n_train, seed=1683, shuffle=True, batch_size=512)
         test_loader = get_data_loader(dim, 512, seed=SEED_TEST, shuffle=False, batch_size=512)
         model = Net(dim, n_hidden_layers=max(1, int(math.log(dim, 2))))
         loss_fn = [{'loss_fn': lossfn.get_mse_loss(), 'weight': 1, 'label': 'mse'},
