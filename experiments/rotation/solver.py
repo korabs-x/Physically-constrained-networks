@@ -55,7 +55,7 @@ class Solver:
             print("Model save: {}".format(checkpoint_path))
 
     def load_checkpoint(self, checkpoint_path):
-        state_dict = torch.load(checkpoint_path)
+        state_dict = torch.load(checkpoint_path, map_location=self.device())
         self.model.load_state_dict(state_dict['model_states'])
         self.optimizer.load_state_dict(state_dict['optim'])
         self.epoch = state_dict['epoch']
