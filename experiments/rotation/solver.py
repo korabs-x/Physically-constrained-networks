@@ -6,13 +6,14 @@ import numpy as np
 import time
 import os
 from lossfn import get_mse_loss
+from collections import Counter
 
 
 class Solver:
     def __init__(self,
                  model,
-                 loss_fn_train=[{'loss_fn': get_mse_loss(), 'weight': 1}],
-                 loss_fn_test=[{'loss_fn': get_mse_loss(reduction='sum'), 'weight': 1}],
+                 loss_fn_train=[{'loss_fn': get_mse_loss(), 'weight': 1, 'label': 'mse'}],
+                 loss_fn_test=[{'loss_fn': get_mse_loss(reduction='sum'), 'weight': 1, 'label': 'mse'}],
                  optim=Adam,
                  optim_args={'lr': 1e-3},
                  checkpoint_dir=None):
@@ -32,11 +33,13 @@ class Solver:
 
         self.init = True
         self.train_loss = torch.FloatTensor([10])
+        self.idv_train_loss = {loss_dict['label']: 10 for loss_dict in loss_fn_train}
         self.start_time = None
 
         self.hist = {'epochs': [],
                      'iterations': [],
                      'train_loss': [],
+                     'individual_train_losses': {loss_dict['label']: [] for loss_dict in loss_fn_train},
                      'test_loss': [],
                      'wall_times': []}
 
@@ -84,6 +87,8 @@ class Solver:
                 self.hist['epochs'].append(self.epoch)
                 self.hist['iterations'].append(self.iteration)
                 self.hist['train_loss'].append(self.train_loss.item())
+                for loss_dict in self.loss_fn_train:
+                    self.hist['individual_train_losses'][loss_dict['label']].append(self.idv_train_loss[loss_dict['label']])
                 self.hist['test_loss'].append(score.item())
                 self.hist['wall_times'].append(time.time() - self.start_time)
             if len(self.hist['test_loss']) == 1 or score < min(self.hist['test_loss'][:-1]):
@@ -102,6 +107,7 @@ class Solver:
         while (epochs is not None and self.epoch < epochs) or (iterations is not None and self.iteration < iterations):
             self.model.train()
             epoch_train_loss = 0
+            epoch_idv_train_loss = Counter()
             for (points, angles, points_rotated) in loader:
                 points = points.to(self.device())
                 angles = angles.to(self.device())
@@ -112,7 +118,9 @@ class Solver:
                 prediction = prediction.view((points.shape[0], points.shape[1]))
                 loss = 0
                 for loss_dict in self.loss_fn_train:
-                    loss += loss_dict['weight'] * loss_dict['loss_fn'](prediction, points_rotated, output_matrix)
+                    loss_val = loss_dict['weight'] * loss_dict['loss_fn'](prediction, points_rotated, output_matrix)
+                    epoch_idv_train_loss[loss_dict['label']] += loss_val
+                    loss += loss_val
                 epoch_train_loss += loss
                 self.optimizer.zero_grad()
                 loss.backward()
@@ -122,6 +130,7 @@ class Solver:
                 self.iteration += 1
             epoch_train_loss /= len(loader)
             self.train_loss = epoch_train_loss
+            self.idv_train_loss = epoch_idv_train_loss
 
             if test_every and (self.epoch % test_every == 0):
                 self.test(test_loader)
