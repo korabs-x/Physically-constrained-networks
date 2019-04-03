@@ -17,11 +17,11 @@ import numpy as np
 import math
 import argparse
 
-det_weights = [1e-5, 1e-4, 1e-3, 1e-2, 0.1, 0.2][:1]
+det_weights = [1e-5, 1e-4, 1e-3, 1e-2, 0.1, 0.2]
 # [:]
 
 dim = 2
-train_range = range(10, 12, 1)
+train_range = range(10, 21, 1)
 # 21
 
 SEED_TEST = 0
@@ -43,7 +43,7 @@ def mp_worker(data):
         solver = Solver(model, loss_fn_train=loss_fn,
                         checkpoint_dir='checkpoints/checkpoints-detweight/checkpoints_detweight-{}_dim-{}_ntrain-{}_seed-{}/'.format(
                             det_weight, dim, n_train, 1683))
-        solver.train(train_loader, iterations=1000, test_every_iterations=200, test_loader=test_loader)
+        solver.train(train_loader, iterations=20000, test_every_iterations=200, test_loader=test_loader)
 # 20000
 
 
