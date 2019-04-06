@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-# SBATCH --cpus=4
-# SBATCH --mem=12GB
-# SBATCH --time=120:00:00
-# SBATCH --mail-type=BEGIN,END,FAIL,TIME_LIMIT
+#SBATCH --gpus=4
+#SBATCH --mem=12GB
+#SBATCH --time=120:00:00
+#SBATCH --mail-user=abstreik
+#SBATCH --mail-type=BEGIN,END,FAIL,TIME_LIMIT
 
 import os
 import multiprocessing
@@ -15,7 +16,7 @@ if dim == 2:
 elif dim == 3:
     train_range = range(10, 501, 10)
 elif dim == 5:
-    train_range = range(550, 5001, 50)
+    train_range = range(900, 5001, 50)
 elif dim == 10:
     train_range = list(range(2500, 10000, 2500)) + list(range(10000, 30000, 5000)) + list(range(30000, 500001, 10000))
 

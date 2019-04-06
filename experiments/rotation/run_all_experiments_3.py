@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-# SBATCH --cpus=3
-# SBATCH --mem=12GB
-# SBATCH --time=72:00:00
-# SBATCH --mail-user=abstreik
-# SBATCH --mail-type=BEGIN,END,FAIL,TIME_LIMIT
+#SBATCH --gpus=3
+#SBATCH --mem=12GB
+#SBATCH --time=72:00:00
+#SBATCH --mail-user=abstreik
+#SBATCH --mail-type=BEGIN,END,FAIL,TIME_LIMIT
 
 import os
 import multiprocessing
@@ -14,7 +14,7 @@ dim = 3
 if dim == 2:
     train_range = range(1, 51, 1)
 elif dim == 3:
-    train_range = range(290, 501, 10)
+    train_range = range(450, 501, 10)
 elif dim == 5:
     train_range = range(50, 5001, 50)
 elif dim == 10:

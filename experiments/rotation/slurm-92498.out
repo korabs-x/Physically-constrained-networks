@@ -1,0 +1,1490 @@
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 0	Iteration 0
+Train score = 10.0	Test score = 1.4003454446792603
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 200	Iteration 200
+Train score = 0.2067452073097229	Test score = 0.6485108733177185
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 400	Iteration 400
+Train score = 0.11680826544761658	Test score = 0.37320762872695923
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 600	Iteration 600
+Train score = 0.06815235316753387	Test score = 0.2191619873046875
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 800	Iteration 800
+Train score = 0.043147824704647064	Test score = 0.144800066947937
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 1000	Iteration 1000
+Train score = 0.02845153398811817	Test score = 0.10123352706432343
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 1200	Iteration 1200
+Train score = 0.019412310793995857	Test score = 0.0718710646033287
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 1400	Iteration 1400
+Train score = 0.01326158456504345	Test score = 0.05066069960594177
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 1600	Iteration 1600
+Train score = 0.009522558189928532	Test score = 0.03757703676819801
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 1800	Iteration 1800
+Train score = 0.007546974346041679	Test score = 0.030759649351239204
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 2000	Iteration 2000
+Train score = 0.00645475136116147	Test score = 0.027029704302549362
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 2200	Iteration 2200
+Train score = 0.005648639053106308	Test score = 0.024319658055901527
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 2400	Iteration 2400
+Train score = 0.005058266222476959	Test score = 0.022244777530431747
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 2600	Iteration 2600
+Train score = 0.004562551621347666	Test score = 0.02038712054491043
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 2800	Iteration 2800
+Train score = 0.00410161167383194	Test score = 0.018551936373114586
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 3000	Iteration 3000
+Train score = 0.0036619745660573244	Test score = 0.016730768606066704
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 3200	Iteration 3200
+Train score = 0.003236091462895274	Test score = 0.01491736713796854
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 3400	Iteration 3400
+Train score = 0.002808786230161786	Test score = 0.013049857690930367
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 3600	Iteration 3600
+Train score = 0.0023954948410391808	Test score = 0.011241544038057327
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 3800	Iteration 3800
+Train score = 0.0020118514075875282	Test score = 0.009573300369083881
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 4000	Iteration 4000
+Train score = 0.0016501290956512094	Test score = 0.008020620793104172
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 4200	Iteration 4200
+Train score = 0.0013139969669282436	Test score = 0.00656537851318717
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 4400	Iteration 4400
+Train score = 0.0010321114677935839	Test score = 0.005321926437318325
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 4600	Iteration 4600
+Train score = 0.0008069017203524709	Test score = 0.004300870932638645
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 4800	Iteration 4800
+Train score = 0.0006337216473184526	Test score = 0.0035049726720899343
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 5000	Iteration 5000
+Train score = 0.0005085044540464878	Test score = 0.0029060349334031343
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 5200	Iteration 5200
+Train score = 0.0004185634898021817	Test score = 0.0024502857122570276
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 5400	Iteration 5400
+Train score = 0.00035325539647601545	Test score = 0.0021014902740716934
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 5600	Iteration 5600
+Train score = 0.00030382120166905224	Test score = 0.0018274810863658786
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 5800	Iteration 5800
+Train score = 0.00026553828502073884	Test score = 0.0016074655577540398
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 6000	Iteration 6000
+Train score = 0.0002352790324948728	Test score = 0.0014280505711212754
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 6200	Iteration 6200
+Train score = 0.00021285671391524374	Test score = 0.0012843955773860216
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 6400	Iteration 6400
+Train score = 0.0001914515160024166	Test score = 0.0011605385225266218
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 6600	Iteration 6600
+Train score = 0.00017448057769797742	Test score = 0.0010632523335516453
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 6800	Iteration 6800
+Train score = 0.0001608408201718703	Test score = 0.000985301798209548
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 7000	Iteration 7000
+Train score = 0.00014920601097401232	Test score = 0.00092164525995031
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 7200	Iteration 7200
+Train score = 0.00013913433940615505	Test score = 0.0008682460756972432
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 7400	Iteration 7400
+Train score = 0.00013021573249716312	Test score = 0.0008235156419686973
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 7600	Iteration 7600
+Train score = 0.0001222200080519542	Test score = 0.0007764323381707072
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 7800	Iteration 7800
+Train score = 0.00011441258538980037	Test score = 0.0007427035016007721
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 8000	Iteration 8000
+Train score = 0.00010719198326114565	Test score = 0.0007069996790960431
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 8200	Iteration 8200
+Train score = 0.00010040849883807823	Test score = 0.000673902512062341
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 8400	Iteration 8400
+Train score = 9.437469998374581e-05	Test score = 0.0006438018172048032
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 8600	Iteration 8600
+Train score = 8.811285806586966e-05	Test score = 0.0006134153227321804
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 8800	Iteration 8800
+Train score = 8.236025314545259e-05	Test score = 0.0005862651159986854
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 9000	Iteration 9000
+Train score = 7.701414142502472e-05	Test score = 0.0005592731758952141
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 9200	Iteration 9200
+Train score = 7.219160033855587e-05	Test score = 0.0005346426041796803
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 9400	Iteration 9400
+Train score = 6.964129715925083e-05	Test score = 0.000509737350512296
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 9600	Iteration 9600
+Train score = 6.343192217173055e-05	Test score = 0.0004908349947072566
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 9800	Iteration 9800
+Train score = 5.9907699323957786e-05	Test score = 0.0004684048180934042
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 10000	Iteration 10000
+Train score = 5.98826227360405e-05	Test score = 0.0004653976939152926
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 10200	Iteration 10200
+Train score = 5.465621143230237e-05	Test score = 0.0004385172505863011
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 10400	Iteration 10400
+Train score = 5.028451414545998e-05	Test score = 0.00041963084368035197
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 10600	Iteration 10600
+Train score = 4.780342715093866e-05	Test score = 0.00040381570579484105
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 10800	Iteration 10800
+Train score = 4.565302879200317e-05	Test score = 0.0003928784281015396
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 11000	Iteration 11000
+Train score = 4.416570300236344e-05	Test score = 0.00038367119850590825
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 11200	Iteration 11200
+Train score = 4.2899489926639944e-05	Test score = 0.0003748114686459303
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 11400	Iteration 11400
+Train score = 4.0665858250577e-05	Test score = 0.0003645772230811417
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 11600	Iteration 11600
+Train score = 3.934065898647532e-05	Test score = 0.00035715114790946245
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 11800	Iteration 11800
+Train score = 3.844622187898494e-05	Test score = 0.0003518476733006537
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 12000	Iteration 12000
+Train score = 3.75013223674614e-05	Test score = 0.0003440573054831475
+Epoch 12200	Iteration 12200
+Train score = 3.718459265655838e-05	Test score = 0.0003465917834546417
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 12400	Iteration 12400
+Train score = 3.5259774449514225e-05	Test score = 0.00033174417330883443
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 12600	Iteration 12600
+Train score = 3.469466537353583e-05	Test score = 0.00032564238063059747
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 12800	Iteration 12800
+Train score = 3.322610427858308e-05	Test score = 0.00032338895834982395
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 13000	Iteration 13000
+Train score = 3.216655386495404e-05	Test score = 0.00031532743014395237
+Epoch 13200	Iteration 13200
+Train score = 3.401891444809735e-05	Test score = 0.00032542398548685014
+Epoch 13400	Iteration 13400
+Train score = 3.224222382414155e-05	Test score = 0.0003161555214319378
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 13600	Iteration 13600
+Train score = 3.185063906130381e-05	Test score = 0.0003096432483289391
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 13800	Iteration 13800
+Train score = 2.94019264401868e-05	Test score = 0.0002968886401504278
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 14000	Iteration 14000
+Train score = 2.869326635845937e-05	Test score = 0.00029421490035019815
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 14200	Iteration 14200
+Train score = 2.769040293060243e-05	Test score = 0.0002903072745539248
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 14400	Iteration 14400
+Train score = 2.7080643121735193e-05	Test score = 0.00028554510208778083
+Epoch 14600	Iteration 14600
+Train score = 2.8167332857265137e-05	Test score = 0.00029188228654675186
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 14800	Iteration 14800
+Train score = 2.6477151550352573e-05	Test score = 0.00028287587338127196
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 15000	Iteration 15000
+Train score = 2.527691685827449e-05	Test score = 0.00027570154634304345
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 15200	Iteration 15200
+Train score = 2.43289159698179e-05	Test score = 0.00027334707556292415
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 15400	Iteration 15400
+Train score = 2.382763705099933e-05	Test score = 0.0002705553197301924
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 15600	Iteration 15600
+Train score = 2.343772939639166e-05	Test score = 0.00026913449983112514
+Epoch 15800	Iteration 15800
+Train score = 2.384728031756822e-05	Test score = 0.00026996750966645777
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 16000	Iteration 16000
+Train score = 2.3027385395835154e-05	Test score = 0.00026398285990580916
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 16200	Iteration 16200
+Train score = 2.2036858354113065e-05	Test score = 0.0002618463768158108
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 16400	Iteration 16400
+Train score = 2.196210334659554e-05	Test score = 0.00025628789444454014
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 16600	Iteration 16600
+Train score = 2.186604069720488e-05	Test score = 0.00025497839669696987
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 16800	Iteration 16800
+Train score = 2.043046879407484e-05	Test score = 0.00025164266116917133
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 17000	Iteration 17000
+Train score = 1.9957842596340925e-05	Test score = 0.0002482989802956581
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 17200	Iteration 17200
+Train score = 1.9606073692557402e-05	Test score = 0.0002454571076668799
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 17400	Iteration 17400
+Train score = 1.9389104636502452e-05	Test score = 0.0002447702281642705
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 17600	Iteration 17600
+Train score = 1.953427454282064e-05	Test score = 0.00024100432347040623
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 17800	Iteration 17800
+Train score = 1.8493004972697236e-05	Test score = 0.00023863613023422658
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 18000	Iteration 18000
+Train score = 1.8290666048415005e-05	Test score = 0.00023685577616561204
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 18200	Iteration 18200
+Train score = 1.7999980627791956e-05	Test score = 0.00023282805341295898
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 18400	Iteration 18400
+Train score = 1.7580288840690628e-05	Test score = 0.00023275335843209177
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 18600	Iteration 18600
+Train score = 1.7154778106487356e-05	Test score = 0.00023109618632588536
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 18800	Iteration 18800
+Train score = 1.6823556507006288e-05	Test score = 0.00022830927628092468
+Epoch 19000	Iteration 19000
+Train score = 1.7991997083299793e-05	Test score = 0.00023754897119943053
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 19200	Iteration 19200
+Train score = 1.643240284465719e-05	Test score = 0.00022561628429684788
+Epoch 19400	Iteration 19400
+Train score = 1.6778767530922778e-05	Test score = 0.00022947939578443766
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/best.pkl
+Epoch 19600	Iteration 19600
+Train score = 1.5581877960357815e-05	Test score = 0.0002205363562097773
+Epoch 19800	Iteration 19800
+Train score = 1.6080350178526714e-05	Test score = 0.00022079655900597572
+Epoch 20000	Iteration 20000
+Train score = 1.5657222320442088e-05	Test score = 0.00022080061899032444
+Model save: checkpoints_dim-3_ntrain-450_lossfn-norm_seed-1683/final.pkl
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 0	Iteration 0
+Train score = 10.0	Test score = 1.2177062034606934
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 200	Iteration 200
+Train score = 0.21643884479999542	Test score = 0.683276891708374
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 400	Iteration 400
+Train score = 0.0976971685886383	Test score = 0.32074812054634094
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 600	Iteration 600
+Train score = 0.05194731056690216	Test score = 0.17857544124126434
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 800	Iteration 800
+Train score = 0.03580955043435097	Test score = 0.12628233432769775
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 1000	Iteration 1000
+Train score = 0.02239810861647129	Test score = 0.08208531886339188
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 1200	Iteration 1200
+Train score = 0.013393107801675797	Test score = 0.05163924768567085
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 1400	Iteration 1400
+Train score = 0.009190735407173634	Test score = 0.036902010440826416
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 1600	Iteration 1600
+Train score = 0.007569232955574989	Test score = 0.031044427305459976
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 1800	Iteration 1800
+Train score = 0.006771015003323555	Test score = 0.02817593887448311
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 2000	Iteration 2000
+Train score = 0.006109989248216152	Test score = 0.02587129920721054
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 2200	Iteration 2200
+Train score = 0.005505172070115805	Test score = 0.02370000258088112
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 2400	Iteration 2400
+Train score = 0.004900763742625713	Test score = 0.021575968712568283
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 2600	Iteration 2600
+Train score = 0.004330437630414963	Test score = 0.019461050629615784
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 2800	Iteration 2800
+Train score = 0.0037896065041422844	Test score = 0.017388133332133293
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 3000	Iteration 3000
+Train score = 0.0033041099086403847	Test score = 0.015437356196343899
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 3200	Iteration 3200
+Train score = 0.0028838973958045244	Test score = 0.01367660891264677
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 3400	Iteration 3400
+Train score = 0.0025198732037097216	Test score = 0.012101324275135994
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 3600	Iteration 3600
+Train score = 0.002202105475589633	Test score = 0.010685618966817856
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 3800	Iteration 3800
+Train score = 0.0019211572362110019	Test score = 0.009414692409336567
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 4000	Iteration 4000
+Train score = 0.0016711311182007194	Test score = 0.008268681354820728
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 4200	Iteration 4200
+Train score = 0.0014454680494964123	Test score = 0.007229318842291832
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 4400	Iteration 4400
+Train score = 0.0012424626620486379	Test score = 0.006279854569584131
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 4600	Iteration 4600
+Train score = 0.0010573355248197913	Test score = 0.0054256496950984
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 4800	Iteration 4800
+Train score = 0.0008930236217565835	Test score = 0.004651011433452368
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 5000	Iteration 5000
+Train score = 0.0007463230867870152	Test score = 0.00395166827365756
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 5200	Iteration 5200
+Train score = 0.0006206808029673994	Test score = 0.003347044810652733
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 5400	Iteration 5400
+Train score = 0.0005181126180104911	Test score = 0.002843965543434024
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 5600	Iteration 5600
+Train score = 0.00043633568566292524	Test score = 0.0024316811468452215
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 5800	Iteration 5800
+Train score = 0.0003748307062778622	Test score = 0.0021175784058868885
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 6000	Iteration 6000
+Train score = 0.00032285164343193173	Test score = 0.0018604920478537679
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 6200	Iteration 6200
+Train score = 0.0002837922074832022	Test score = 0.0016639159293845296
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 6400	Iteration 6400
+Train score = 0.00025181230739690363	Test score = 0.0015114486450329423
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 6600	Iteration 6600
+Train score = 0.00022474663273897022	Test score = 0.00138462008908391
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 6800	Iteration 6800
+Train score = 0.00020198474521748722	Test score = 0.0012787982122972608
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 7000	Iteration 7000
+Train score = 0.00018251923029311	Test score = 0.0011905760038644075
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 7200	Iteration 7200
+Train score = 0.00016706720634829253	Test score = 0.0011157956905663013
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 7400	Iteration 7400
+Train score = 0.00015358113159891218	Test score = 0.0010540148941799998
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 7600	Iteration 7600
+Train score = 0.00014359230408445	Test score = 0.00099855603184551
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 7800	Iteration 7800
+Train score = 0.0001346288772765547	Test score = 0.0009554507560096681
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 8000	Iteration 8000
+Train score = 0.00012430016067810357	Test score = 0.0009177037281915545
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 8200	Iteration 8200
+Train score = 0.0001152944314526394	Test score = 0.0008578130509704351
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 8400	Iteration 8400
+Train score = 0.00010799949086504057	Test score = 0.0008186191553249955
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 8600	Iteration 8600
+Train score = 0.00010183601261815056	Test score = 0.0007854814175516367
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 8800	Iteration 8800
+Train score = 9.532272088108584e-05	Test score = 0.000747669255360961
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 9000	Iteration 9000
+Train score = 8.98415528354235e-05	Test score = 0.000715373083949089
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 9200	Iteration 9200
+Train score = 8.550953498343006e-05	Test score = 0.0006894620601087809
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 9400	Iteration 9400
+Train score = 8.297599561046809e-05	Test score = 0.000666121719405055
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 9600	Iteration 9600
+Train score = 8.335880556842312e-05	Test score = 0.0006619392079301178
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 9800	Iteration 9800
+Train score = 7.309429201995954e-05	Test score = 0.0006075017736293375
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 10000	Iteration 10000
+Train score = 7.165939314290881e-05	Test score = 0.0005869853775948286
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 10200	Iteration 10200
+Train score = 6.610546552110463e-05	Test score = 0.0005660480819642544
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 10400	Iteration 10400
+Train score = 6.338438106467947e-05	Test score = 0.0005485668079927564
+Epoch 10600	Iteration 10600
+Train score = 6.275727355387062e-05	Test score = 0.000552200130186975
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 10800	Iteration 10800
+Train score = 5.83467299293261e-05	Test score = 0.0005177847342565656
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 11000	Iteration 11000
+Train score = 5.6170283642131835e-05	Test score = 0.0005044530844315886
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 11200	Iteration 11200
+Train score = 5.416608473751694e-05	Test score = 0.0004932274459861219
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 11400	Iteration 11400
+Train score = 5.2421044529182836e-05	Test score = 0.0004891271819360554
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 11600	Iteration 11600
+Train score = 5.0627055315999314e-05	Test score = 0.0004776785208377987
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 11800	Iteration 11800
+Train score = 5.0512058805907145e-05	Test score = 0.00047667240141890943
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 12000	Iteration 12000
+Train score = 4.7368142986670136e-05	Test score = 0.00045082453289069235
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 12200	Iteration 12200
+Train score = 4.591066317516379e-05	Test score = 0.0004414412542246282
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 12400	Iteration 12400
+Train score = 4.452611392480321e-05	Test score = 0.00043252643081359565
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 12600	Iteration 12600
+Train score = 4.3196741899009794e-05	Test score = 0.0004242260183673352
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 12800	Iteration 12800
+Train score = 4.1968920413637534e-05	Test score = 0.00041621411219239235
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 13000	Iteration 13000
+Train score = 4.090717266080901e-05	Test score = 0.00040820473805069923
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 13200	Iteration 13200
+Train score = 3.954084240831435e-05	Test score = 0.000400427175918594
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 13400	Iteration 13400
+Train score = 3.8417023461079225e-05	Test score = 0.00039317941991612315
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 13600	Iteration 13600
+Train score = 3.7649431760655716e-05	Test score = 0.00038747742655687034
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 13800	Iteration 13800
+Train score = 3.63173421646934e-05	Test score = 0.00038334683631546795
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 14000	Iteration 14000
+Train score = 3.524737257976085e-05	Test score = 0.0003720453823916614
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 14200	Iteration 14200
+Train score = 3.755006764549762e-05	Test score = 0.0003713906626217067
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 14400	Iteration 14400
+Train score = 3.314887726446614e-05	Test score = 0.00036012279451824725
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 14600	Iteration 14600
+Train score = 3.219278733013198e-05	Test score = 0.00035393290454521775
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 14800	Iteration 14800
+Train score = 3.156629463774152e-05	Test score = 0.00034594975295476615
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 15000	Iteration 15000
+Train score = 3.066231147386134e-05	Test score = 0.00034463874180801213
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 15200	Iteration 15200
+Train score = 2.9905877454439178e-05	Test score = 0.00033886489109136164
+Epoch 15400	Iteration 15400
+Train score = 3.253104296163656e-05	Test score = 0.000362527760444209
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 15600	Iteration 15600
+Train score = 2.829442746588029e-05	Test score = 0.0003282940306235105
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 15800	Iteration 15800
+Train score = 2.8171814847155474e-05	Test score = 0.00032675976399332285
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 16000	Iteration 16000
+Train score = 2.717137431318406e-05	Test score = 0.0003222728264518082
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 16200	Iteration 16200
+Train score = 2.653909359651152e-05	Test score = 0.00031613645842298865
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 16400	Iteration 16400
+Train score = 2.5954333978006616e-05	Test score = 0.00031264519202522933
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 16600	Iteration 16600
+Train score = 2.548248266975861e-05	Test score = 0.0003097582666669041
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 16800	Iteration 16800
+Train score = 2.4953073079814203e-05	Test score = 0.00030586248612962663
+Epoch 17000	Iteration 17000
+Train score = 2.645982021931559e-05	Test score = 0.0003064222983084619
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 17200	Iteration 17200
+Train score = 2.41222842305433e-05	Test score = 0.0002991203509736806
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 17400	Iteration 17400
+Train score = 2.4051512809819542e-05	Test score = 0.0002967626496683806
+Epoch 17600	Iteration 17600
+Train score = 2.4387434677919373e-05	Test score = 0.0003051825042348355
+Epoch 17800	Iteration 17800
+Train score = 2.3574188162456267e-05	Test score = 0.0003028223291039467
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 18000	Iteration 18000
+Train score = 2.2507638277602382e-05	Test score = 0.0002879635139834136
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 18200	Iteration 18200
+Train score = 2.2153790268930607e-05	Test score = 0.0002848520234692842
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 18400	Iteration 18400
+Train score = 2.2767022528569214e-05	Test score = 0.0002840098168235272
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 18600	Iteration 18600
+Train score = 2.1454321540659294e-05	Test score = 0.00028219190426170826
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 18800	Iteration 18800
+Train score = 2.1047722839284688e-05	Test score = 0.0002785692922770977
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 19000	Iteration 19000
+Train score = 2.074187977996189e-05	Test score = 0.00027608629898168147
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 19200	Iteration 19200
+Train score = 2.0531333575490862e-05	Test score = 0.00027395004872232676
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 19400	Iteration 19400
+Train score = 2.0163592125754803e-05	Test score = 0.0002718476753216237
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/best.pkl
+Epoch 19600	Iteration 19600
+Train score = 1.9898458049283363e-05	Test score = 0.00026953613269142807
+Epoch 19800	Iteration 19800
+Train score = 2.171150299545843e-05	Test score = 0.0002748772967606783
+Epoch 20000	Iteration 20000
+Train score = 2.3684566258452833e-05	Test score = 0.00027634602156467736
+Model save: checkpoints_dim-3_ntrain-460_lossfn-norm_seed-1683/final.pkl
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 0	Iteration 0
+Train score = 10.0	Test score = 1.5732414722442627
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 200	Iteration 200
+Train score = 0.4929410219192505	Test score = 1.5014349222183228
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 400	Iteration 400
+Train score = 0.41828277707099915	Test score = 1.2193293571472168
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 600	Iteration 600
+Train score = 0.32510843873023987	Test score = 0.9069952964782715
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 800	Iteration 800
+Train score = 0.26250582933425903	Test score = 0.7116765975952148
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 1000	Iteration 1000
+Train score = 0.22404882311820984	Test score = 0.5654304027557373
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 1200	Iteration 1200
+Train score = 0.1808343231678009	Test score = 0.38247060775756836
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 1400	Iteration 1400
+Train score = 0.08796815574169159	Test score = 0.23344680666923523
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 1600	Iteration 1600
+Train score = 0.056925754994153976	Test score = 0.16451211273670197
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 1800	Iteration 1800
+Train score = 0.03886184096336365	Test score = 0.11624112725257874
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 2000	Iteration 2000
+Train score = 0.028549958020448685	Test score = 0.08700353652238846
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 2200	Iteration 2200
+Train score = 0.021994005888700485	Test score = 0.06871636211872101
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 2400	Iteration 2400
+Train score = 0.017393475398421288	Test score = 0.055977221578359604
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 2600	Iteration 2600
+Train score = 0.014153932221233845	Test score = 0.046664223074913025
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 2800	Iteration 2800
+Train score = 0.011821875348687172	Test score = 0.039795197546482086
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 3000	Iteration 3000
+Train score = 0.010077742859721184	Test score = 0.03451889380812645
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 3200	Iteration 3200
+Train score = 0.008685716427862644	Test score = 0.030220119282603264
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 3400	Iteration 3400
+Train score = 0.007522901054471731	Test score = 0.02655668370425701
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 3600	Iteration 3600
+Train score = 0.006544083822518587	Test score = 0.023330707103013992
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 3800	Iteration 3800
+Train score = 0.005705011077225208	Test score = 0.020456094294786453
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 4000	Iteration 4000
+Train score = 0.00497692683711648	Test score = 0.017885077744722366
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 4200	Iteration 4200
+Train score = 0.004339323844760656	Test score = 0.015580958686769009
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 4400	Iteration 4400
+Train score = 0.003780947532504797	Test score = 0.013538029976189137
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 4600	Iteration 4600
+Train score = 0.0033015208318829536	Test score = 0.011771287769079208
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 4800	Iteration 4800
+Train score = 0.0028976919129490852	Test score = 0.010274260304868221
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 5000	Iteration 5000
+Train score = 0.00255546229891479	Test score = 0.009000924415886402
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 5200	Iteration 5200
+Train score = 0.0022574772592633963	Test score = 0.00791116338223219
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 5400	Iteration 5400
+Train score = 0.0019904752261936665	Test score = 0.006964797619730234
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 5600	Iteration 5600
+Train score = 0.0017452448373660445	Test score = 0.006118332035839558
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 5800	Iteration 5800
+Train score = 0.0015277101192623377	Test score = 0.00539475679397583
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 6000	Iteration 6000
+Train score = 0.0013399765593931079	Test score = 0.004794413689523935
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 6200	Iteration 6200
+Train score = 0.0011757529573515058	Test score = 0.004284770227968693
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 6400	Iteration 6400
+Train score = 0.0010318104177713394	Test score = 0.003845958737656474
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 6600	Iteration 6600
+Train score = 0.0009055366972461343	Test score = 0.00346510112285614
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 6800	Iteration 6800
+Train score = 0.0007970340084284544	Test score = 0.0031234659254550934
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 7000	Iteration 7000
+Train score = 0.0007011645357124507	Test score = 0.0028337324038147926
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 7200	Iteration 7200
+Train score = 0.0006225815159268677	Test score = 0.002581488573923707
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 7400	Iteration 7400
+Train score = 0.0005585973849520087	Test score = 0.002368178218603134
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 7600	Iteration 7600
+Train score = 0.0005063462303951383	Test score = 0.002184678101912141
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 7800	Iteration 7800
+Train score = 0.000463348813354969	Test score = 0.002027089474722743
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 8000	Iteration 8000
+Train score = 0.0004271016223356128	Test score = 0.0018961400492116809
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 8200	Iteration 8200
+Train score = 0.00039766193367540836	Test score = 0.0017826334806159139
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 8400	Iteration 8400
+Train score = 0.00037237536162137985	Test score = 0.0016808233922347426
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 8600	Iteration 8600
+Train score = 0.0003501955361571163	Test score = 0.0015946939820423722
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 8800	Iteration 8800
+Train score = 0.00033155333949252963	Test score = 0.0015166011871770024
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 9000	Iteration 9000
+Train score = 0.00031501572811976075	Test score = 0.001441910513676703
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 9200	Iteration 9200
+Train score = 0.00030022591818124056	Test score = 0.001378239132463932
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 9400	Iteration 9400
+Train score = 0.0002902049745898694	Test score = 0.001317292102612555
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 9600	Iteration 9600
+Train score = 0.00027449504705145955	Test score = 0.0012660794891417027
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 9800	Iteration 9800
+Train score = 0.0002630053786560893	Test score = 0.0012155139120295644
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 10000	Iteration 10000
+Train score = 0.00025283952709287405	Test score = 0.0011673779226839542
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 10200	Iteration 10200
+Train score = 0.00024340281379409134	Test score = 0.001125159440562129
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 10400	Iteration 10400
+Train score = 0.00023346542729996145	Test score = 0.00108038738835603
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 10600	Iteration 10600
+Train score = 0.00023415630857925862	Test score = 0.0010547465644776821
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 10800	Iteration 10800
+Train score = 0.00021685590036213398	Test score = 0.0010108031565323472
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 11000	Iteration 11000
+Train score = 0.0002092996146529913	Test score = 0.0009768198942765594
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 11200	Iteration 11200
+Train score = 0.00020229449728503823	Test score = 0.0009460666915401816
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 11400	Iteration 11400
+Train score = 0.00019596975471358746	Test score = 0.0009129074751399457
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 11600	Iteration 11600
+Train score = 0.00019118897034786642	Test score = 0.000888301117811352
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 11800	Iteration 11800
+Train score = 0.0001829153043217957	Test score = 0.0008622140157967806
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 12000	Iteration 12000
+Train score = 0.00017845375987235457	Test score = 0.000835777260363102
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 12200	Iteration 12200
+Train score = 0.00017179800488520414	Test score = 0.0008154993411153555
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 12400	Iteration 12400
+Train score = 0.00016646846779622138	Test score = 0.0007894482696428895
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 12600	Iteration 12600
+Train score = 0.00016117362247314304	Test score = 0.0007662815623916686
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 12800	Iteration 12800
+Train score = 0.0001583034754730761	Test score = 0.000755118380766362
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 13000	Iteration 13000
+Train score = 0.0001544308615848422	Test score = 0.0007378379232250154
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 13200	Iteration 13200
+Train score = 0.0001473991433158517	Test score = 0.0007039529155008495
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 13400	Iteration 13400
+Train score = 0.00014320705668069422	Test score = 0.0006877840496599674
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 13600	Iteration 13600
+Train score = 0.00013922731159254909	Test score = 0.0006733820773661137
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 13800	Iteration 13800
+Train score = 0.0001364546624245122	Test score = 0.000657928641885519
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 14000	Iteration 14000
+Train score = 0.0001312573440372944	Test score = 0.0006372807547450066
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 14200	Iteration 14200
+Train score = 0.00013316355762071908	Test score = 0.0006315987557172775
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 14400	Iteration 14400
+Train score = 0.0001243424485437572	Test score = 0.0006093870033510029
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 14600	Iteration 14600
+Train score = 0.0001232508075190708	Test score = 0.0005931304767727852
+Epoch 14800	Iteration 14800
+Train score = 0.00012816049274988472	Test score = 0.0006081914762035012
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 15000	Iteration 15000
+Train score = 0.00011452178296167403	Test score = 0.0005694031133316457
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 15200	Iteration 15200
+Train score = 0.00011522195563884452	Test score = 0.0005603056633844972
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 15400	Iteration 15400
+Train score = 0.00010935575846815482	Test score = 0.0005457545048557222
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 15600	Iteration 15600
+Train score = 0.00011328358959872276	Test score = 0.000540357839781791
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 15800	Iteration 15800
+Train score = 0.00010402377665741369	Test score = 0.0005237475852482021
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 16000	Iteration 16000
+Train score = 0.00010143856343347579	Test score = 0.0005157080013304949
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 16200	Iteration 16200
+Train score = 0.00011274103599134833	Test score = 0.0005141627625562251
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 16400	Iteration 16400
+Train score = 9.75295843090862e-05	Test score = 0.0004975663614459336
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 16600	Iteration 16600
+Train score = 9.47036241996102e-05	Test score = 0.0004898373153991997
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 16800	Iteration 16800
+Train score = 9.26845968933776e-05	Test score = 0.00047993529005907476
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 17000	Iteration 17000
+Train score = 9.101450996240601e-05	Test score = 0.00046949624083936214
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 17200	Iteration 17200
+Train score = 9.634099842514843e-05	Test score = 0.0004644696309696883
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 17400	Iteration 17400
+Train score = 8.856337808538228e-05	Test score = 0.0004580969689413905
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 17600	Iteration 17600
+Train score = 8.53614037623629e-05	Test score = 0.0004487100522965193
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 17800	Iteration 17800
+Train score = 9.924625919666141e-05	Test score = 0.0004472413274925202
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 18000	Iteration 18000
+Train score = 8.286989759653807e-05	Test score = 0.0004340569139458239
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 18200	Iteration 18200
+Train score = 8.0727411841508e-05	Test score = 0.000428072817157954
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 18400	Iteration 18400
+Train score = 7.909385021775961e-05	Test score = 0.0004212440690025687
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 18600	Iteration 18600
+Train score = 7.812695548636839e-05	Test score = 0.0004162460973020643
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 18800	Iteration 18800
+Train score = 7.623745477758348e-05	Test score = 0.0004103044338990003
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 19000	Iteration 19000
+Train score = 7.502514927182347e-05	Test score = 0.0004036946047563106
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 19200	Iteration 19200
+Train score = 7.419836765620857e-05	Test score = 0.0003988767566625029
+Epoch 19400	Iteration 19400
+Train score = 7.525672117481008e-05	Test score = 0.0003993153804913163
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 19600	Iteration 19600
+Train score = 7.105981785571203e-05	Test score = 0.00038852725992910564
+Epoch 19800	Iteration 19800
+Train score = 9.590621630195528e-05	Test score = 0.00039414200000464916
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/best.pkl
+Epoch 20000	Iteration 20000
+Train score = 6.88945729052648e-05	Test score = 0.00037847369094379246
+Model save: checkpoints_dim-3_ntrain-450_lossfn-det_seed-1683/final.pkl
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 0	Iteration 0
+Train score = 10.0	Test score = 1.4391236305236816
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 200	Iteration 200
+Train score = 0.21371537446975708	Test score = 0.6684982776641846
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 400	Iteration 400
+Train score = 0.11022033542394638	Test score = 0.3494626581668854
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 600	Iteration 600
+Train score = 0.06831551343202591	Test score = 0.22161094844341278
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 800	Iteration 800
+Train score = 0.03957813233137131	Test score = 0.13456620275974274
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 1000	Iteration 1000
+Train score = 0.0244524497538805	Test score = 0.08731658011674881
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 1200	Iteration 1200
+Train score = 0.015767570585012436	Test score = 0.05868467316031456
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 1400	Iteration 1400
+Train score = 0.010782993398606777	Test score = 0.0415499173104763
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 1600	Iteration 1600
+Train score = 0.008129422552883625	Test score = 0.032224543392658234
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 1800	Iteration 1800
+Train score = 0.0067929164506495	Test score = 0.027515048161149025
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 2000	Iteration 2000
+Train score = 0.006044232286512852	Test score = 0.02494296245276928
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 2200	Iteration 2200
+Train score = 0.005448158364742994	Test score = 0.022962896153330803
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 2400	Iteration 2400
+Train score = 0.004919786471873522	Test score = 0.021404176950454712
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 2600	Iteration 2600
+Train score = 0.0044793663546442986	Test score = 0.020012300461530685
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 2800	Iteration 2800
+Train score = 0.004075740929692984	Test score = 0.018670979887247086
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 3000	Iteration 3000
+Train score = 0.0037169645074754953	Test score = 0.017422083765268326
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 3200	Iteration 3200
+Train score = 0.0034008484799414873	Test score = 0.016281234100461006
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 3400	Iteration 3400
+Train score = 0.0031181913800537586	Test score = 0.015215584076941013
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 3600	Iteration 3600
+Train score = 0.002861122600734234	Test score = 0.014206125400960445
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 3800	Iteration 3800
+Train score = 0.002621861407533288	Test score = 0.013229833915829659
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 4000	Iteration 4000
+Train score = 0.002395153744146228	Test score = 0.012273697182536125
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 4200	Iteration 4200
+Train score = 0.0021750733722001314	Test score = 0.01130240224301815
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 4400	Iteration 4400
+Train score = 0.0019568323623389006	Test score = 0.010362714529037476
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 4600	Iteration 4600
+Train score = 0.0017532865749672055	Test score = 0.009446988813579082
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 4800	Iteration 4800
+Train score = 0.0015568695962429047	Test score = 0.008520033210515976
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 5000	Iteration 5000
+Train score = 0.0013666130835190415	Test score = 0.007582873106002808
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 5200	Iteration 5200
+Train score = 0.0011856076307594776	Test score = 0.006657073739916086
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 5400	Iteration 5400
+Train score = 0.001014929381199181	Test score = 0.005750737618654966
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 5600	Iteration 5600
+Train score = 0.000854883692227304	Test score = 0.004896649159491062
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 5800	Iteration 5800
+Train score = 0.0007173074409365654	Test score = 0.004175384994596243
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 6000	Iteration 6000
+Train score = 0.0005988829652778804	Test score = 0.0035553358029574156
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 6200	Iteration 6200
+Train score = 0.0004983737017028034	Test score = 0.0030329811852425337
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 6400	Iteration 6400
+Train score = 0.0004165994469076395	Test score = 0.0025934078730642796
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 6600	Iteration 6600
+Train score = 0.0003528590896166861	Test score = 0.002234646352007985
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 6800	Iteration 6800
+Train score = 0.0003018402785528451	Test score = 0.0019329466158524156
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 7000	Iteration 7000
+Train score = 0.0002621155872475356	Test score = 0.0016912763239815831
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 7200	Iteration 7200
+Train score = 0.0002294776204507798	Test score = 0.0014853208558633924
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 7400	Iteration 7400
+Train score = 0.000203168106963858	Test score = 0.0013140157097950578
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 7600	Iteration 7600
+Train score = 0.00018112699035555124	Test score = 0.0011695778230205178
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 7800	Iteration 7800
+Train score = 0.00016278628027066588	Test score = 0.0010491892462596297
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 8000	Iteration 8000
+Train score = 0.00014662592730019242	Test score = 0.0009497670689597726
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 8200	Iteration 8200
+Train score = 0.00013652810594066978	Test score = 0.0008820050861686468
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 8400	Iteration 8400
+Train score = 0.00012055455590598285	Test score = 0.0007974404143169522
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 8600	Iteration 8600
+Train score = 0.00010975926124956459	Test score = 0.0007393589476123452
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 8800	Iteration 8800
+Train score = 0.00010089960414916277	Test score = 0.000690256361849606
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 9000	Iteration 9000
+Train score = 9.208563278662041e-05	Test score = 0.0006454552058130503
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 9200	Iteration 9200
+Train score = 8.428676665062085e-05	Test score = 0.0006073522963561118
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 9400	Iteration 9400
+Train score = 7.83162031439133e-05	Test score = 0.0005780092906206846
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 9600	Iteration 9600
+Train score = 7.261456630658358e-05	Test score = 0.0005480083636939526
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 9800	Iteration 9800
+Train score = 6.92369430908002e-05	Test score = 0.0005242933984845877
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 10000	Iteration 10000
+Train score = 6.418601697077975e-05	Test score = 0.0005024423589929938
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 10200	Iteration 10200
+Train score = 6.050988667993806e-05	Test score = 0.00048521728604100645
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 10400	Iteration 10400
+Train score = 5.7470093452138826e-05	Test score = 0.00046830426435917616
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 10600	Iteration 10600
+Train score = 5.5900014558574185e-05	Test score = 0.00046402079169638455
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 10800	Iteration 10800
+Train score = 5.432760008261539e-05	Test score = 0.000447130820248276
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 11000	Iteration 11000
+Train score = 5.027070073992945e-05	Test score = 0.00042848949669860303
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 11200	Iteration 11200
+Train score = 4.9475525884190574e-05	Test score = 0.00041559242527000606
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 11400	Iteration 11400
+Train score = 4.655347584048286e-05	Test score = 0.00040462499600835145
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 11600	Iteration 11600
+Train score = 4.478642586036585e-05	Test score = 0.00039423632551915944
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 11800	Iteration 11800
+Train score = 4.7152512706816196e-05	Test score = 0.0003846176259685308
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 12000	Iteration 12000
+Train score = 4.175784488325007e-05	Test score = 0.0003762460546568036
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 12200	Iteration 12200
+Train score = 4.0355556848226115e-05	Test score = 0.0003688165161293
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 12400	Iteration 12400
+Train score = 3.89966371585615e-05	Test score = 0.0003606576647143811
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 12600	Iteration 12600
+Train score = 3.780153929255903e-05	Test score = 0.00035520567325875163
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 12800	Iteration 12800
+Train score = 3.6516383261187e-05	Test score = 0.00034647772554308176
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 13000	Iteration 13000
+Train score = 3.59227487933822e-05	Test score = 0.0003435497055761516
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 13200	Iteration 13200
+Train score = 3.47292261722032e-05	Test score = 0.00033969624200835824
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 13400	Iteration 13400
+Train score = 3.3243759389733896e-05	Test score = 0.0003287789295427501
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 13600	Iteration 13600
+Train score = 3.224760803277604e-05	Test score = 0.0003228481800761074
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 13800	Iteration 13800
+Train score = 3.367664976394735e-05	Test score = 0.00032050354639068246
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 14000	Iteration 14000
+Train score = 3.0613238777732477e-05	Test score = 0.00031292581115849316
+Epoch 14200	Iteration 14200
+Train score = 3.1851996027398854e-05	Test score = 0.0003132447600364685
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 14400	Iteration 14400
+Train score = 2.900546860473696e-05	Test score = 0.000308232061797753
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 14600	Iteration 14600
+Train score = 2.8119598937337287e-05	Test score = 0.00029957806691527367
+Epoch 14800	Iteration 14800
+Train score = 2.7715728720068e-05	Test score = 0.0003008355852216482
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 15000	Iteration 15000
+Train score = 2.6632889785105363e-05	Test score = 0.00029184159939177334
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 15200	Iteration 15200
+Train score = 2.6771685952553526e-05	Test score = 0.0002898016828112304
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 15400	Iteration 15400
+Train score = 2.5520606868667528e-05	Test score = 0.0002889669849537313
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 15600	Iteration 15600
+Train score = 2.4719511202420108e-05	Test score = 0.0002818344801198691
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 15800	Iteration 15800
+Train score = 2.4308044885401614e-05	Test score = 0.0002805023395922035
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 16000	Iteration 16000
+Train score = 2.3562050046166405e-05	Test score = 0.00027527008205652237
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 16200	Iteration 16200
+Train score = 2.3028074792819098e-05	Test score = 0.00027244898956269026
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 16400	Iteration 16400
+Train score = 2.252576086902991e-05	Test score = 0.00026807215181179345
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 16600	Iteration 16600
+Train score = 2.197035246354062e-05	Test score = 0.0002665142237674445
+Epoch 16800	Iteration 16800
+Train score = 2.2127314878161997e-05	Test score = 0.0002676492149475962
+Epoch 17000	Iteration 17000
+Train score = 2.1687583284801804e-05	Test score = 0.0002688683453015983
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 17200	Iteration 17200
+Train score = 2.0543820937746204e-05	Test score = 0.00025860435562208295
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 17400	Iteration 17400
+Train score = 2.033936652878765e-05	Test score = 0.0002554884704295546
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 17600	Iteration 17600
+Train score = 1.994734520849306e-05	Test score = 0.00025196399656124413
+Epoch 17800	Iteration 17800
+Train score = 2.1430312699521892e-05	Test score = 0.0002597843704279512
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 18000	Iteration 18000
+Train score = 1.8827729945769534e-05	Test score = 0.00024815608048811555
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 18200	Iteration 18200
+Train score = 1.846461236709729e-05	Test score = 0.00024618246243335307
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 18400	Iteration 18400
+Train score = 1.83596603164915e-05	Test score = 0.00024559773737564683
+Epoch 18600	Iteration 18600
+Train score = 1.9254257495049387e-05	Test score = 0.00024996092543005943
+Epoch 18800	Iteration 18800
+Train score = 1.9995557522634044e-05	Test score = 0.00025124961393885314
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 19000	Iteration 19000
+Train score = 1.7523021597298793e-05	Test score = 0.00023843097733333707
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 19200	Iteration 19200
+Train score = 1.701705332379788e-05	Test score = 0.00023636672995053232
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 19400	Iteration 19400
+Train score = 1.645465090405196e-05	Test score = 0.00023395811149384826
+Epoch 19600	Iteration 19600
+Train score = 1.6903213690966368e-05	Test score = 0.0002395121700828895
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 19800	Iteration 19800
+Train score = 1.5841687854845077e-05	Test score = 0.00023192587832454592
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/best.pkl
+Epoch 20000	Iteration 20000
+Train score = 1.573358167661354e-05	Test score = 0.00023031997261568904
+Model save: checkpoints_dim-3_ntrain-470_lossfn-norm_seed-1683/final.pkl
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 0	Iteration 0
+Train score = 10.0	Test score = 1.2356984615325928
+Epoch 200	Iteration 200
+Train score = 0.4960142970085144	Test score = 1.4629254341125488
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 400	Iteration 400
+Train score = 0.4286145269870758	Test score = 1.2119473218917847
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 600	Iteration 600
+Train score = 0.32260632514953613	Test score = 0.8985026478767395
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 800	Iteration 800
+Train score = 0.2020590901374817	Test score = 0.4049850106239319
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 1000	Iteration 1000
+Train score = 0.07243133336305618	Test score = 0.2103608250617981
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 1200	Iteration 1200
+Train score = 0.04162014275789261	Test score = 0.1247921884059906
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 1400	Iteration 1400
+Train score = 0.026800289750099182	Test score = 0.08111383765935898
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 1600	Iteration 1600
+Train score = 0.019366268068552017	Test score = 0.059493742883205414
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 1800	Iteration 1800
+Train score = 0.015989266335964203	Test score = 0.04992774873971939
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 2000	Iteration 2000
+Train score = 0.014100829139351845	Test score = 0.04468056187033653
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 2200	Iteration 2200
+Train score = 0.012629191391170025	Test score = 0.04054464027285576
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 2400	Iteration 2400
+Train score = 0.011310596019029617	Test score = 0.03679526224732399
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 2600	Iteration 2600
+Train score = 0.010086707770824432	Test score = 0.033230580389499664
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 2800	Iteration 2800
+Train score = 0.008950673043727875	Test score = 0.029843999072909355
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 3000	Iteration 3000
+Train score = 0.007900085300207138	Test score = 0.02667486108839512
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 3200	Iteration 3200
+Train score = 0.0069517819210886955	Test score = 0.023734241724014282
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 3400	Iteration 3400
+Train score = 0.006098977755755186	Test score = 0.020974885672330856
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 3600	Iteration 3600
+Train score = 0.005349781364202499	Test score = 0.018417242914438248
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 3800	Iteration 3800
+Train score = 0.004712095018476248	Test score = 0.016146501526236534
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 4000	Iteration 4000
+Train score = 0.004176774527877569	Test score = 0.014199439436197281
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 4200	Iteration 4200
+Train score = 0.0037292938213795424	Test score = 0.01255897805094719
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 4400	Iteration 4400
+Train score = 0.003351364051923156	Test score = 0.011184041388332844
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 4600	Iteration 4600
+Train score = 0.0030244209337979555	Test score = 0.010026354342699051
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 4800	Iteration 4800
+Train score = 0.0027364203706383705	Test score = 0.009038415737450123
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 5000	Iteration 5000
+Train score = 0.0024774193298071623	Test score = 0.008175705559551716
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 5200	Iteration 5200
+Train score = 0.0022391199599951506	Test score = 0.007406500168144703
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 5400	Iteration 5400
+Train score = 0.0020176656544208527	Test score = 0.006701172329485416
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 5600	Iteration 5600
+Train score = 0.0018109045922756195	Test score = 0.006044353358447552
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 5800	Iteration 5800
+Train score = 0.0016219901153817773	Test score = 0.005419492721557617
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 6000	Iteration 6000
+Train score = 0.0014327495591714978	Test score = 0.004863332491368055
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 6200	Iteration 6200
+Train score = 0.00126045779325068	Test score = 0.004326118156313896
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 6400	Iteration 6400
+Train score = 0.001096520572900772	Test score = 0.0038190020713955164
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 6600	Iteration 6600
+Train score = 0.0009420642745681107	Test score = 0.0033547242637723684
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 6800	Iteration 6800
+Train score = 0.0008051072945818305	Test score = 0.002940113190561533
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 7000	Iteration 7000
+Train score = 0.0006893789977766573	Test score = 0.002584288828074932
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 7200	Iteration 7200
+Train score = 0.0005961980787105858	Test score = 0.0022837603464722633
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 7400	Iteration 7400
+Train score = 0.0005165799520909786	Test score = 0.002051672199741006
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 7600	Iteration 7600
+Train score = 0.00045588542707264423	Test score = 0.0018382041016593575
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 7800	Iteration 7800
+Train score = 0.0004090965958312154	Test score = 0.00167696678545326
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 8000	Iteration 8000
+Train score = 0.00037288147723302245	Test score = 0.0015409741317853332
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 8200	Iteration 8200
+Train score = 0.00034221672103740275	Test score = 0.0014332046266645193
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 8400	Iteration 8400
+Train score = 0.00032742167240940034	Test score = 0.001368369092233479
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 8600	Iteration 8600
+Train score = 0.0002966886677313596	Test score = 0.0012656367616727948
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 8800	Iteration 8800
+Train score = 0.00028408371144905686	Test score = 0.001214648480527103
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 9000	Iteration 9000
+Train score = 0.0002737237955443561	Test score = 0.00112925807479769
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 9200	Iteration 9200
+Train score = 0.0002488867612555623	Test score = 0.0010866671800613403
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 9400	Iteration 9400
+Train score = 0.0002356788027100265	Test score = 0.0010371292009949684
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 9600	Iteration 9600
+Train score = 0.00022479891777038574	Test score = 0.0009991781553253531
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 9800	Iteration 9800
+Train score = 0.00022335792891681194	Test score = 0.0009627162362448871
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 10000	Iteration 10000
+Train score = 0.00020505819702520967	Test score = 0.0009240205981768668
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 10200	Iteration 10200
+Train score = 0.00019824807532131672	Test score = 0.0008933733915910125
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 10400	Iteration 10400
+Train score = 0.0001903367374325171	Test score = 0.0008592894300818443
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 10600	Iteration 10600
+Train score = 0.00018221890786662698	Test score = 0.0008378131315112114
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 10800	Iteration 10800
+Train score = 0.00017528126772958785	Test score = 0.0008073542267084122
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 11000	Iteration 11000
+Train score = 0.00017473891784902662	Test score = 0.0007813911652192473
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 11200	Iteration 11200
+Train score = 0.00016347976634278893	Test score = 0.0007658101385459304
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 11400	Iteration 11400
+Train score = 0.00015909000649116933	Test score = 0.0007437713793478906
+Epoch 11600	Iteration 11600
+Train score = 0.0001575512724230066	Test score = 0.0007446659146808088
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 11800	Iteration 11800
+Train score = 0.00015134867862798274	Test score = 0.000708374660462141
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 12000	Iteration 12000
+Train score = 0.00014439495862461627	Test score = 0.000693860522005707
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 12200	Iteration 12200
+Train score = 0.00014112642384134233	Test score = 0.0006818927940912545
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 12400	Iteration 12400
+Train score = 0.0001372906845062971	Test score = 0.0006668897112831473
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 12600	Iteration 12600
+Train score = 0.00013301358558237553	Test score = 0.0006507468642666936
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 12800	Iteration 12800
+Train score = 0.0001321233867201954	Test score = 0.0006313034100458026
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 13000	Iteration 13000
+Train score = 0.00012552888074424118	Test score = 0.0006188230472616851
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 13200	Iteration 13200
+Train score = 0.00013000619946978986	Test score = 0.0006128057138994336
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 13400	Iteration 13400
+Train score = 0.00011924259888473898	Test score = 0.0005946403834968805
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 13600	Iteration 13600
+Train score = 0.00011963797442149371	Test score = 0.0005827905843034387
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 13800	Iteration 13800
+Train score = 0.00011367863771738485	Test score = 0.0005713562131859362
+Epoch 14000	Iteration 14000
+Train score = 0.00011961169366259128	Test score = 0.0005854053888469934
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 14200	Iteration 14200
+Train score = 0.0001089479701477103	Test score = 0.000549488584510982
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 14400	Iteration 14400
+Train score = 0.00010676952661015093	Test score = 0.0005359818460419774
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 14600	Iteration 14600
+Train score = 0.00010355038102716208	Test score = 0.000528269330970943
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 14800	Iteration 14800
+Train score = 0.00010152286267839372	Test score = 0.0005183208268135786
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 15000	Iteration 15000
+Train score = 9.927348583005369e-05	Test score = 0.0005090857157483697
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 15200	Iteration 15200
+Train score = 0.00011156711843796074	Test score = 0.0005075220833532512
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 15400	Iteration 15400
+Train score = 9.767159644979984e-05	Test score = 0.0004935531760565937
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 15600	Iteration 15600
+Train score = 9.349617175757885e-05	Test score = 0.0004828685778193176
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 15800	Iteration 15800
+Train score = 9.130168473348022e-05	Test score = 0.0004756375274155289
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 16000	Iteration 16000
+Train score = 9.006401523947716e-05	Test score = 0.0004680933488998562
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 16200	Iteration 16200
+Train score = 8.866063581081107e-05	Test score = 0.0004614048229996115
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 16400	Iteration 16400
+Train score = 8.60880536492914e-05	Test score = 0.0004531073209363967
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 16600	Iteration 16600
+Train score = 8.590069774072617e-05	Test score = 0.00044932207674719393
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 16800	Iteration 16800
+Train score = 8.394075121032074e-05	Test score = 0.00043853456736542284
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 17000	Iteration 17000
+Train score = 8.739652548683807e-05	Test score = 0.0004290932265575975
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 17200	Iteration 17200
+Train score = 8.095939847407863e-05	Test score = 0.00042588013457134366
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 17400	Iteration 17400
+Train score = 7.890605775173753e-05	Test score = 0.00041807795059867203
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 17600	Iteration 17600
+Train score = 8.061069092946127e-05	Test score = 0.0004174447967670858
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 17800	Iteration 17800
+Train score = 7.612715126015246e-05	Test score = 0.0004065420071128756
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 18000	Iteration 18000
+Train score = 7.493798329960555e-05	Test score = 0.00040139639168046415
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 18200	Iteration 18200
+Train score = 7.422982162097469e-05	Test score = 0.00039490876952186227
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 18400	Iteration 18400
+Train score = 7.273197115864605e-05	Test score = 0.00039021146949380636
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 18600	Iteration 18600
+Train score = 7.251208444358781e-05	Test score = 0.00038611129275523126
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 18800	Iteration 18800
+Train score = 7.225488661788404e-05	Test score = 0.00037871813401579857
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 19000	Iteration 19000
+Train score = 6.948688678676262e-05	Test score = 0.0003740341926459223
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 19200	Iteration 19200
+Train score = 6.841304275440052e-05	Test score = 0.00036927315522916615
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 19400	Iteration 19400
+Train score = 6.750720785930753e-05	Test score = 0.0003639318165369332
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 19600	Iteration 19600
+Train score = 6.664526154054329e-05	Test score = 0.0003604730882216245
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 19800	Iteration 19800
+Train score = 6.613087316509336e-05	Test score = 0.00035562546690925956
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/best.pkl
+Epoch 20000	Iteration 20000
+Train score = 6.47475098958239e-05	Test score = 0.0003507235087454319
+Model save: checkpoints_dim-3_ntrain-450_lossfn-detnorm_seed-1683/final.pkl
