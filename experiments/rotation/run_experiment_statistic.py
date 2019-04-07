@@ -10,10 +10,10 @@ import multiprocessing
 import lossfn
 from experiment import run_experiment
 
-loss_fns = ['error', 'det', 'norm', 'detnorm']
+loss_fns = ['det']# ['error', 'det', 'norm', 'detnorm']
 
 dim = 2
-train_range = range(8, 10, 1)
+train_range = range(15, 19, 1)
 n_runs = 20
 
 def mp_worker(data):
