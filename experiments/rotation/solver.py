@@ -17,6 +17,7 @@ class Solver:
                  optim=Adam,
                  optim_args={'lr': 1e-3},
                  checkpoint_dir=None):
+        torch.manual_seed(0)
         self.device = lambda: torch.device('cuda' if torch.cuda.is_available() else 'cpu')
         self.model = model.to(self.device())
         self.loss_fn_train = loss_fn_train
@@ -88,7 +89,8 @@ class Solver:
                 self.hist['iterations'].append(self.iteration)
                 self.hist['train_loss'].append(self.train_loss.item())
                 for loss_dict in self.loss_fn_train:
-                    self.hist['individual_train_losses'][loss_dict['label']].append(self.idv_train_loss[loss_dict['label']])
+                    if loss_dict['label'] in self.hist['individual_train_losses']:
+                        self.hist['individual_train_losses'][loss_dict['label']].append(self.idv_train_loss[loss_dict['label']])
                 self.hist['test_loss'].append(score.item())
                 self.hist['wall_times'].append(time.time() - self.start_time)
             if len(self.hist['test_loss']) == 1 or score < min(self.hist['test_loss'][:-1]):
@@ -96,9 +98,8 @@ class Solver:
             print("Epoch {}\tIteration {}".format(self.epoch, self.iteration))
             print("Train score = {}\tTest score = {}".format(self.train_loss.item(), score.item()))
 
-    def train(self, loader, epochs=None, iterations=None, test_every=False, test_every_iterations=False, test_loader=None):
+    def train(self, loader, epochs=None, iterations=None, test_every=False, test_every_iterations=False, test_loader=None, save_final=True):
         assert (epochs is not None or iterations is not None)
-        torch.manual_seed(0)
         self.start_time = time.time()
         if epochs is not None:
             epochs += self.epoch
@@ -137,6 +138,9 @@ class Solver:
 
             self.epoch += 1
 
-        if test_every or test_every_iterations:
+        if save_final:
             self.test(test_loader)
             self.save_checkpoint('final.pkl')
+
+    def set_loss_fn_train(self, loss_fn_train):
+        self.loss_fn_train = loss_fn_train

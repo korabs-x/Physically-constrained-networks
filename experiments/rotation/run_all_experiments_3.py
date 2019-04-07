@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
-#SBATCH --gpus=3
+#SBATCH --gpus=2
 #SBATCH --mem=12GB
-#SBATCH --time=72:00:00
+#SBATCH --time=120:00:00
 #SBATCH --mail-user=abstreik
 #SBATCH --mail-type=BEGIN,END,FAIL,TIME_LIMIT
 
 import os
 import multiprocessing
 
-loss_fns = ['det', 'norm', 'detnorm'] #['error', 'det', 'norm', 'detnorm']
+loss_fns = ['norm', 'detnorm'] #['error', 'det', 'norm', 'detnorm']
 
 dim = 3
 if dim == 2:

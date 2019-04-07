@@ -1,18 +1,18 @@
 #!/usr/bin/env python3
-# SBATCH --cpus=2
-# SBATCH --mem=12GB
-# SBATCH --time=120:00:00
-# SBATCH --mail-user=abstreik
-# SBATCH --mail-type=BEGIN,END,FAIL,TIME_LIMIT
+#SBATCH --cpus=2
+#SBATCH --mem=12GB
+#SBATCH --time=120:00:00
+#SBATCH --mail-user=abstreik
+#SBATCH --mail-type=BEGIN,END,FAIL,TIME_LIMIT
 
 import os
 import multiprocessing
 
-loss_fns = ['det', 'detnorm'] #['error', 'det', 'norm', 'detnorm']
+loss_fns = ['norm', 'detnorm'] #['error', 'det', 'norm', 'detnorm']
 
 dim = 2
 if dim == 2:
-    train_range = range(36, 51, 1)
+    train_range = range(1, 51, 1)
 elif dim == 3:
     train_range = range(10, 501, 10)
 elif dim == 5:

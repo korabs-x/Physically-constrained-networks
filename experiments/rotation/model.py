@@ -5,9 +5,9 @@ import torch
 class Net(nn.Module):
     def __init__(self, dim, n_hidden_layers=1, n_hidden_nodes=None):
         super().__init__()
+        torch.manual_seed(0)
         self.dim = dim
         hidden_nodes = 50 if n_hidden_nodes is None else n_hidden_nodes
-
         def create_modules():
             modules = [
                 nn.Linear(self.dim - 1, hidden_nodes),

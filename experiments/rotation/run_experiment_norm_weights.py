@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-#SBATCH --cpus=6
+#SBATCH --gpus=9
 #SBATCH --mem=12GB
 #SBATCH --time=120:00:00
 #SBATCH --mail-user=abstreik
@@ -17,7 +17,7 @@ import numpy as np
 import math
 import argparse
 
-det_weights = [0, 1e-5, 1e-4, 1e-3, 1e-2, 0.1, 0.2, 0.35, 0.5]
+norm_weights = [0, 1e-5, 1e-4, 1e-3, 1e-2, 0.1, 0.2, 0.35, 0.5]
 # [:]
 
 dim = 2
@@ -33,23 +33,22 @@ def get_data_loader(dim, n, seed=SEED_TEST, shuffle=False, batch_size=512):
 
 
 def mp_worker(data):
-    det_weight = data
+    norm_weight = data
     for n_train in train_range:
         train_loader = get_data_loader(dim, n_train, seed=1683, shuffle=True, batch_size=512)
         test_loader = get_data_loader(dim, 512, seed=SEED_TEST, shuffle=False, batch_size=512)
         model = Net(dim, n_hidden_layers=max(1, int(math.log(dim, 2))))
         loss_fn = [{'loss_fn': lossfn.get_mse_loss(), 'weight': 1, 'label': 'mse'},
-                   {'loss_fn': lossfn.get_det_loss(), 'weight': det_weight, 'label': 'det'}]
+                   {'loss_fn': lossfn.get_norm_loss(), 'weight': norm_weight, 'label': 'norm'}]
         solver = Solver(model, loss_fn_train=loss_fn,
-                        checkpoint_dir='checkpoints/checkpoints-detweight/checkpoints_detweight-{}_dim-{}_ntrain-{}_seed-{}/'.format(
-                            det_weight, dim, n_train, 1683))
+                        checkpoint_dir='checkpoints/checkpoints-normweight/checkpoints_normweight-{}_dim-{}_ntrain-{}_seed-{}/'.format(
+                            norm_weight, dim, n_train, 1683))
         solver.train(train_loader, iterations=20000, test_every_iterations=200, test_loader=test_loader)
-# 20000
 
 
 def mp_handler():
-    for det_weight in det_weights:
-        p = multiprocessing.Process(target=mp_worker, args=(det_weight,))
+    for norm_weight in norm_weights:
+        p = multiprocessing.Process(target=mp_worker, args=(norm_weight,))
         p.start()
 
 

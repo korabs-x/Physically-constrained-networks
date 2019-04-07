@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-#SBATCH --gpus=4
+#SBATCH --gpus=2
 #SBATCH --mem=12GB
 #SBATCH --time=120:00:00
 #SBATCH --mail-user=abstreik
@@ -8,7 +8,7 @@
 import os
 import multiprocessing
 
-loss_fns = ['error', 'det', 'norm', 'detnorm']
+loss_fns = ['norm', 'detnorm'] # 'error', 'det',
 
 dim = 10
 if dim == 2:
