@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-#SBATCH --gpus=35
+#SBATCH --gpus=150
 #SBATCH --mem=12GB
 #SBATCH --time=39:00:00
 #SBATCH --mail-user=abstreik
@@ -10,7 +10,7 @@ import multiprocessing
 import lossfn
 from experiment import run_experiment_variable_loss
 
-loss_fns = ['detnorm', 'detnorm_variable']# ['error', 'det', 'norm', 'detnorm', 'det_variable', 'norm_variable', 'detnorm_variable']
+loss_fns = ['error', 'det', 'norm', 'det_variable', 'norm_variable']# ['error', 'det', 'norm', 'detnorm', 'det_variable', 'norm_variable', 'detnorm_variable']
 
 dim = 2
 train_range = range(1, 31, 1)
