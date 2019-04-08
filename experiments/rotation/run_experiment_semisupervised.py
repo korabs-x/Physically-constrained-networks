@@ -30,7 +30,7 @@ def mp_worker(data):
     if lossfnstr == 'det_variable' or lossfnstr == 'norm_variable' or lossfnstr == 'detnorm_variable':
         n_trains.append(n_train)
         train_seeds.append(train_seed + 1)
-        lossfns[0]['iterations'] = 5
+        lossfns[0]['iterations'] = 10
     if lossfnstr == 'det_variable':
         lossfns.append(
             {'loss_fn': [{'loss_fn': lossfn.get_det_loss(), 'weight': 0.2, 'label': 'det'}], 'iterations': 1})
