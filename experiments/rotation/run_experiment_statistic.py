@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-#SBATCH --gpus=80
+#SBATCH --gpus=40
 #SBATCH --mem=12GB
 #SBATCH --time=8:00:00
 #SBATCH --mail-user=abstreik
@@ -10,10 +10,10 @@ import multiprocessing
 import lossfn
 from experiment import run_experiment
 
-loss_fns = ['det']# ['error', 'det', 'norm', 'detnorm']
+loss_fns = ['norm', 'detnorm']# ['error', 'det', 'norm', 'detnorm']
 
 dim = 2
-train_range = range(15, 19, 1)
+train_range = range(1, 31, 1)
 n_runs = 20
 
 def mp_worker(data):
@@ -22,7 +22,7 @@ def mp_worker(data):
     if lossfnstr == 'det' or lossfnstr == 'detnorm':
         loss_fn.append({'loss_fn': lossfn.get_det_loss(), 'weight': 0.5, 'label': 'det'})
     if lossfnstr == 'norm' or lossfnstr == 'detnorm':
-        loss_fn.append({'loss_fn': lossfn.get_norm_loss(), 'weight': 0.5, 'label': 'norm'})
+        loss_fn.append({'loss_fn': lossfn.get_norm_loss(), 'weight': 0.1, 'label': 'norm'})
 
     for n_train in train_range:
         checkpoint_dir = 'checkpoints/'
