@@ -38,7 +38,7 @@ def run_experiment_variable_loss(dim, n_trains, train_seeds, loss_fns, weight_de
         n_iterations_left = max_iterations - iterations
         n_iterations = min(loss_fns[loss_index]["iterations"], n_iterations_left)
         solver.train(train_loader, iterations=n_iterations,
-                     test_every_iterations=200, test_loader=test_loader, save_final=(n_iterations_left == n_iterations))
+                     test_every_iterations=30000, test_loader=test_loader, save_final=(n_iterations_left == n_iterations))
         if loss_index == 0:
             iterations += n_iterations
         loss_index = (loss_index + 1) % len(loss_fns)

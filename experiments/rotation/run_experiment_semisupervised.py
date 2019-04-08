@@ -10,10 +10,10 @@ import multiprocessing
 import lossfn
 from experiment import run_experiment_variable_loss
 
-loss_fns = ['error', 'det', 'norm', 'detnorm', 'det_variable', 'norm_variable', 'detnorm_variable']
+loss_fns = ['detnorm', 'detnorm_variable']# ['error', 'det', 'norm', 'detnorm', 'det_variable', 'norm_variable', 'detnorm_variable']
 
 dim = 2
-train_range = range(10, 16, 1)
+train_range = range(1, 31, 1)
 # n_train = 10
 n_runs = 1
 
@@ -30,7 +30,7 @@ def mp_worker(data):
     if lossfnstr == 'det_variable' or lossfnstr == 'norm_variable' or lossfnstr == 'detnorm_variable':
         n_trains.append(n_train)
         train_seeds.append(train_seed + 1)
-        lossfns[0]['iterations'] = 10
+        lossfns[0]['iterations'] = 100
     if lossfnstr == 'det_variable':
         lossfns.append(
             {'loss_fn': [{'loss_fn': lossfn.get_det_loss(), 'weight': 0.2, 'label': 'det'}], 'iterations': 1})
