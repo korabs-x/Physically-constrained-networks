@@ -34,9 +34,9 @@ if __name__ == '__main__':
     model = Net(dim, n_hidden_layers=max(1, int(math.log(dim, 2))))
     loss_fn = [{'loss_fn': lossfn.get_mse_loss(), 'weight': 1, 'label': 'mse'}]
     if args.lossfn == 'det' or args.lossfn == 'detnorm':
-        loss_fn.append({'loss_fn': lossfn.get_det_loss(), 'weight': 0.5, 'label': 'det'})
+        loss_fn.append({'loss_fn': lossfn.get_det_loss(), 'weight': 0.2, 'label': 'det'})
     if args.lossfn == 'norm' or args.lossfn == 'detnorm':
-        loss_fn.append({'loss_fn': lossfn.get_norm_loss(), 'weight': 0.1, 'label': 'norm'})
+        loss_fn.append({'loss_fn': lossfn.get_norm_loss(), 'weight': 0.2, 'label': 'norm'})
     solver = Solver(model, loss_fn_train=loss_fn,
                     checkpoint_dir='checkpoints/checkpoints_lossfn/checkpoints_dim-{}_ntrain-{}_lossfn-{}_seed-{}/'.format(
                         args.dim, args.ntrain, args.lossfn, args.seed))

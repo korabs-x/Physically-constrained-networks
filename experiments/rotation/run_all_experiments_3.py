@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-#SBATCH --gpus=2
+#SBATCH --gpus=44
 #SBATCH --mem=12GB
 #SBATCH --time=120:00:00
 #SBATCH --mail-user=abstreik
@@ -8,13 +8,13 @@
 import os
 import multiprocessing
 
-loss_fns = ['norm', 'detnorm'] #['error', 'det', 'norm', 'detnorm']
+loss_fns = ['error', 'det', 'norm', 'detnorm']
 
 dim = 3
 if dim == 2:
     train_range = range(1, 51, 1)
 elif dim == 3:
-    train_range = range(450, 501, 10)
+    train_range = range(25, 251, 25)
 elif dim == 5:
     train_range = range(50, 5001, 50)
 elif dim == 10:
@@ -22,18 +22,18 @@ elif dim == 10:
 
 
 def mp_worker(data):
-    index, dimension, lossfn = data
-    for ntrain in train_range:
-        run = 'python3 run_experiment.py --dim {} --ntrain {} --lossfn {} --seed {}'.format(dimension, ntrain, lossfn,
-                                                                                            1683)
-        print(run)
-        os.system(run)
+    index, dimension, lossfn, ntrain = data
+    run = 'python3 run_experiment2.py --dim {} --ntrain {} --lossfn {} --seed {}'.format(dimension, ntrain, lossfn,
+                                                                                        1683)
+    print(run)
+    os.system(run)
 
 
 def mp_handler():
     for i, lossfn in enumerate(loss_fns):
-        p = multiprocessing.Process(target=mp_worker, args=((i, dim, lossfn),))
-        p.start()
+        for ntrain in train_range:
+            p = multiprocessing.Process(target=mp_worker, args=((i, dim, lossfn, ntrain),))
+            p.start()
 
 
 if __name__ == '__main__':
