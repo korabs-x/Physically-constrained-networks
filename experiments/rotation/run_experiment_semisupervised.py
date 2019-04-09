@@ -24,7 +24,7 @@ def mp_worker(data):
     train_seeds = [train_seed]
     lossfns = [{'loss_fn': [{'loss_fn': lossfn.get_mse_loss(), 'weight': 1, 'label': 'mse'}], 'iterations': 1e8}]
     if lossfnstr == 'det' or lossfnstr == 'detnorm' or lossfnstr == 'det_variable' or lossfnstr == 'detnorm_variable':
-        lossfns[0]['loss_fn'].append({'loss_fn': lossfn.get_det_loss(), 'weight': 0.2, 'label': 'det'})
+        lossfns[0]['loss_fn'].append({'loss_fn': lossfn.get_det_loss(), 'weight': 0.5, 'label': 'det'})
     if lossfnstr == 'norm' or lossfnstr == 'detnorm' or lossfnstr == 'norm_variable' or lossfnstr == 'detnorm_variable':
         lossfns[0]['loss_fn'].append({'loss_fn': lossfn.get_norm_loss(), 'weight': 0.2, 'label': 'norm'})
     if lossfnstr == 'det_variable' or lossfnstr == 'norm_variable' or lossfnstr == 'detnorm_variable':
@@ -33,17 +33,17 @@ def mp_worker(data):
         lossfns[0]['iterations'] = 100
     if lossfnstr == 'det_variable':
         lossfns.append(
-            {'loss_fn': [{'loss_fn': lossfn.get_det_loss(), 'weight': 0.2, 'label': 'det'}], 'iterations': 1})
+            {'loss_fn': [{'loss_fn': lossfn.get_det_loss(), 'weight': 0.5, 'label': 'det'}], 'iterations': 1})
     if lossfnstr == 'norm_variable':
         lossfns.append(
             {'loss_fn': [{'loss_fn': lossfn.get_norm_loss(), 'weight': 0.2, 'label': 'norm'}], 'iterations': 1})
     if lossfnstr == 'detnorm_variable':
         lossfns.append(
-            {'loss_fn': [{'loss_fn': lossfn.get_det_loss(), 'weight': 0.2, 'label': 'det'},
+            {'loss_fn': [{'loss_fn': lossfn.get_det_loss(), 'weight': 0.5, 'label': 'det'},
                          {'loss_fn': lossfn.get_norm_loss(), 'weight': 0.2, 'label': 'norm'}], 'iterations': 1})
 
     checkpoint_dir = 'checkpoints/'
-    checkpoint_dir += 'checkpoints_semisupervised/'
+    checkpoint_dir += 'checkpoints_semisupervised2/'
     checkpoint_dir += 'checkpoint_dim-{}_ntrain-{}_lossfn-{}_seed-{}/'.format(dim, n_train, lossfnstr,
                                                                               train_seed)
     run_experiment_variable_loss(dim, n_trains, train_seeds, lossfns, 0, checkpoint_dir, max_iterations=20000)
