@@ -1,7 +1,8 @@
 import math
 import numpy as np
+from random import shuffle
 
-
+"""
 def get_rotation_matrix(angles):
     dim = len(angles) + 1
     # one rotation matrix for each angle
@@ -15,6 +16,28 @@ def get_rotation_matrix(angles):
         rotation_matrices[mat_idx][a][b] = - math.sin(alpha)
         rotation_matrices[mat_idx][b][a] = math.sin(alpha)
         rotation_matrices[mat_idx][b][b] = math.cos(alpha)
+    rotind = list(range(len(angles)))
+    shuffle(rotind)
+    print(rotind)
+    return np.linalg.multi_dot(np.array(rotation_matrices)[rotind])
+"""
+def get_rotation_matrix(angles):
+    dim = len(angles) + 1
+    # one rotation matrix for each angle
+    rotation_matrices = [np.identity(dim) for _ in range(dim)]
+    for axis, alpha in enumerate(angles):
+        # rotate on plane spanned by axes a and b
+        a = 0
+        b = axis + 1
+        mat_idx = len(rotation_matrices) - axis - 1
+        rotation_matrices[mat_idx][a][a] = math.cos(alpha)
+        rotation_matrices[mat_idx][a][b] = - math.sin(alpha)
+        rotation_matrices[mat_idx][b][a] = math.sin(alpha)
+        rotation_matrices[mat_idx][b][b] = math.cos(alpha)
+    # rotind = list(range(len(angles)))
+    # shuffle(rotind)
+    # print(rotind)
+    # return np.linalg.multi_dot(np.array(rotation_matrices)[rotind])
     return np.linalg.multi_dot(rotation_matrices)
 
 
@@ -50,10 +73,10 @@ def euclidean_to_spherical(euclidean_coordinates):
 
 def get_spherical_rotation(sph1, sph2):
     rotation = sph2 - sph1
-    """for i in range(len(rotation)):
+    for i in range(len(rotation)):
         if rotation[i] <= - math.pi:
             rotation[i] += 2 * math.pi
         elif rotation[i] > math.pi:
-            rotation[i] -= 2 * math.pi"""
+            rotation[i] -= 2 * math.pi
     return rotation
 
