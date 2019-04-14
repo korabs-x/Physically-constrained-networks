@@ -18,17 +18,14 @@ def get_det_loss():
     return loss_fn
 
 
-"""
-def get_norm_loss():
+def get_norm_loss_old():
     def loss_fn(pred, y, mat):
-        #
         loss = 0
         for pred_row in pred:
             loss += (torch.norm(pred_row) - 1) ** 2
         loss /= y.shape[0]
         return loss
     return loss_fn
-"""
 
 
 def get_norm_loss():

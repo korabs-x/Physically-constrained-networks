@@ -21,7 +21,7 @@ norm_weights = [0, 1e-2, 1e-1, 1e0, 1e1, 1e2, 1e3, 1e4]
 # [:]
 
 dims = [3]
-train_range = range(5, 101, 5)
+train_range = range(26, 61, 1)
 # 21
 
 SEED_TEST = 0
