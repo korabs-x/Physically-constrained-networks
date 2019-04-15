@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 #SBATCH --gpus=80
 #SBATCH --mem=12GB
-#SBATCH --time=13:30:00
+#SBATCH --time=23:00:00
 #SBATCH --mail-user=abstreik
 #SBATCH --mail-type=ALL
 
@@ -13,7 +13,7 @@ from experiment import run_experiment
 loss_fns = ['error', 'det', 'detnorm', 'norm']# ['error', 'det', 'norm', 'detnorm']
 
 dim = 2
-train_range = range(1, 26, 1)
+train_range = range(10, 26, 1)
 n_runs = 20
 
 def mp_worker(data):

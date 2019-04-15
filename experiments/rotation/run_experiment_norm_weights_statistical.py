@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-# SBATCH --gpus=100
-# SBATCH --mem=12GB
-# SBATCH --time=120:00:00
-# SBATCH --mail-user=abstreik
-# SBATCH --mail-type=ALL
+#SBATCH --gpus=100
+#SBATCH --mem=12GB
+#SBATCH --time=120:00:00
+#SBATCH --mail-user=abstreik
+#SBATCH --mail-type=ALL
 
 import os
 import multiprocessing
@@ -21,7 +21,7 @@ norm_weights = [0, 1e-2, 1e-1, 1e0, 1e1]  # [0, 1e-5, 1e-4, 1e-3, 1e-2, 1e-1, 1e
 # [:]
 
 dims = [2]
-train_range = range(5, 31, 1)
+train_range = range(11, 31, 1)
 # 21
 n_runs = 20
 
