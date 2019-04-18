@@ -13,7 +13,7 @@ from experiment import run_experiment
 loss_fns = ['error', 'det', 'detnorm', 'norm']# ['error', 'det', 'norm', 'detnorm']
 
 dim = 2
-train_range = range(10, 26, 1)
+train_range = range(24, 26, 1)
 n_runs = 20
 
 def mp_worker(data):
