@@ -13,13 +13,19 @@ def get_data_loader(dim, n, seed=SEED_TEST, shuffle=False, batch_size=512):
     return DataLoader(dataset, batch_size=batch_size, shuffle=shuffle)
 
 
-def run_experiment(dim, n_train, train_seed, loss_fn, weight_decay, checkpoint_dir):
+def run_experiment(dim, n_train, train_seed, loss_fn, weight_decay, checkpoint_dir, fn_matrix=lambda x: x,
+                   fn_pred=lambda x: x, iterations=20000):
     train_loader = get_data_loader(dim, n_train, seed=train_seed, shuffle=True, batch_size=512)
     test_loader = get_data_loader(dim, 512, seed=SEED_TEST, shuffle=False, batch_size=512)
     model = Net(dim, n_hidden_layers=max(1, int(math.log(dim, 2))))
     optim_args = {'lr': 1e-3, 'weight_decay': weight_decay}
-    solver = Solver(model, loss_fn_train=loss_fn, optim_args=optim_args, checkpoint_dir=checkpoint_dir)
-    solver.train(train_loader, iterations=20000, test_every_iterations=200, test_loader=test_loader)
+    solver = Solver(model,
+                    loss_fn_train=loss_fn,
+                    optim_args=optim_args,
+                    checkpoint_dir=checkpoint_dir,
+                    fn_matrix=fn_matrix,
+                    fn_pred=fn_pred)
+    solver.train(train_loader, iterations=iterations, test_every_iterations=200, test_loader=test_loader)
 
 
 def run_experiment_variable_loss(dim, n_trains, train_seeds, loss_fns, weight_decay, checkpoint_dir,
@@ -38,7 +44,8 @@ def run_experiment_variable_loss(dim, n_trains, train_seeds, loss_fns, weight_de
         n_iterations_left = max_iterations - iterations
         n_iterations = min(loss_fns[loss_index]["iterations"], n_iterations_left)
         solver.train(train_loader, iterations=n_iterations,
-                     test_every_iterations=30000, test_loader=test_loader, save_final=(n_iterations_left == n_iterations))
+                     test_every_iterations=30000, test_loader=test_loader,
+                     save_final=(n_iterations_left == n_iterations))
         if loss_index == 0:
             iterations += n_iterations
         loss_index = (loss_index + 1) % len(loss_fns)

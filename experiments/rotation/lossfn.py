@@ -28,9 +28,9 @@ def get_norm_loss_old():
     return loss_fn
 
 
-def get_norm_loss():
+def get_norm_loss(**args_mse):
     # calculates the mse loss between the prediction and the normed prediction
-    mse = nn.MSELoss()
+    mse = nn.MSELoss(**args_mse)
     # mse_no_reduction = nn.MSELoss(reduction='none')
 
     def loss_fn(pred, y, mat):
