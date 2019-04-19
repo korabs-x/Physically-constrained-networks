@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-#SBATCH --gpus=22
+#SBATCH --gpus=4
 #SBATCH --mem=12GB
 #SBATCH --time=120:00:00
 #SBATCH --mail-user=abstreik
@@ -16,7 +16,7 @@ import torch
 import numpy as np
 import math
 import argparse
-
+from experiment import run_experiment
 
 dims = [2, 3]
 
