@@ -13,7 +13,7 @@ from experiment import run_experiment
 loss_fns = ['error', 'det', 'detnorm', 'norm']# ['error', 'det', 'norm', 'detnorm']
 
 dim = 2
-train_range = range(24, 26, 1)
+train_range = range(20, 22, 1)
 n_runs = 20
 
 def mp_worker(data):
@@ -35,7 +35,7 @@ def mp_worker(data):
         train_range_spec = range(17, 20, 1)"""
     for n_train in train_range_spec:
         checkpoint_dir = 'checkpoints/'
-        checkpoint_dir += 'checkpoints_statistical2/'
+        checkpoint_dir += 'checkpoints_statistical_validation/'
         checkpoint_dir += 'checkpoint_dim-{}_ntrain-{}_lossfn-{}_seed-{}/'.format(dim, n_train, lossfnstr,
                                                                                       train_seed)
         run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir)
