@@ -14,11 +14,11 @@ def get_data_loader(dim, n, seed=SEED_TEST, shuffle=False, batch_size=512):
 
 
 def run_experiment(dim, n_train, train_seed, loss_fn, weight_decay, checkpoint_dir, fn_matrix=lambda x: x,
-                   fn_pred=lambda x: x, iterations=20000):
+                   fn_pred=lambda x: x, iterations=20000, lr=1e-3):
     train_loader = get_data_loader(dim, n_train, seed=train_seed, shuffle=True, batch_size=512)
     test_loader = get_data_loader(dim, 512, seed=SEED_TEST, shuffle=False, batch_size=512)
     model = Net(dim, n_hidden_layers=max(1, int(math.log(dim, 2))))
-    optim_args = {'lr': 1e-3, 'weight_decay': weight_decay}
+    optim_args = {'lr': lr, 'weight_decay': weight_decay}
     solver = Solver(model,
                     loss_fn_train=loss_fn,
                     optim_args=optim_args,

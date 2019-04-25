@@ -28,6 +28,7 @@ n_runs = 10
 
 def fn_pred_normed(pred):
     norms = torch.norm(pred.data, 2, 1)
+    print(norms.requires_grad)
     pred_normed = pred / norms.view(norms.shape[0], 1)
     return pred_normed
 
