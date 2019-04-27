@@ -7,11 +7,7 @@
 
 import os
 import multiprocessing
-from solver import Solver
-from model import Net
-from dataset import RotationDataset
 import lossfn
-from torch.utils.data import DataLoader
 import torch
 import numpy as np
 import math
@@ -23,7 +19,7 @@ dims = [2, 3]
 SEED_TEST = 0
 # train_seed = 1683
 
-n_runs = 10
+n_runs = 20
 
 
 def fn_pred_normed(pred):
@@ -41,12 +37,14 @@ def mp_worker(data):
 
     fn_pred = fn_pred_normed if fn_pred_name == "normed" else fn_pred_unnormed
 
-    train_range = range(1, 26, 1) if dim == 2 else range(1, 81, 5)
+    train_range = range(10, 21, 1) if dim == 2 else range(20, 201, 20)
     for n_train in train_range:
         loss_fn = [{'loss_fn': lossfn.get_mse_loss(), 'weight': 1, 'label': 'mse'}]
-        checkpoint_dir = 'checkpoints/checkpoints-normedpred_statistical/checkpoints_normedpred-{}_dim-{}_ntrain-{}_seed-{}/'.format(
+        checkpoint_dir = 'checkpoints/'
+        checkpoint_dir += 'round2_normed_pred/'
+        checkpoint_dir += 'dim-{}_normedpred-{}_ntrain-{}_seed-{}/'.format(
             fn_pred_name, dim, n_train, train_seed)
-        run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, fn_pred=fn_pred, iterations=50000)
+        run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, fn_pred=fn_pred, lr=5e-5, iterations=50000, n_test=4096)
 
 
 def mp_handler():
