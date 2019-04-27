@@ -31,7 +31,7 @@ def mp_worker(data):
         checkpoint_dir += 'round2_weight_decay/'
         checkpoint_dir += 'dim-{}_ntrain-{}_weightdecay-{}_seed-{}/'.format(dim, n_train, weight_decay,
                                                                            train_seed)
-        run_experiment(dim, n_train, train_seed, loss_fn, weight_decay, checkpoint_dir, lr=1e-4, iterations=50000,
+        run_experiment(dim, n_train, train_seed, loss_fn, weight_decay, checkpoint_dir, lr=5e-5, iterations=50000,
                        n_test=4096)
 
 

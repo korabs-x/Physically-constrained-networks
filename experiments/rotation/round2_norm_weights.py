@@ -42,7 +42,7 @@ def mp_worker(data):
         checkpoint_dir += 'dim-{}_normweight-{}_ntrain-{}_seed-{}/'.format(dim, norm_weight, n_train, train_seed)
         loss_fn = [{'loss_fn': lossfn.get_mse_loss(), 'weight': 1, 'label': 'mse'},
                    {'loss_fn': lossfn.get_norm_loss(), 'weight': norm_weight, 'label': 'norm'}]
-        run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+        run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=5e-5, iterations=50000,
                        n_test=4096)
 
 
