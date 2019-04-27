@@ -1,0 +1,1800 @@
+Process Process-5:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-3:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-4:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-8:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-2:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-9:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-10:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-1:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-6:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-7:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-14:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-12:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-15:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-13:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-11:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-16:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-19:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-18:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-20:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-22:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-23:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-24:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-21:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-25:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-17:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-26:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-27:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-29:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-30:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-31:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-33:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-34:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-32:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-36:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-35:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-28:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-37:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-38:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-41:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-40:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-42:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-39:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-43:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-44:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-46:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-48:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-47:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-45:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-49:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-51:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-50:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-55:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-56:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-52:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-57:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-54:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-53:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-58:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-61:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-60:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-62:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-63:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-59:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-64:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-65:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-66:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-68:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-67:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-69:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-70:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-71:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-73:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-72:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-74:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-78:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-75:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-76:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-77:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-79:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-80:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-83:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-82:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-81:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-85:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-84:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-86:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-89:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-87:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-90:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-88:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-91:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-93:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-95:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-94:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-96:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-92:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-97:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-99:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-103:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-104:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-100:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-102:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-101:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-105:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-98:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-107:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-106:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-108:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-109:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-110:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-113:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-112:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-114:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-111:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-115:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-116:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-117:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-118:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-120:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-119:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-122:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-121:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-125:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-127:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-124:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-128:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-126:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-129:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-130:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-132:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-131:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-133:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-123:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-134:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-135:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-136:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-137:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-138:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-139:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-140:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-141:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-142:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-143:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-144:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-145:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-146:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-147:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-148:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-149:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-154:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-153:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-150:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-152:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-151:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-156:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-155:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-160:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-159:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-161:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-158:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-162:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-163:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-164:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-165:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-167:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-157:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-166:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-168:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-169:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-175:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-176:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-174:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-171:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-172:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-173:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-170:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-178:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-179:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-177:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-180:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-181:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-182:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-183:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-186:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-187:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-188:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-185:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-189:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-190:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-192:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-193:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-194:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-184:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-191:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-197:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-198:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-199:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-196:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-200:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined
+Process Process-195:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job95082/slurm_script", line 44, in mp_worker
+    run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=1e-4, iterations=50000,
+NameError: name 'run_experiment' is not defined

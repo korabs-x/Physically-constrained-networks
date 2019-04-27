@@ -16,12 +16,14 @@ import torch
 import numpy as np
 import math
 import argparse
+from experiment import run_experiment
 
 det_weights = [0, 1e-5, 1e-2, 0.1, 0.2, 0.5, 1, 2, 4]
 
 train_range = range(10, 21, 1)
 
 SEED_TEST = 0
+n_runs = 20
 
 
 def mp_worker(data):
