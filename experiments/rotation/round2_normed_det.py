@@ -49,7 +49,7 @@ def mp_worker(data):
         checkpoint_dir = 'checkpoints/'
         checkpoint_dir += 'round2_normed_det/'
         checkpoint_dir += 'dim-{}_normeddet-{}_ntrain-{}_seed-{}/'.format(
-            fn_pred_name, dim, n_train, train_seed)
+            fn_matrix_name, dim, n_train, train_seed)
         run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, fn_matrix=fn_matrix, lr=5e-5, iterations=50000, n_test=4096)
 
 

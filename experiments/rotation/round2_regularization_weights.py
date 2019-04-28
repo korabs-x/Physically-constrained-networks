@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 #SBATCH --gpus=240
 #SBATCH --mem=12GB
-#SBATCH --time=46:00:00
+#SBATCH --time=120:00:00
 #SBATCH --mail-user=abstreik
 #SBATCH --mail-type=ALL
 
@@ -28,7 +28,7 @@ def mp_worker(data):
 
     for n_train in train_range_spec:
         checkpoint_dir = 'checkpoints/'
-        checkpoint_dir += 'round2_weight_decay/'
+        checkpoint_dir += 'round2_weight_decay2/'
         checkpoint_dir += 'dim-{}_ntrain-{}_weightdecay-{}_seed-{}/'.format(dim, n_train, weight_decay,
                                                                            train_seed)
         run_experiment(dim, n_train, train_seed, loss_fn, weight_decay, checkpoint_dir, lr=5e-5, iterations=50000,

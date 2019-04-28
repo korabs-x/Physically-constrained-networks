@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 #SBATCH --gpus=200
 #SBATCH --mem=12GB
-#SBATCH --time=46:00:00
+#SBATCH --time=120:00:00
 #SBATCH --mail-user=abstreik
 #SBATCH --mail-type=ALL
 
@@ -38,7 +38,7 @@ def mp_worker(data):
 
     for n_train in train_range_spec:
         checkpoint_dir = 'checkpoints/'
-        checkpoint_dir += 'round2_normweight/'
+        checkpoint_dir += 'round2_normweight2/'
         checkpoint_dir += 'dim-{}_normweight-{}_ntrain-{}_seed-{}/'.format(dim, norm_weight, n_train, train_seed)
         loss_fn = [{'loss_fn': lossfn.get_mse_loss(), 'weight': 1, 'label': 'mse'},
                    {'loss_fn': lossfn.get_norm_loss(), 'weight': norm_weight, 'label': 'norm'}]
