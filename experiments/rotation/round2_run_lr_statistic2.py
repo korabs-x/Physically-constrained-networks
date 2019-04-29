@@ -24,7 +24,7 @@ def mp_worker(data):
     if dim == 2:
         train_range_spec = range(10, 21, 1)
     if dim == 3:
-        train_range_spec = range(20, 201, 20)
+        train_range_spec = range(160, 201, 20)
 
     for n_train in train_range_spec:
         checkpoint_dir = 'checkpoints/'
@@ -34,7 +34,7 @@ def mp_worker(data):
 
 
 def mp_handler():
-    for dim in [2, 3]:
+    for dim in [3]:
         for lossfnstr in loss_fns:
             for lr in [5*1e-5, 5*1e-4, 5*1e-3]:
                 for train_seed in range(1683, 1683 + n_runs, 1):
