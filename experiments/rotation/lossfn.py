@@ -18,6 +18,26 @@ def get_det_loss():
     return loss_fn
 
 
+def det_linear(pred, y, mat):
+    return torch.stack(tuple([torch.det(matrix) - 1 for matrix in mat]))
+
+
+def weighted_constraint_vals(dets, weights):
+    return dets * weights
+
+
+def get_constrained_loss_linear(constraint_fn, weights):
+    def loss_fn(pred, y, mat):
+        return torch.sum(weighted_constraint_vals(constraint_fn(pred, y, mat), weights))
+    return loss_fn
+
+
+def get_constrained_loss_quadratic(constraint_fn):
+    def loss_fn(pred, y, mat):
+        return torch.sum(constraint_fn(pred, y, mat) ** 2)
+    return loss_fn
+
+
 def get_norm_loss_old():
     def loss_fn(pred, y, mat):
         loss = 0

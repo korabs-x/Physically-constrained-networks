@@ -38,7 +38,7 @@ class Solver:
 
         self.init = True
         self.train_loss = torch.FloatTensor([10])
-        self.idv_train_loss = {loss_dict['label']: 10 for loss_dict in loss_fn_train}
+        self.idv_train_loss = {loss_dict['label']: torch.FloatTensor([10]) for loss_dict in loss_fn_train}
         self.start_time = None
 
         self.hist = {'epochs': [],
@@ -100,7 +100,7 @@ class Solver:
                 for loss_dict in self.loss_fn_train:
                     if loss_dict['label'] in self.hist['individual_train_losses']:
                         self.hist['individual_train_losses'][loss_dict['label']].append(
-                            self.idv_train_loss[loss_dict['label']])
+                            self.idv_train_loss[loss_dict['label']].item())
                 self.hist['test_loss'].append(score.item())
                 # self.hist['test_loss_no_fn'].append(score_no_fn.item())
                 self.hist['wall_times'].append(time.time() - self.start_time)
@@ -166,3 +166,6 @@ class Solver:
 
     def set_loss_fn_train(self, loss_fn_train):
         self.loss_fn_train = loss_fn_train
+        if self.iteration == 0:
+            self.hist['individual_train_losses'] = {loss_dict['label']: [] for loss_dict in loss_fn_train}
+            self.idv_train_loss = {loss_dict['label']: torch.FloatTensor([10]) for loss_dict in loss_fn_train}
