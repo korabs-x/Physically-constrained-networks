@@ -38,6 +38,10 @@ def get_constrained_loss_quadratic(constraint_fn):
     return loss_fn
 
 
+def norm_linear(pred, y, mat):
+    return torch.norm(pred, 2, 1) - 1
+
+
 def get_norm_loss_old():
     def loss_fn(pred, y, mat):
         loss = 0
