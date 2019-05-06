@@ -33,7 +33,7 @@ def mp_worker(data):
     for train_seed in range(1683, 1683 + n_runs, 1):
         checkpoint_dir = 'checkpoints/'
         checkpoint_dir += 'round2_det_norm_loss/'
-        checkpoint_dir += 'dim-{}_detweight-{}_normweight_ntrain-{}_seed-{}/'.format(dim, det_weight, norm_weight, n_train, train_seed)
+        checkpoint_dir += 'dim-{}_detweight-{}_normweight-{}_ntrain-{}_seed-{}/'.format(dim, det_weight, norm_weight, n_train, train_seed)
         loss_fn = [{'loss_fn': lossfn.get_mse_loss(), 'weight': 1, 'label': 'mse'},
                    {'loss_fn': lossfn.get_det_loss(), 'weight': det_weight, 'label': 'det'},
                    {'loss_fn': lossfn.get_norm_loss(), 'weight': norm_weight, 'label': 'norm'}]
