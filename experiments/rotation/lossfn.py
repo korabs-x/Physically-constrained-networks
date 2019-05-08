@@ -52,7 +52,7 @@ def get_norm_loss_old():
     return loss_fn
 
 
-def get_norm_loss(**args_mse):
+def get_norm_loss_old_2(**args_mse):
     # calculates the mse loss between the prediction and the normed prediction
     mse = nn.MSELoss(**args_mse)
     # mse_no_reduction = nn.MSELoss(reduction='none')
@@ -63,5 +63,20 @@ def get_norm_loss(**args_mse):
         # sqnorms = torch.sum(mse_no_reduction(pred, torch.zeros_like(pred)), dim=1)
         # return mse(sqnorms, torch.ones_like(sqnorms))
         return mse(pred, pred / norms.view(norms.shape[0], 1))
+
+    return loss_fn
+
+
+def get_norm_loss(**args_mse):
+    # calculates the mse loss between the prediction and the normed prediction
+    mse = nn.MSELoss(**args_mse)
+    # mse_no_reduction = nn.MSELoss(reduction='none')
+
+    def loss_fn(pred, y, mat):
+        norms = torch.norm(pred, 2, 1)
+        # sqnorms = torch.norm(pred, 2, 1) ** 2
+        # sqnorms = torch.sum(mse_no_reduction(pred, torch.zeros_like(pred)), dim=1)
+        # return mse(sqnorms, torch.ones_like(sqnorms))
+        return mse(norms, torch.ones_like(norms))
 
     return loss_fn
