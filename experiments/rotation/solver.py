@@ -43,6 +43,7 @@ class Solver:
 
         self.hist = {'epochs': [],
                      'iterations': [],
+                     'gradient_norm': [],
                      'train_loss': [],
                      'individual_train_losses': {loss_dict['label']: [] for loss_dict in loss_fn_train},
                      'test_loss': [],
@@ -96,6 +97,8 @@ class Solver:
             if len(self.hist['epochs']) == 0 or self.epoch != self.hist['epochs'][-1]:
                 self.hist['epochs'].append(self.epoch)
                 self.hist['iterations'].append(self.iteration)
+                self.hist['gradient_norm'].append(self.get_grad_norm())
+                print(self.get_grad_norm())
                 self.hist['train_loss'].append(self.train_loss.item())
                 for loss_dict in self.loss_fn_train:
                     if loss_dict['label'] in self.hist['individual_train_losses']:
@@ -169,3 +172,11 @@ class Solver:
         if self.iteration == 0:
             self.hist['individual_train_losses'] = {loss_dict['label']: [] for loss_dict in loss_fn_train}
             self.idv_train_loss = {loss_dict['label']: torch.FloatTensor([10]) for loss_dict in loss_fn_train}
+
+    def get_grad_norm(self):
+        total_norm = 0
+        for p in self.model.parameters():
+            param_norm = p.grad.data.norm(2)
+            total_norm += param_norm.item() ** 2
+        total_norm = total_norm ** (1. / 2)
+        return total_norm

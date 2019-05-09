@@ -73,9 +73,9 @@ def run_experiment_augmented_lagrangian(dim, n_train, train_seed, loss_fn, lin_c
             constraint_fn = constraint_info["fn"]
             constraint_label = constraint_info["label"]
             loss_fns += [{'loss_fn': lossfn.get_constrained_loss_quadratic(constraint_fn),
-                          'weight': constraint_sq_weight * 0.5, 'label': constraint_label+'_sq'},
+                          'weight': constraint_sq_weight * 0.5, 'label': constraint_label + '_sq'},
                          {'loss_fn': lossfn.get_constrained_loss_linear(constraint_fn, constraint_ln_weights[i]),
-                          'weight': -1, 'label': constraint_label+'_lin'}]
+                          'weight': -1, 'label': constraint_label + '_lin'}]
         solver.set_loss_fn_train(loss_fns)
         solver.train(train_loader, iterations=n_iterations, test_every_iterations=500, test_loader=test_loader,
                      save_final=(step == len(constraint_weights) - 1))
@@ -90,3 +90,65 @@ def run_experiment_augmented_lagrangian(dim, n_train, train_seed, loss_fn, lin_c
             constraint_ln_weights[i] -= constraint_sq_weight * constraint_vals[i]
 
 
+def run_experiment_augmented_lagrangian_auto(dim, n_train, train_seed, loss_fn, lin_constraints, constraint_sq_weight,
+                                             constraint_sq_weight_multiplier, eps_gam_decay_rate, grad_threshold,
+                                             checkpoint_dir, iterations=100, lr=5e-5, n_test=4096):
+    train_loader = get_data_loader(dim, n_train, seed=train_seed, shuffle=False, batch_size=512)
+    test_loader = get_data_loader(dim, n_test, seed=SEED_TEST, shuffle=False, batch_size=min(n_test, 8 * 512))
+    model = Net(dim, n_hidden_layers=max(1, int(math.log(dim, 2))))
+    optim_args = {'lr': lr}
+    solver = Solver(model,
+                    loss_fn_train=loss_fn,
+                    optim_args=optim_args,
+                    checkpoint_dir=checkpoint_dir)
+
+    # augmented lagrangian parameters
+    initial_ln_weight = 0
+    constraint_ln_weights = [torch.ones(size=(n_train,)) * initial_ln_weight for _ in lin_constraints]
+    # constraint_sq_weight = 1e-2
+    # constraint_sq_weight_multiplier = 1
+
+    # eps and gam are used to determine the threshold when to end the iteration
+    eps = 1e-3
+    gam = 10
+    # eps_gam_decay_rate = 0.98
+    grad_norm_threshold = eps if grad_threshold is None else grad_threshold
+
+    for iteration in range(iterations):
+        print("Start iteration {}".format(iteration))
+        loss_fns = [] + loss_fn
+        for i, constraint_info in enumerate(lin_constraints):
+            constraint_fn = constraint_info["fn"]
+            constraint_label = constraint_info["label"]
+            loss_fns += [{'loss_fn': lossfn.get_constrained_loss_quadratic(constraint_fn),
+                          'weight': constraint_sq_weight * 0.5, 'label': constraint_label + '_sq'},
+                         {'loss_fn': lossfn.get_constrained_loss_linear(constraint_fn, constraint_ln_weights[i]),
+                          'weight': -1, 'label': constraint_label + '_lin'}]
+        solver.set_loss_fn_train(loss_fns)
+
+        # iterate until gradient norm is smaller than grad_norm_threshold
+        for _ in range(100):
+            print("grad_norm_threshold = {}".format(grad_norm_threshold))
+            solver.train(train_loader, iterations=500, test_every_iterations=500, test_loader=test_loader,
+                         save_final=False)
+            if solver.hist["gradient_norm"][-1] <= grad_norm_threshold:
+                break
+
+        # update weights
+        constraint_vals = [[] for _ in lin_constraints]
+        for (points, angles, points_rotated) in train_loader:
+            output_matrix, prediction = solver.forward(angles, points)
+            for i in range(len(lin_constraints)):
+                constraint_vals[i].append(lin_constraints[i]["fn"](prediction, points_rotated, output_matrix).detach())
+        constraint_vals = [torch.stack(val_list).view(-1) for val_list in constraint_vals]
+        for i in range(len(lin_constraints)):
+            constraint_ln_weights[i] -= constraint_sq_weight * constraint_vals[i]
+
+        total_constraint_norm = torch.stack(constraint_vals).norm(2)
+        if grad_threshold is None:
+            grad_norm_threshold = min(eps, total_constraint_norm * gam)
+        eps *= eps_gam_decay_rate
+        gam *= eps_gam_decay_rate
+        constraint_sq_weight *= constraint_sq_weight_multiplier
+
+    solver.train(train_loader, iterations=0, test_loader=test_loader, save_final=True)
