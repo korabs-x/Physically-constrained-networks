@@ -104,15 +104,15 @@ def mp_worker(data):
     dim, n_train, i = data
 
     loss_fn = [{'loss_fn': lossfn.get_mse_loss(), 'weight': 1, 'label': 'mse'}]
-    lin_constraints = [{'fn': lossfn.det_linear, 'label': 'det'}]
+    lin_constraints = [{'fn': lossfn.norm_linear, 'label': 'norm'}]
     config = configs[i]
 
     for train_seed in range(1683, 1683 + n_runs, 1):
         checkpoint_dir = 'checkpoints/'
-        checkpoint_dir += 'round2_aug_lag_auto_det/'
+        checkpoint_dir += 'round2_aug_lag_auto_norm/'
         checkpoint_dir += 'dim-{}_config-{}_ntrain-{}_seed-{}/'.format(dim, i, n_train, train_seed)
         run_experiment_augmented_lagrangian_auto(dim, n_train, train_seed, loss_fn, lin_constraints,
-                                                 config['constraint_sq_weight'],
+                                                 config['constraint_sq_weight']*100,
                                                  config['constraint_sq_weight_multiplier'],
                                                  config['eps_gam_decay_rate'],
                                                  config['grad_threshold'],
