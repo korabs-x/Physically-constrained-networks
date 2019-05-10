@@ -50,7 +50,7 @@ class Solver:
                      'test_loss_no_fn': [],
                      'wall_times': []}
 
-    def save_checkpoint(self, checkpoint_file):
+    def save_checkpoint(self, checkpoint_file, prints=True):
         if self.save:
             state_dict = {'model_states': self.model.state_dict(),
                           'optim': self.optimizer.state_dict(),
@@ -62,7 +62,8 @@ class Solver:
             if os.path.exists(checkpoint_path):
                 os.remove(checkpoint_path)
             torch.save(state_dict, checkpoint_path)
-            print("Model save: {}".format(checkpoint_path))
+            if prints:
+                print("Model save: {}".format(checkpoint_path))
 
     def load_checkpoint(self, checkpoint_path):
         state_dict = torch.load(checkpoint_path, map_location=self.device())
@@ -98,7 +99,6 @@ class Solver:
                 self.hist['epochs'].append(self.epoch)
                 self.hist['iterations'].append(self.iteration)
                 self.hist['gradient_norm'].append(self.get_grad_norm())
-                print(self.get_grad_norm())
                 self.hist['train_loss'].append(self.train_loss.item())
                 for loss_dict in self.loss_fn_train:
                     if loss_dict['label'] in self.hist['individual_train_losses']:
@@ -108,7 +108,7 @@ class Solver:
                 # self.hist['test_loss_no_fn'].append(score_no_fn.item())
                 self.hist['wall_times'].append(time.time() - self.start_time)
             if len(self.hist['test_loss']) == 1 or score < min(self.hist['test_loss'][:-1]):
-                self.save_checkpoint('best.pkl')
+                self.save_checkpoint('best.pkl', prints=prints)
             if prints:
                 print("Epoch {}\tIteration {}".format(self.epoch, self.iteration))
                 print("Train score = {}\tTest score = {}".format(self.train_loss.item(), score.item()))
@@ -125,7 +125,7 @@ class Solver:
         return output_matrix, prediction
 
     def train(self, loader, epochs=None, iterations=None, test_every=False, test_every_iterations=False,
-              test_loader=None, save_final=True):
+              test_loader=None, save_final=True, prints=True):
         assert (epochs is not None or iterations is not None)
         self.start_time = time.time()
         if epochs is not None:
@@ -152,20 +152,20 @@ class Solver:
                 loss.backward()
                 self.optimizer.step()
                 if test_every_iterations and (self.iteration % test_every_iterations == 0):
-                    self.test(test_loader)
+                    self.test(test_loader, prints=prints)
                 self.iteration += 1
             epoch_train_loss /= len(loader)
             self.train_loss = epoch_train_loss
             self.idv_train_loss = epoch_idv_train_loss
 
             if test_every and (self.epoch % test_every == 0):
-                self.test(test_loader)
+                self.test(test_loader, prints=prints)
 
             self.epoch += 1
 
         if save_final:
-            self.test(test_loader)
-            self.save_checkpoint('final.pkl')
+            self.test(test_loader, prints=prints)
+            self.save_checkpoint('final.pkl', prints=prints)
 
     def set_loss_fn_train(self, loss_fn_train):
         self.loss_fn_train = loss_fn_train

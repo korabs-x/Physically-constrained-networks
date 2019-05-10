@@ -91,8 +91,8 @@ def run_experiment_augmented_lagrangian(dim, n_train, train_seed, loss_fn, lin_c
 
 
 def run_experiment_augmented_lagrangian_auto(dim, n_train, train_seed, loss_fn, lin_constraints, constraint_sq_weight,
-                                             constraint_sq_weight_multiplier, eps_gam_decay_rate, grad_threshold,
-                                             checkpoint_dir, iterations=100, lr=5e-5, n_test=4096):
+                                             constraint_sq_weight_multiplier, eps, gam, eps_gam_decay_rate,
+                                             grad_threshold, checkpoint_dir, iterations=100, lr=5e-5, n_test=4096):
     train_loader = get_data_loader(dim, n_train, seed=train_seed, shuffle=False, batch_size=512)
     test_loader = get_data_loader(dim, n_test, seed=SEED_TEST, shuffle=False, batch_size=min(n_test, 8 * 512))
     model = Net(dim, n_hidden_layers=max(1, int(math.log(dim, 2))))
@@ -109,13 +109,15 @@ def run_experiment_augmented_lagrangian_auto(dim, n_train, train_seed, loss_fn, 
     # constraint_sq_weight_multiplier = 1
 
     # eps and gam are used to determine the threshold when to end the iteration
-    eps = 1e-3
-    gam = 10
+    # eps = 1e-3
+    # gam = 10
     # eps_gam_decay_rate = 0.98
     grad_norm_threshold = eps if grad_threshold is None else grad_threshold
 
+    total_iterations = 0
+
     for iteration in range(iterations):
-        print("Start iteration {}".format(iteration))
+        print("Start iteration {}, after {} iterations, sqweight={}".format(iteration, total_iterations, constraint_sq_weight))
         loss_fns = [] + loss_fn
         for i, constraint_info in enumerate(lin_constraints):
             constraint_fn = constraint_info["fn"]
@@ -127,11 +129,14 @@ def run_experiment_augmented_lagrangian_auto(dim, n_train, train_seed, loss_fn, 
         solver.set_loss_fn_train(loss_fns)
 
         # iterate until gradient norm is smaller than grad_norm_threshold
-        for _ in range(100):
-            print("grad_norm_threshold = {}".format(grad_norm_threshold))
+        for round in range(100):
             solver.train(train_loader, iterations=500, test_every_iterations=500, test_loader=test_loader,
-                         save_final=False)
-            if solver.hist["gradient_norm"][-1] <= grad_norm_threshold:
+                         save_final=False, prints=False)
+            total_iterations += 500
+            print("Test loss {}".format(solver.hist["test_loss"][-1]))
+            print("Gradient norm       {}".format(solver.hist["gradient_norm"][-1]))
+            print("grad_norm_threshold {}".format(grad_norm_threshold))
+            if solver.hist["gradient_norm"][-1] <= grad_norm_threshold and round >= 5:
                 break
 
         # update weights
@@ -146,6 +151,8 @@ def run_experiment_augmented_lagrangian_auto(dim, n_train, train_seed, loss_fn, 
 
         total_constraint_norm = torch.stack(constraint_vals).norm(2)
         if grad_threshold is None:
+            print("Set grad_threshold to min({}, {} * {})".format(eps, total_constraint_norm, gam))
+            print("Set grad_threshold to min({}, {})".format(eps, total_constraint_norm * gam))
             grad_norm_threshold = min(eps, total_constraint_norm * gam)
         eps *= eps_gam_decay_rate
         gam *= eps_gam_decay_rate
