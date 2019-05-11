@@ -110,17 +110,15 @@ def mp_worker(data):
             config['constraint_sq_weight'], config['constraint_sq_weight_multiplier'], config['eps'], config['gam'],
             config['eps_gam_decay_rate'], config['grad_threshold'], config['iterations'])
 
-        for config in configs:
-            print("Start next config")
-            run_experiment_augmented_lagrangian_auto(dim, n_train, train_seed, loss_fn, lin_constraints,
-                                                     config['constraint_sq_weight'],
-                                                     config['constraint_sq_weight_multiplier'],
-                                                     config['eps'],
-                                                     config['gam'],
-                                                     config['eps_gam_decay_rate'],
-                                                     config['grad_threshold'],
-                                                     checkpoint_dir,
-                                                     iterations=config['iterations'])
+        run_experiment_augmented_lagrangian_auto(dim, n_train, train_seed, loss_fn, lin_constraints,
+                                                 config['constraint_sq_weight'],
+                                                 config['constraint_sq_weight_multiplier'],
+                                                 config['eps'],
+                                                 config['gam'],
+                                                 config['eps_gam_decay_rate'],
+                                                 config['grad_threshold'],
+                                                 checkpoint_dir,
+                                                 iterations=config['iterations'])
 
 
 def mp_handler():
