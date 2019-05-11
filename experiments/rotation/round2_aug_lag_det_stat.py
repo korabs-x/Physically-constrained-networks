@@ -22,7 +22,7 @@ config = {'constraint_sq_weight': 0.001,
           'gam': 0.1,
           'eps_gam_decay_rate': 0.95,
           'grad_threshold': None,
-          'iterations': 50},
+          'iterations': 50}
 
 
 def mp_worker(data):
@@ -32,9 +32,12 @@ def mp_worker(data):
     lin_constraints = [{'fn': lossfn.det_linear, 'label': 'det'}]
 
     for train_seed in range(1683, 1683 + n_runs, 1):
-        checkpoint_dir = 'checkpoints/round2_aug_lag_det/sqweight-{}_sqwmul-{}_eps-{}_gam-{}_decrate-{}_gradthresh-{}_it-{}/'.format(
+        checkpoint_dir = 'checkpoints/'
+        checkpoint_dir += 'round2_aug_lag_det/'
+        checkpoint_dir += 'sqweight-{}_sqwmul-{}_eps-{}_gam-{}_decrate-{}_gradthresh-{}_it-{}/'.format(
             config['constraint_sq_weight'], config['constraint_sq_weight_multiplier'], config['eps'], config['gam'],
             config['eps_gam_decay_rate'], config['grad_threshold'], config['iterations'])
+        checkpoint_dir += 'dim-{}_ntrain-{}_seed-{}/'.format(dim, n_train, train_seed)
 
         run_experiment_augmented_lagrangian_auto(dim, n_train, train_seed, loss_fn, lin_constraints,
                                                  config['constraint_sq_weight'],
