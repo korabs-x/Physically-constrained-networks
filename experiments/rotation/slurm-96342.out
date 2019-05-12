@@ -1,0 +1,99 @@
+Process Process-2:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job96342/slurm_script", line 36, in mp_worker
+    config['constraint_sq_weight'], config['constraint_sq_weight_multiplier'], config['eps'], config['gam'],
+TypeError: tuple indices must be integers or slices, not str
+Process Process-4:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job96342/slurm_script", line 36, in mp_worker
+    config['constraint_sq_weight'], config['constraint_sq_weight_multiplier'], config['eps'], config['gam'],
+TypeError: tuple indices must be integers or slices, not str
+Process Process-5:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job96342/slurm_script", line 36, in mp_worker
+    config['constraint_sq_weight'], config['constraint_sq_weight_multiplier'], config['eps'], config['gam'],
+TypeError: tuple indices must be integers or slices, not str
+Process Process-6:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job96342/slurm_script", line 36, in mp_worker
+    config['constraint_sq_weight'], config['constraint_sq_weight_multiplier'], config['eps'], config['gam'],
+TypeError: tuple indices must be integers or slices, not str
+Process Process-7:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job96342/slurm_script", line 36, in mp_worker
+    config['constraint_sq_weight'], config['constraint_sq_weight_multiplier'], config['eps'], config['gam'],
+TypeError: tuple indices must be integers or slices, not str
+Process Process-8:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job96342/slurm_script", line 36, in mp_worker
+    config['constraint_sq_weight'], config['constraint_sq_weight_multiplier'], config['eps'], config['gam'],
+TypeError: tuple indices must be integers or slices, not str
+Process Process-9:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job96342/slurm_script", line 36, in mp_worker
+    config['constraint_sq_weight'], config['constraint_sq_weight_multiplier'], config['eps'], config['gam'],
+TypeError: tuple indices must be integers or slices, not str
+Process Process-3:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job96342/slurm_script", line 36, in mp_worker
+    config['constraint_sq_weight'], config['constraint_sq_weight_multiplier'], config['eps'], config['gam'],
+TypeError: tuple indices must be integers or slices, not str
+Process Process-1:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job96342/slurm_script", line 36, in mp_worker
+    config['constraint_sq_weight'], config['constraint_sq_weight_multiplier'], config['eps'], config['gam'],
+TypeError: tuple indices must be integers or slices, not str
+Process Process-11:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job96342/slurm_script", line 36, in mp_worker
+    config['constraint_sq_weight'], config['constraint_sq_weight_multiplier'], config['eps'], config['gam'],
+TypeError: tuple indices must be integers or slices, not str
+Process Process-10:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job96342/slurm_script", line 36, in mp_worker
+    config['constraint_sq_weight'], config['constraint_sq_weight_multiplier'], config['eps'], config['gam'],
+TypeError: tuple indices must be integers or slices, not str
