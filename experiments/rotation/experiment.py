@@ -53,7 +53,7 @@ def run_experiment_variable_loss(dim, n_trains, train_seeds, loss_fns, weight_de
 
 
 def run_experiment_augmented_lagrangian(dim, n_train, train_seed, loss_fn, lin_constraints, constraint_weights,
-                                        checkpoint_dir, iterations=10000, lr=5e-5, n_test=4096):
+                                        checkpoint_dir, iterations=10000, lr=5e-5, n_test=4096, exclude_linear=False):
     train_loader = get_data_loader(dim, n_train, seed=train_seed, shuffle=False, batch_size=512)
     test_loader = get_data_loader(dim, n_test, seed=SEED_TEST, shuffle=False, batch_size=min(n_test, 8 * 512))
     model = Net(dim, n_hidden_layers=max(1, int(math.log(dim, 2))))
@@ -73,9 +73,10 @@ def run_experiment_augmented_lagrangian(dim, n_train, train_seed, loss_fn, lin_c
             constraint_fn = constraint_info["fn"]
             constraint_label = constraint_info["label"]
             loss_fns += [{'loss_fn': lossfn.get_constrained_loss_quadratic(constraint_fn),
-                          'weight': constraint_sq_weight * 0.5, 'label': constraint_label + '_sq'},
-                         {'loss_fn': lossfn.get_constrained_loss_linear(constraint_fn, constraint_ln_weights[i]),
-                          'weight': -1, 'label': constraint_label + '_lin'}]
+                          'weight': constraint_sq_weight * 0.5, 'label': constraint_label + '_sq'}]
+            if not exclude_linear:
+                loss_fns += [{'loss_fn': lossfn.get_constrained_loss_linear(constraint_fn, constraint_ln_weights[i]),
+                              'weight': -1, 'label': constraint_label + '_lin'}]
         solver.set_loss_fn_train(loss_fns)
         solver.train(train_loader, iterations=n_iterations, test_every_iterations=500, test_loader=test_loader,
                      save_final=(step == len(constraint_weights) - 1))
@@ -92,7 +93,8 @@ def run_experiment_augmented_lagrangian(dim, n_train, train_seed, loss_fn, lin_c
 
 def run_experiment_augmented_lagrangian_auto(dim, n_train, train_seed, loss_fn, lin_constraints, constraint_sq_weight,
                                              constraint_sq_weight_multiplier, eps, gam, eps_gam_decay_rate,
-                                             grad_threshold, checkpoint_dir, iterations=100, lr=5e-5, n_test=4096):
+                                             grad_threshold, checkpoint_dir, iterations=100, lr=5e-5, n_test=4096,
+                                             exclude_linear=False):
     train_loader = get_data_loader(dim, n_train, seed=train_seed, shuffle=False, batch_size=512)
     test_loader = get_data_loader(dim, n_test, seed=SEED_TEST, shuffle=False, batch_size=min(n_test, 8 * 512))
     model = Net(dim, n_hidden_layers=max(1, int(math.log(dim, 2))))
@@ -117,15 +119,17 @@ def run_experiment_augmented_lagrangian_auto(dim, n_train, train_seed, loss_fn, 
     total_iterations = 0
 
     for iteration in range(iterations):
-        print("Start iteration {}, after {} iterations, sqweight={}".format(iteration, total_iterations, constraint_sq_weight))
+        print("Start iteration {}, after {} iterations, sqweight={}".format(iteration, total_iterations,
+                                                                            constraint_sq_weight))
         loss_fns = [] + loss_fn
         for i, constraint_info in enumerate(lin_constraints):
             constraint_fn = constraint_info["fn"]
             constraint_label = constraint_info["label"]
             loss_fns += [{'loss_fn': lossfn.get_constrained_loss_quadratic(constraint_fn),
-                          'weight': constraint_sq_weight * 0.5, 'label': constraint_label + '_sq'},
-                         {'loss_fn': lossfn.get_constrained_loss_linear(constraint_fn, constraint_ln_weights[i]),
-                          'weight': -1, 'label': constraint_label + '_lin'}]
+                          'weight': constraint_sq_weight * 0.5, 'label': constraint_label + '_sq'}]
+            if not exclude_linear:
+                loss_fns += [{'loss_fn': lossfn.get_constrained_loss_linear(constraint_fn, constraint_ln_weights[i]),
+                              'weight': -1, 'label': constraint_label + '_lin'}]
         solver.set_loss_fn_train(loss_fns)
 
         # iterate until gradient norm is smaller than grad_norm_threshold

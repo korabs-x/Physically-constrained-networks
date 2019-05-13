@@ -28,12 +28,12 @@ def mp_worker(data):
 
     for train_seed in range(1683, 1683 + n_runs, 1):
         checkpoint_dir = 'checkpoints/'
-        checkpoint_dir += 'round2_aug_lag_det_fixed/'
+        checkpoint_dir += 'round2_aug_lag_det_fixed_nolin/'
         checkpoint_dir += 'config_0/'
         checkpoint_dir += 'dim-{}_ntrain-{}_seed-{}/'.format(dim, n_train, train_seed)
 
         run_experiment_augmented_lagrangian(dim, n_train, train_seed, loss_fn, lin_constraints, config['weights'],
-                                            checkpoint_dir, iterations=config['iterations'])
+                                            checkpoint_dir, iterations=config['iterations'], exclude_linear=True)
 
 
 def mp_handler():
