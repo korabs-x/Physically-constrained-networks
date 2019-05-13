@@ -15,17 +15,18 @@ def get_data_loader(dim, n, seed=SEED_TEST, shuffle=False, batch_size=512):
 
 
 def run_experiment(dim, n_train, train_seed, loss_fn, weight_decay, checkpoint_dir, fn_matrix=lambda x: x,
-                   fn_pred=lambda x: x, iterations=20000, lr=1e-3, n_test=512):
+                   fn_pred=lambda x: x, iterations=20000, lr=1e-3, n_test=512, model_class=Net, is_matrix_model=True):
     train_loader = get_data_loader(dim, n_train, seed=train_seed, shuffle=True, batch_size=512)
     test_loader = get_data_loader(dim, n_test, seed=SEED_TEST, shuffle=False, batch_size=min(n_test, 8 * 512))
-    model = Net(dim, n_hidden_layers=max(1, int(math.log(dim, 2))))
+    model = model_class(dim)
     optim_args = {'lr': lr, 'weight_decay': weight_decay}
     solver = Solver(model,
                     loss_fn_train=loss_fn,
                     optim_args=optim_args,
                     checkpoint_dir=checkpoint_dir,
                     fn_matrix=fn_matrix,
-                    fn_pred=fn_pred)
+                    fn_pred=fn_pred,
+                    is_matrix_model=is_matrix_model)
     solver.train(train_loader, iterations=iterations, test_every_iterations=200, test_loader=test_loader)
 
 
@@ -53,15 +54,17 @@ def run_experiment_variable_loss(dim, n_trains, train_seeds, loss_fns, weight_de
 
 
 def run_experiment_augmented_lagrangian(dim, n_train, train_seed, loss_fn, lin_constraints, constraint_weights,
-                                        checkpoint_dir, iterations=10000, lr=5e-5, n_test=4096, exclude_linear=False):
+                                        checkpoint_dir, iterations=10000, lr=5e-5, n_test=4096, exclude_linear=False,
+                                        model_class=Net, is_matrix_model=True):
     train_loader = get_data_loader(dim, n_train, seed=train_seed, shuffle=False, batch_size=512)
     test_loader = get_data_loader(dim, n_test, seed=SEED_TEST, shuffle=False, batch_size=min(n_test, 8 * 512))
-    model = Net(dim, n_hidden_layers=max(1, int(math.log(dim, 2))))
+    model = model_class(dim)
     optim_args = {'lr': lr}
     solver = Solver(model,
                     loss_fn_train=loss_fn,
                     optim_args=optim_args,
-                    checkpoint_dir=checkpoint_dir)
+                    checkpoint_dir=checkpoint_dir,
+                    is_matrix_model=is_matrix_model)
     initial_ln_weight = 0
     constraint_ln_weights = [torch.ones(size=(n_train,)) * initial_ln_weight for _ in lin_constraints]
     # constraint_fn = lossfn.det_linear
@@ -94,15 +97,16 @@ def run_experiment_augmented_lagrangian(dim, n_train, train_seed, loss_fn, lin_c
 def run_experiment_augmented_lagrangian_auto(dim, n_train, train_seed, loss_fn, lin_constraints, constraint_sq_weight,
                                              constraint_sq_weight_multiplier, eps, gam, eps_gam_decay_rate,
                                              grad_threshold, checkpoint_dir, iterations=100, lr=5e-5, n_test=4096,
-                                             exclude_linear=False):
+                                             exclude_linear=False, model_class=Net, is_matrix_model=True):
     train_loader = get_data_loader(dim, n_train, seed=train_seed, shuffle=False, batch_size=512)
     test_loader = get_data_loader(dim, n_test, seed=SEED_TEST, shuffle=False, batch_size=min(n_test, 8 * 512))
-    model = Net(dim, n_hidden_layers=max(1, int(math.log(dim, 2))))
+    model = model_class(dim)
     optim_args = {'lr': lr}
     solver = Solver(model,
                     loss_fn_train=loss_fn,
                     optim_args=optim_args,
-                    checkpoint_dir=checkpoint_dir)
+                    checkpoint_dir=checkpoint_dir,
+                    is_matrix_model=is_matrix_model)
 
     # augmented lagrangian parameters
     initial_ln_weight = 0

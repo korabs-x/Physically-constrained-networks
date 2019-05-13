@@ -18,7 +18,8 @@ class Solver:
                  optim_args={'lr': 1e-3},
                  checkpoint_dir=None,
                  fn_matrix=lambda x: x,
-                 fn_pred=lambda x: x):
+                 fn_pred=lambda x: x,
+                 is_matrix_model=True):
         torch.manual_seed(0)
         self.device = lambda: torch.device('cuda' if torch.cuda.is_available() else 'cpu')
         self.model = model.to(self.device())
@@ -28,6 +29,7 @@ class Solver:
         self.fn_pred = fn_pred
         self.save = False
         self.optimizer = optim(self.model.parameters(), **optim_args)
+        self.is_matrix_model = is_matrix_model
         if checkpoint_dir is not None:
             self.save = True
             self.checkpoint_dir = checkpoint_dir
@@ -115,14 +117,17 @@ class Solver:
             return score
 
     def forward(self, angles, points, apply_fns=True):
-        output_matrix = self.model(angles)
-        if apply_fns:
-            output_matrix = self.fn_matrix(output_matrix)
-        prediction = torch.bmm(output_matrix, points.view((points.shape[0], points.shape[1], 1)))
-        prediction = prediction.view((points.shape[0], points.shape[1]))
-        if apply_fns:
-            prediction = self.fn_pred(prediction)
-        return output_matrix, prediction
+        if self.is_matrix_model:
+            output_matrix = self.model(angles)
+            if apply_fns:
+                output_matrix = self.fn_matrix(output_matrix)
+            prediction = torch.bmm(output_matrix, points.view((points.shape[0], points.shape[1], 1)))
+            prediction = prediction.view((points.shape[0], points.shape[1]))
+            if apply_fns:
+                prediction = self.fn_pred(prediction)
+            return output_matrix, prediction
+        else:
+            return None, self.model(torch.cat((angles, points), dim=1))
 
     def train(self, loader, epochs=None, iterations=None, test_every=False, test_every_iterations=False,
               test_loader=None, save_final=True, prints=True):

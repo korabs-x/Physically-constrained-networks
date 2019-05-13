@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-#SBATCH --gpus=360
+#SBATCH --gpus=33
 #SBATCH --mem=12GB
 #SBATCH --time=120:00:00
 #SBATCH --mail-user=abstreik
@@ -8,7 +8,7 @@
 import os
 import multiprocessing
 from solver import Solver
-from model import Net
+from model import Net, NetConnected
 from dataset import RotationDataset
 import lossfn
 from torch.utils.data import DataLoader
@@ -18,7 +18,7 @@ import math
 import argparse
 from experiment import run_experiment
 
-det_weights = [0, 1e-5, 1e-2, 0.1, 0.2, 0.5, 1, 2, 4]
+det_weights = [0, 1e-2, 1e-1]
 
 train_range = range(10, 21, 1)
 
@@ -31,12 +31,12 @@ def mp_worker(data):
 
     for train_seed in range(1683, 1683 + n_runs, 1):
         checkpoint_dir = 'checkpoints/'
-        checkpoint_dir += 'round2_detweight4/'
+        checkpoint_dir += 'round2_detweight_model2/'
         checkpoint_dir += 'dim-{}_detweight-{}_ntrain-{}_seed-{}/'.format(dim, det_weight, n_train, train_seed)
         loss_fn = [{'loss_fn': lossfn.get_mse_loss(), 'weight': 1, 'label': 'mse'},
                    {'loss_fn': lossfn.get_det_loss(), 'weight': det_weight, 'label': 'det'}]
         run_experiment(dim, n_train, train_seed, loss_fn, 0, checkpoint_dir, lr=5e-5, iterations=50000,
-                       n_test=4096)
+                       n_test=4096, model_class=NetConnected)
 
 
 def mp_handler():
