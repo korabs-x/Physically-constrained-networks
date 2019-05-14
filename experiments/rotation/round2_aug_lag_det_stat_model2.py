@@ -9,6 +9,7 @@ import os
 import multiprocessing
 import lossfn
 from experiment import run_experiment_augmented_lagrangian_auto
+from model import NetConnected
 
 loss_fns = ['error']
 
