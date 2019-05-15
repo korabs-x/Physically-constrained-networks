@@ -46,3 +46,20 @@ class NetConnected(nn.Module):
     def forward(self, x_batch):
         return self.ff(x_batch).view((x_batch.shape[0], self.dim, self.dim))
 
+
+class NetConnected100(nn.Module):
+    def __init__(self, dim, n_hidden_nodes=None):
+        super().__init__()
+        torch.manual_seed(0)
+        self.dim = dim
+        hidden_nodes = 100 if n_hidden_nodes is None else n_hidden_nodes
+
+        self.ff = nn.Sequential(
+            nn.Linear(self.dim - 1, hidden_nodes),
+            nn.Sigmoid(),
+            nn.Linear(hidden_nodes, self.dim * self.dim)
+        )
+
+    def forward(self, x_batch):
+        return self.ff(x_batch).view((x_batch.shape[0], self.dim, self.dim))
+
