@@ -12,6 +12,8 @@ class NetNomatrix(nn.Module):
         self.ff = nn.Sequential(
             nn.Linear(2 * self.dim - 1, hidden_nodes),
             nn.Sigmoid(),
+            nn.Linear(hidden_nodes, hidden_nodes),
+            nn.ReLU(),
             nn.Linear(hidden_nodes, self.dim)
         )
 
