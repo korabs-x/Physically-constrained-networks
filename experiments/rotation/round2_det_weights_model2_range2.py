@@ -43,10 +43,6 @@ def mp_handler():
     for dim in [2]:
         for det_weight in det_weights:
             train_range_spec = train_range
-            if dim == 2:
-                train_range_spec = range(10, 21, 1)
-            if dim == 3:
-                train_range_spec = range(20, 201, 20)
 
             for n_train in train_range_spec:
                 p = multiprocessing.Process(target=mp_worker, args=((dim, det_weight, n_train),))
