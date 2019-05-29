@@ -18,7 +18,7 @@ import math
 import argparse
 from experiment import run_experiment
 
-norm_weights = [0, 1e0, 2e0, 4e0, 1e1, 2e1, 4e1, 1e2]
+norm_weights = [1e-1] # [0, 1e0, 2e0, 4e0, 1e1, 2e1, 4e1, 1e2]
 
 dims = [2]
 train_range = range(10, 21, 1)
