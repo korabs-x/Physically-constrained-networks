@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-#SBATCH --gpus=88
+#SBATCH --gpus=11
 #SBATCH --mem=12GB
 #SBATCH --time=120:00:00
 #SBATCH --mail-user=abstreik
@@ -18,10 +18,10 @@ import math
 import argparse
 from experiment import run_experiment
 
-norm_weights = [0, 1e-3, 1e-2, 1e-1, 1e0]
+norm_weights = [1e-1] # [0, 1e0, 2e0, 4e0, 1e1, 2e1, 4e1, 1e2]
 
-dims = [3]
-train_range = range(20, 201, 20)
+dims = [2]
+train_range = range(10, 21, 1)
 n_runs = 20
 
 SEED_TEST = 0
