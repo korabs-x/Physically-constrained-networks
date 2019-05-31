@@ -1,0 +1,46 @@
+% !TEX root = ../main.tex
+% The titlepage.
+% Included by MAIN.TEX
+
+
+%--------------------------------------------------
+% The title page
+%--------------------------------------------------
+
+% correct BCOR - undo at the end !!!
+\def\bcorcor{0.15cm}
+\addtolength{\hoffset}{\bcorcor}
+
+\thispagestyle{empty}
+
+\vspace{4cm}
+\begin{center}
+    \includegraphics[width=4cm]{\universityLogo}\\
+    \vspace{5mm}
+    \huge \program \\
+    \vspace{0.5cm}
+    \large \university
+\end{center}
+
+\vspace{10mm}
+\begin{center}
+    {\Large \doctype}\\
+    \vspace{10mm}
+    {\LARGE \title}\\
+    \vspace{10mm}
+    {\textit{\LARGE \titlegerman}}\\
+	\vspace{10mm}
+	
+    \begin{tabular}{ll}
+      \Large Author:                        & \Large \author \\[2mm]
+      \Large Supervisor:& \Large \examinerOne\\[2mm]
+      %\Large 2\textsuperscript{nd} examiner:& \Large \examinerTwo \\[2mm]
+      \Large Advisor:             & \Large \assistantAdvisor \\[2mm]
+      \Large Submission date:               & \Large \date
+    \end{tabular}
+
+    \vspace{\fill}
+\end{center}
+
+% undo BCOR correction
+\addtolength{\hoffset}{\bcorcor}
