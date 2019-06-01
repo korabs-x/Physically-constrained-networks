@@ -39,6 +39,12 @@
               BCOR=12mm,
               DIV=13]{scrbook}
 
+\usepackage{hyperref}
+\usepackage{amsmath}
+\DeclareMathOperator*{\argmax}{argmax}
+\DeclareMathOperator*{\argmin}{argmin}
+\usepackage{amsthm}
+
 % KOMA scrbook options:
 %  index=totoc: include an entry for the index in the table of contents.
 %  headsepline: use horizontal line under heading.
@@ -61,26 +67,29 @@
  \frontmatter
 
  \input{components/cover}
-
-\clearpage
+ \clearpage
 
  \input{components/titlepage}
+ \clearpage
 
  \input{components/disclaimer}
 
- \input{components/acknowledgements}
+% \clearpage
 
- \input{components/quote}
+% \input{components/acknowledgements}
+
+%  \input{components/quote}
 
  \input{components/abstract}
 
- \tableofcontents
+\tableofcontents
+ \clearpage
+ 
+ \pagenumbering{arabic}
 
- \mainmatter
+% \mainmatter
 
  \input{components/text}
-
- \clearemptydoublepage
 
  \printglossaries
 

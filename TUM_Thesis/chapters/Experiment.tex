@@ -1,0 +1,61 @@
+% !TEX root = ../main.tex
+\label{section:experiment}
+\section{Experiment}
+
+Since it can be difficult to break down the effects utilizing physical constraints has on a deep learning model, the previously introduced methods have to be applied to a simple, yet not trivial problem. By analyzing the behaviour of our model, we aim to show that incorporating physical constraints contribute in the following ways:
+\begin{itemize}
+	\item Improve model performance
+	\item Produce more realistic predictions
+	\item Decrease required amount of learning data
+\end{itemize}
+
+In order to show these improvements, we apply both the Penalty Method and the Augmented Lagrangian Method to the problem of learning a rotation in two and three dimensions. We chose this problem, since it satisfies both the existence of physical constraints and the required simplicity to gain insights on incorporating knowledge about the constraints. Formally, a rotation maps a point and the rotation angles to a target point:
+\[rot: \mathbb{R}^{d} \times [- \pi, \pi] ^{d-1} \to \mathbb{R}^{d} \text{, where $d$ is the dimension of the domain space} \]
+For example, the rotation in two dimension can be described the following way:
+\[rot_{2D}: \mathbb{R}^{2} \times [- \pi, \pi]  \to \mathbb{R}^{2},\,\, rot_{2D}(x, \alpha) = R_{2D}(\alpha) \,x, \]
+where $R_{2D}(\alpha) = \begin{pmatrix} \cos(\alpha) & -\sin(\alpha) \\\sin(\alpha) & \cos(\alpha) \end{pmatrix}$.
+For three dimensions, we will consecutively apply a rotation around the z-axis and the y-axis, both counterclockwise when looking towards the origin. This means that the rotation function is the following:
+\[rot_{3D}: \mathbb{R}^{3} \times [- \pi, \pi]^2 \to \mathbb{R}^{3},\,\, rot_{3D}(x, \alpha) = R_{y}(\alpha_2) R_{z}(\alpha_1) \,x, \]
+where $R_{z}(\alpha) = \begin{pmatrix} \cos(\alpha) & -\sin(\alpha) & 0\\\sin(\alpha) & \cos(\alpha) & 0\\ 0 & 0 & 1\end{pmatrix}$
+and $R_{y}(\alpha) = \begin{pmatrix} \cos(\alpha) & 0 & -\sin(\alpha)\\ 0 & 1 & 0\\\sin(\alpha) & 0 & \cos(\alpha)\end{pmatrix}$.\\
+\\
+\indent Regarding physical constraints, we know that the determinant of any rotation matrix equals one and that is preserves the norm of any point. Therefore, we have the following two physical constraints for our experiment:\\
+
+\begin{subequations}
+\begin{equation}
+\det (R(\alpha)) = 1 \indent \forall \alpha \in [-\pi, \pi], \forall R \in \{R_{2D}, R_z, R_y\}
+\end{equation}
+\begin{equation}
+||R(\alpha)x|| = ||x||, \forall \alpha \in [-\pi, \pi], \forall x \in \mathbb{R}^d, \forall R \in \{R_{2D}, R_z, R_y\}
+\end{equation}
+\end{subequations}
+
+
+\indent Using a deep learning model, we can now approximate the rotation function $R$ with the use of training data. For the remainder of this thesis, $N_{train}$ denotes the number of points included in our training dataset. The training data itself will be denoted $X_{train}$. It contains $N_{train}$ elements of the set $\mathbb{R}^{d} \times [- \pi, \pi] ^{d-1}$. The corresponding correct target points are included in $y_{train}$.\\
+\indent The points to be rotated for the $2D$- and $3D$-Rotation are drawn uniformly from the unit circle and the unit sphere, respectively. The rotation angles are chosen uniformly from the set $[-\pi, \pi]^{d-1}$. Note that for three dimensions, this leads to a bias towards the poles, meaning that the target point is more likely to be either close to the original point or to the point located exactly on the opposite side.\\
+\indent When training a neural network to learn the rotation function, we solve the following minimization problem:
+\[\underset{\theta}\argmin  \]
+
+
+TODO: Introduce minimization problem:\\
+
+TODO: Mathematical MSE\\
+
+
+\indent The performance of the different models and methods will be measured by the Mean Squared Error between the predictions and the target points. Each experiment will be tested on 20 different seeds used to generate the training data (if not specified otherwise). We will compare the models' performance according to the mean of the MSEs of the individual runs. We prefer the mean over the median in order to include the performance of outliers which lead to poor results. We will further compare how realistic the predictions are according to the given physical constraints.\\
+
+TODO: Why MSE?\\
+
+%When training a deep learning model to learn the rotation, we essentially solve this minimization problem:\\
+\[   \]
+
+
+
+%Depending on the model architecture, 
+
+
+
+
+
+\clearpage
+

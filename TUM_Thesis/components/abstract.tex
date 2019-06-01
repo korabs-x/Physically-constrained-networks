@@ -2,9 +2,9 @@
 % The abstract.
 % Included by MAIN.TEX
 
-\clearemptydoublepage
-\phantomsection
-\addcontentsline{toc}{chapter}{Abstract}
+
+%\phantomsection
+%\addcontentsline{toc}{chapter}{Abstract}
 
 \vspace*{2cm}
 \begin{center}
@@ -12,14 +12,7 @@
 \end{center}
 \vspace{1cm}
 
-This document will serve as an example to you, of how to use \LaTeX to write your
-CSE Master's Thesis. It will have examples and recomendations, and hopefully a
-few laughs.  Because this is the abstract, it will have to convince you that this 
-template is something you want to use.  It has been proven, that without using
-this template, writing your thesis will be much more dificult. The template is
-based on previous work, and has been improved apon and updated.  The result of 
-this template is a modern latex template that everyone can contribute to and use
-for their studies of CSE @ TUM.
 
-Some more great abstract tips can be found here: 
-\href{https://users.ece.cmu.edu/~koopman/essays/abstract.html}{Great Abstract tips}
+Nowadays, deep learning models are applied in a wide range of different tasks, often working with real world data. They have replaced a variety of hand-crafted models, since they are faster, easier to create, and can be used even when theoretical knowledge is sparse. However, for the predictions of data-driven models to align with theoretical constraints, such as the laws of physics, large amounts of training data covering the whole domain space are required. This raises the question, whether we have to purely rely on data to learn the mathematical theories which scientists have found and experimentally validated over many years. \\
+\indent In this thesis, we examine and experiment with different approaches to incorporate knowledge of physical constraints into deep learning models. In particular, we analyse the Penalty Method and Augmented Lagrangian Method. In addition, we inspect the results when projecting predictions according to physical constraints during training. The benefits of these approaches are validated on the task of predicting a rotation in two and three dimensions with the constraints on the determinant of the rotation matrix and the preservation of the norm. We confirm that the methods lead to higher overall performance already for small sizes of our training dataset and produce more realistic predictions in regions where no or only few training data is available.
+

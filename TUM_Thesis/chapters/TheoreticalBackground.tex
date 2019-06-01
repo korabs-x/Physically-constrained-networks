@@ -1,0 +1,52 @@
+% !TEX root = ../main.tex
+\label{section:theoreticalBackground}
+\section{Theoretical Background}
+\subsection{Optimization problems}
+Optimization problems can be found in almost every field and researchers have come up with numerous algorithms to efficiently solve such tasks. Formally, an optimization problem can be described as 
+\[\argmin_{x \in \mathbb{R}^n} f(x),\]
+where $f\colon \mathbb{R}^n\to \mathbb{R}$ is a smooth function to be minimized and $n \in \mathbb{N}$ is the input dimension.\\
+In \cite{NoceWrig06}, Nocedal et al. describe several different approaches to solve the minimization problem. According to them, all optimization algorithms start at a point $x_0 \in \mathbb{R}^n$ and generate a sequence $\{x_k\}_{k=0}^\infty$, terminating when finding a sufficiently good approximation of the solution or when they can not make any more progress. The core of the algorithms is the way they use information about $f$ at the points $x_0, x_1, ..., x_k$ to compute $x_{k+1}$. \\
+\indent Novedal et al. introduce two categories of optimization algorithms: Line search and trust region strategies. The former first determines a line on which the next iterate will be located, and then tries to find a point $x_{k+1}$ such that $f(x_{k+1}) < f(x_k)$. Finding such an iterate is much simpler than the original minimization problem, since a search has only performed along one dimension. The direction is often chosen to be the negative gradient, since it offers the locally steepest decent. 
+\\ \indent In contrast, trust region strategies approximate the behaviour of the objective function $f$ inside a trust region $T$ around $x_k$ using a simpler model function $m_k$. The model function is often computed using the first terms of the Taylor expansion, that is \[m_k(x_k + p) = f(x_k) + p^T\Delta f(x_k) + \frac{1}{2}p^T\Delta^2 f(x_k) p \text{, \indent where } x_k + p \in T.\] Since the Hessian of the objective function can be hard to compute or not accessable, the Hessian $\Delta^2 f(x_k)$ can also be replaced by an approximation. The iterate $x_{k+1}$ is then set to be the solution of the simpler problem $x_{k+1} = \underset{x \in T}{\argmin }  \,\,m_k(x)$.
+
+\subsection{Constrained optimization problems}
+Constrained optimization problems are optimization problems for which a solution has to satisfy given constraints. Formally, they can be described as the following:\\
+\begin{equation}
+	\label{constrained_min_problem}
+	\begin{aligned}
+		& \underset{x \in \mathbb{R}^n}{\argmin}
+		& & f(x) \\
+		& \text{subject to}
+		& & c_i(x) \geq 0, \; i \in \mathcal{I}.
+	\end{aligned}
+\end{equation}
+
+As before, $f\colon \mathbb{R}^n\to \mathbb{R}$ is our objective function and $n \in \mathbb{N}$ is the input dimension, whereas $c_i\colon \mathbb{R}^n\to \mathbb{R}, i \in \mathcal{I}$ are the inequality constraints. Both $f$ and all $c_i, i \in \mathcal{I}$ will be assumed to be smooth. Further, we will also assume that a solution for the given problem exists.\\
+
+\indent One approach to solve the constraint optimization problem is the so-called Lagrangian Relaxation \cite{Lemarechal:2000:LR:647776.734757}. This method creates an unconstrained optimization problem by penalizing constraint violations (and rewarding opposite?).\\
+
+TODO: Wait for feedback which proofs to include\\
+TODO: Introduce lagrangian relaxation, easier to solve, tell that solution is not the solution of original problem, therefore introduce Theorem.\\
+TODO: Penalty method incl proof\\
+TODO: ALM (proof?)\\
+
+
+%\begin{theorem}
+%Let $C(x) = \underset{i \in \mathcal{I}}{\sum} min(c_i(x), 0)^2$ be a function to measure the constraint violation of a given solution $x$. Further, let $x^* $ be a solution to the problem 
+%\begin{equation}
+%\label{minmax_constrained_opt}
+%x^* = \underset{x \in \mathbb{R}^n}{\argmin}\, \underset{\mu }{\max}\, f(x) + \mu C(x).
+%\end{equation} Then $C(x^*) = 0$ and $x^*$ is a solution for \eqref{constrained_min_problem}.
+%\end{theorem}
+%\begin{proof}
+%	Let $\overline{x}$ be a solution of \eqref{constrained_min_problem}. It follows that $C(\overline{x}) = 0$, since $\overline{x}$ satisfies all constraints.\\
+%	Now assume $C(x^*) > 0$, then we have $f(\overline{x}) + \mu C(\overline{x}) = f(\overline{x}) < f(x^*) + \mu C(x^*)$ for $\mu > (f(\overline{x} - f(x^*)) / C(x^*)$, which would make $x^*$ not a solution of \eqref{minmax_constrained_opt}. Therefore $C(x^*) = 0$. Further, we claim that $x^*$ is a solution for \eqref{constrained_min_problem}: If that was not the case, then $f(\overline{x}) < f(x^*)$ would hold. But because of $C(\overline{x}) = C(x^*) = 0$, we would have $\underset{\mu }{\max}\, f(\overline{x}) + \mu C(\overline{x}) < \underset{\mu }{\max}\, f(x^*) + \mu C(x^*)$, in which case $x^*$ would not be a solution of \eqref{minmax_constrained_opt}.
+%\end{proof}
+
+\subsection{Solving strategies}
+In the following, we will present two strategies to solve constrained optimization problems. We will begin by discussing the Penalty Method and follow with the Augmented Lagrangian Method. Both methods are based on the previsouly introduced idea of Lagrangian Relaxation.
+\subsubsection{Penalty Method}
+
+
+\clearpage
+
