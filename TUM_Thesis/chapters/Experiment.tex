@@ -9,7 +9,8 @@ Since it can be difficult to break down the effects utilizing physical constrain
 	\item Decrease required amount of learning data
 \end{itemize}
 
-In order to show these improvements, we apply both the Penalty Method and the Augmented Lagrangian Method to the problem of learning a rotation in two and three dimensions. We chose this problem, since it satisfies both the existence of physical constraints and the required simplicity to gain insights on incorporating knowledge about the constraints. Formally, a rotation maps a point and the rotation angles to a target point:
+\subsection{Problem formulation}
+In order to show these improvements, we incorporate the knowledge about physical constraints into the problem of learning a rotation in two and three dimensions. We chose this problem, since it satisfies both the existence of physical constraints and the required simplicity to gain insights on the effects of the different methods of utilizing physical constraints. Formally, a rotation maps a point and the rotation angles to a target point:
 \[rot: \mathbb{R}^{d} \times [- \pi, \pi] ^{d-1} \to \mathbb{R}^{d} \text{, where $d$ is the dimension of the domain space} \]
 For example, the rotation in two dimension can be described the following way:
 \[rot_{2D}: \mathbb{R}^{2} \times [- \pi, \pi]  \to \mathbb{R}^{2},\,\, rot_{2D}(x, \alpha) = R_{2D}(\alpha) \,x, \]
@@ -19,7 +20,7 @@ For three dimensions, we will consecutively apply a rotation around the z-axis a
 where $R_{z}(\alpha) = \begin{pmatrix} \cos(\alpha) & -\sin(\alpha) & 0\\\sin(\alpha) & \cos(\alpha) & 0\\ 0 & 0 & 1\end{pmatrix}$
 and $R_{y}(\alpha) = \begin{pmatrix} \cos(\alpha) & 0 & -\sin(\alpha)\\ 0 & 1 & 0\\\sin(\alpha) & 0 & \cos(\alpha)\end{pmatrix}$.\\
 \\
-\indent Regarding physical constraints, we know that the determinant of any rotation matrix equals one and that is preserves the norm of any point. Therefore, we have the following two physical constraints for our experiment:\\
+\indent Regarding physical constraints, we know that the determinant of any rotation matrix equals one and thereby preserves the norm of any point. Therefore, we have the following two physical constraints for our experiment:\\
 
 \begin{subequations}
 \begin{equation}
@@ -30,21 +31,70 @@ and $R_{y}(\alpha) = \begin{pmatrix} \cos(\alpha) & 0 & -\sin(\alpha)\\ 0 & 1 & 
 \end{equation}
 \end{subequations}
 
-
+\subsection{Training the Deep Learning Model}
 \indent Using a deep learning model, we can now approximate the rotation function $R$ with the use of training data. For the remainder of this thesis, $N_{train}$ denotes the number of points included in our training dataset. The training data itself will be denoted $X_{train}$. It contains $N_{train}$ elements of the set $\mathbb{R}^{d} \times [- \pi, \pi] ^{d-1}$. The corresponding correct target points are included in $y_{train}$.\\
 \indent The points to be rotated for the $2D$- and $3D$-Rotation are drawn uniformly from the unit circle and the unit sphere, respectively. The rotation angles are chosen uniformly from the set $[-\pi, \pi]^{d-1}$. Note that for three dimensions, this leads to a bias towards the poles, meaning that the target point is more likely to be either close to the original point or to the point located exactly on the opposite side.\\
 \indent When training a neural network to learn the rotation function, we solve the following minimization problem:
-\[\underset{\theta}\argmin  \]
+\[\underset{\theta}\argmin \,\, \mathcal{L}(f_{\theta} (X_{train}), y_{train}), \]
+where $f_\theta$ is the function represented by the model parameterized by $\theta$ and $L$ is a loss function measuring the dissimilarity between the model predictions $f_{\theta} (X_{train})$ and the true target points $y_{train}$. From this point on, the model predictions $f_{\theta} (X_{train})$ for a fixed parameter set $\theta$ will be denoted by $\hat{y}$.
+A commonly used loss function is the Mean Squared Error (MSE), which is calculated the following way (Source?):
+\[\mathcal{L}_{MSE}(\hat{y}, y) = \frac{1}{N}\sum_{n = 1}^{N} \frac{1}{d} \sum_{i = 1}^{d} (\hat{y}_{n\,i} - y_{n\,i})^2, \qquad \text{ where } y, \hat{y} \in \mathbb{R}^{N \times d}\]
+
+\indent All models will be trained using the MSE between the predictions and the target points. Minimizing the MSE loss function fits well for our experiment, since it is closely related to the euclidian distance, except that distances are squared. This leads to a high values for distant predictions and thus penalizes higher variance of the errors of the predictions, which is desirable.\\ 
+
+\subsection{Performance evaluation}
+For the same reason we chose the MSE Loss as the training loss, we also evaluate the performance of the different models and methods according to the MSE. Despite the MSE being a good measure for the distance between the predictions and the target point, we also compare how well the predictions of the model align with the given physical constraints in order to determine how realistic they are.\\
+
+\subsection{Network architectures}
+\paragraph{Model 1:}The first model is a neural network directly approximating $f_\theta$. Thus it takes a point of dimension $d$ and angles of dimension $d-1$ as input and predicts a target point of dimension $d$. The network has three hidden layers with 16 nodes each. In each hidden layers, the activation function $\tanh$ is applied and we include bias. We do not apply dropout.\\
+
+For the next models, we make use of the knowledge that a rotation is the result of multiplying a rotation matrix, which only depends on the angles, with the given point. Consequently, the next models will represent the function $g_\theta: [-\pi, \pi]^{d-1} \to \mathbb{R}^{d \times d}$, which in turn is used to create the final predictions in the following way:
+\begin{equation}
+\label{eq:rot_pred}
+\hat{y} = g_\theta(\alpha) \, x
+\end{equation}
+where $\alpha$ is the rotation angle and $x$ the point to be rotated.
+
+\paragraph{Model 2:} Based on this approach, the second model predicts the rotation matrix. In particular, it maps $d-1$ input angles to a matrix of size $d \times d$. This is done using one hidden layer of size 100 including bias and using the Sigmoid activation function. 
+
+\paragraph{Model 3:} Similar to the previous model, we also try to solve the problem using an independent neural network for each of the $d \times d$ matrix entries. Each of these networks maps the rotation angles of size $d-1$ to a single real number, which is interpreted as a single matrix entry. For these networks, we use one hidden layer of size 50, again including bias and applying the Simoid activation function.\\
+
+\indent In order to achieve undistorted comparisons of the models, they were designed to each have between 600 and 650 parameters.
+
+\subsection{Hyperparameters}
+For all experiments, we choose to use the Adaptive Moment Estimator "Adam" as our optimizer, since it empirically appeared to perform well in practice and should be favoured over other known adaptive learning-method algorithms \cite{DBLP:journals/corr/Ruder16}. Furthermore we will use a learning rate of $5\times 10^{-5}$ and train each model using $50000$ iterations. A comparison of using different learning rates on Model 3 can be found in the appendix (\ref{fig:comp_lr_m3}). For all experiments, we use a batch size of 512 and shuffle the training set at the start of each epoch.
+
+\subsection{Physical loss}
+In order to train our models to learn the physical constraints, we use the following loss functions for the training process.
+\[\mathcal{L}(\theta, X_{train}, y_{train}) = \mathcal{L}_{MSE}(\hat{y}_\theta, y_{train}) + L_{PHY}(\hat{y}_\theta, g_\theta(X_{train})),\]
+where $\hat{y}_\theta$ is computed according to equation \ref{eq:rot_pred}. For Model 1, $g_\theta$ is ignored and $\hat{y}_\theta$ is the output of the neural network.\\
+For the determinant, we use the following function as our physical loss:
+\[L_{DET}(\hat{y}, \hat{R}) = \frac{1}{N_{train}}\sum_{n = 1}^{N_{train}}(\det(\hat{R}_n) - 1)^2,\]
+where $\hat{R}$ are the predicted rotation matrices $g_\theta(X_{train})$.\\
+We utilize the norm constraint through the following loss function:
+\[L_{NORM}(\hat{y}, \hat{R}) = \frac{1}{N_{train}}\sum_{n = 1}^{N_{train}}(||\hat{y}_n|| - 1)^2,\]
+
+\subsection{Solving methods}
+In this section, we will introduce the methods we apply to incorporate the physical constraints into the models. As a baseline for comparisons, we train each model using solely the MSE Loss on the training data.
+
+\subsubsection{Penalty Method}
+The first and simplest version of the Penalty Method we apply is setting a fixed weight $\lambda > 0$ and solving a single minimization problem, that is:
+
+\[\underset{\theta}\argmin \,\, (\mathcal{L}_{MSE}(\hat{y}_\theta, y_{train}) + \lambda \cdot L_{PHY}(\hat{y}_\theta, g_\theta(X_{train})))\]
+
+In addition, we also solve a series of minimization problems of the type above with exponentially increasing $\lambda$, but using the solution of the last iteration as a warm start for the next one. In particular, we introduce a multiplier $\mu > 1$ such that the weight of the physical loss in the i-th iteration is given by $\lambda_i = \mu^i \, \lambda_0$. Each minimization is stopped as soon as the norm of the gradient is below a certain threshold.
+
+\subsubsection{Augmented Lagrangian Method}
+
+As we do for the Penalty Method, we apply also apply two different versions of the Augmented Lagrangian Method. Both versions minimize a fixed number of problems and update the weights of the linear constraint terms according to \textit{insert equation reference here}. However, the first one only computes a fixed number of epochs with a constant weight $\lambda$ for the physical loss.\\
+\indent The second version was suggested by Bertsekas in \cite{Yurkiewicz1985ConstrainedOA}. In addition to increasing the weight of the squared constraint term, he proposes to stop the minimization of the k-th problem as soon as the norm of the gradient is smaller than a threshold $\tau_k$ computed according to the following:
+\[\tau_k = \min(\epsilon_k, \gamma_k ||c(x_k)||), \]
+where $\{\epsilon_k\}$ and $\{\gamma_k \}$ are two sequences decreasing to 0, and $c(x_k)$ is the value of the constraint violation at the current solution. In our experiment, $c(x_k)$ is the difference of the norms / determinants of the predicted points / rotation matrices and one. Intuitively, this approach spends more ressources on minimizing a problem if the predictions of the current solution already align well with the physical constraints and otherwise tries to focuses on learning the constraints first.
+
+\subsection{Statistical measurements}
+Each experiment will be tested on 20 different seeds used to generate the training data (if not specified otherwise). If not otherwise specified, we compare the models' performances according to the mean of the MSEs of the individual runs. We prefer the mean over the median, because we are also interested in the performance of outliers that lead to poor results.\\
 
 
-TODO: Introduce minimization problem:\\
-
-TODO: Mathematical MSE\\
-
-
-\indent The performance of the different models and methods will be measured by the Mean Squared Error between the predictions and the target points. Each experiment will be tested on 20 different seeds used to generate the training data (if not specified otherwise). We will compare the models' performance according to the mean of the MSEs of the individual runs. We prefer the mean over the median in order to include the performance of outliers which lead to poor results. We will further compare how realistic the predictions are according to the given physical constraints.\\
-
-TODO: Why MSE?\\
 
 %When training a deep learning model to learn the rotation, we essentially solve this minimization problem:\\
 \[   \]

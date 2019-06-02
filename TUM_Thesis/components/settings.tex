@@ -5,6 +5,18 @@
 % Fonts and page setup
 %--------------------------------------------------
 
+\usepackage{amsmath}
+\DeclareMathOperator*{\argmax}{argmax}
+\DeclareMathOperator*{\argmin}{argmin}
+\usepackage{amsthm}
+\usepackage{graphicx}
+%\usepackage{svg}
+\usepackage{float}
+\graphicspath{ {./images/} }
+
+%\usepackage[]{epstopdf}
+%\epstopdfsetup{outdir=./images/}
+
 % Default font
 \usepackage{palatino}
 
@@ -62,13 +74,13 @@
 %--------------------------------------------------
 
 % Enhanced support for graphics (recommended)
-\usepackage{graphicx}
+%\usepackage{graphicx}
 % Path to the figures directory (default: {figures/})
 % Multiple entries are allowed, e.g. {{figures1/}{figures2/}}.
-\graphicspath{{figures/}}
+%\graphicspath{{./images/}}
 
 % Improved interface for floating objects (optional)
-\usepackage{float}
+%\usepackage{float}
 
 % To use the subfigures (optional)
 \usepackage{subcaption}
@@ -77,9 +89,6 @@
 %--------------------------------------------------
 % Mathematics
 %--------------------------------------------------
-
-% AMS mathematical facilities for LaTeX (recommended)
-\usepackage{amsmath}
 
 % TeX fonts from the American Mathematical Society (recommended)
 \usepackage{amsfonts}
