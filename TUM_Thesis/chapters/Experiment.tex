@@ -46,6 +46,7 @@ A commonly used loss function is the Mean Squared Error (MSE), which is calculat
 For the same reason we chose the MSE Loss as the training loss, we also evaluate the performance of the different models and methods according to the MSE. Despite the MSE being a good measure for the distance between the predictions and the target point, we also compare how well the predictions of the model align with the given physical constraints in order to determine how realistic they are.\\
 
 \subsection{Network architectures}
+\label{ssec:network_architectures}
 \paragraph{Model 1:}The first model is a neural network directly approximating $f_\theta$. Thus it takes a point of dimension $d$ and angles of dimension $d-1$ as input and predicts a target point of dimension $d$. The network has three hidden layers with 16 nodes each. In each hidden layers, the activation function $\tanh$ is applied and we include bias. We do not apply dropout.\\
 
 For the next models, we make use of the knowledge that a rotation is the result of multiplying a rotation matrix, which only depends on the angles, with the given point. Consequently, the next models will represent the function $g_\theta: [-\pi, \pi]^{d-1} \to \mathbb{R}^{d \times d}$, which in turn is used to create the final predictions in the following way:
@@ -87,12 +88,22 @@ In addition, we also solve a series of minimization problems of the type above w
 \subsubsection{Augmented Lagrangian Method}
 
 As we do for the Penalty Method, we apply also apply two different versions of the Augmented Lagrangian Method. Both versions minimize a fixed number of problems and update the weights of the linear constraint terms according to \textit{insert equation reference here}. However, the first one only computes a fixed number of epochs with a constant weight $\lambda$ for the physical loss.\\
-\indent The second version was suggested by Bertsekas in \cite{Yurkiewicz1985ConstrainedOA}. In addition to increasing the weight of the squared constraint term, he proposes to stop the minimization of the k-th problem as soon as the norm of the gradient is smaller than a threshold $\tau_k$ computed according to the following:
+\indent The second version was suggested by Bertsekas in \cite{Yurkiewicz1985ConstrainedOA}. In addition to increasing the weight of the squared constraint term, he proposes to stop the minimization of the k-th problem as soon as the norm of the gradient is smaller than a threshold $\tau_k$ computed according to the following equation:
 \[\tau_k = \min(\epsilon_k, \gamma_k ||c(x_k)||), \]
-where $\{\epsilon_k\}$ and $\{\gamma_k \}$ are two sequences decreasing to 0, and $c(x_k)$ is the value of the constraint violation at the current solution. In our experiment, $c(x_k)$ is the difference of the norms / determinants of the predicted points / rotation matrices and one. Intuitively, this approach spends more ressources on minimizing a problem if the predictions of the current solution already align well with the physical constraints and otherwise tries to focuses on learning the constraints first.
+where $\{\epsilon_k\}$ and $\{\gamma_k \}$ are two sequences decreasing to 0 and $c(x_k)$ is the value of the constraint violation at the current solution. In our experiment, $c(x_k)$ is the difference of the norms / determinants of the predicted points / rotation matrices and one. Intuitively, this approach spends more ressources on minimizing a problem if the predictions of the current solution already align well with the physical constraints and otherwise tries to focuses on learning the constraints first.
+
+\subsubsection{Physical Projection}
+
+As a third approach, we apply the Physical Projection. In particular, each prediction in the training process is projected to the closest feasable prediction. When applying it to the norm loss, we divide the predicted point $\hat{y}$ by its norm and thus get a prediction $\hat{y}'$ located on the unit circle or unit sphere. Formally, predictions are calculated the following way:
+\[\hat{y}' = \frac{\hat{y}}{||\hat{y}||} \]
+
+For the determinant, we only divide the matrix by the $d$-th root of the determinant if the latter is positive, otherwise we do not change the matrix. Therefore any predicted rotation matrix with a positive determinant is projected to one having a determinant of one. Formally, we apply the following function to the predicted matrices $\hat{R}$:
+\[\hat{R}' = \frac{\hat{R}}{\sqrt[d]{\det(\hat{R})}} if \det(\hat{R}) > 0 else \hat{R} \]
+
+Since matrices with negative determinants are far away from the true rotation matrix, they should not occur often or if so, be corrected by solely training on the MSE-Loss of the predicted and the target point. 
 
 \subsection{Statistical measurements}
-Each experiment will be tested on 20 different seeds used to generate the training data (if not specified otherwise). If not otherwise specified, we compare the models' performances according to the mean of the MSEs of the individual runs. We prefer the mean over the median, because we are also interested in the performance of outliers that lead to poor results.\\
+Each experiment will be tested on 20 different seeds used to generate the training data (if not specified otherwise). If not otherwise specified, we compare the models' performances according to the mean of the MSEs of the individual runs. We prefer the mean over the median, because we are also interested in the performance of outliers that lead to poor results. The test set on which each model's performance is calculated consinsts of 4096 data points sampled in the same manner as the training dataset.\\
 
 
 

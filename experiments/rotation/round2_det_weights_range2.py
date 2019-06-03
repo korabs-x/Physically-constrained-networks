@@ -18,18 +18,18 @@ import math
 import argparse
 from experiment import run_experiment
 
-det_weights = [0, 1e-2, 1e-1, 1e0]
+det_weights = [0, 1e-2, 1e-1, 1e0, 1e1]
 
-train_range = list(range(2, 50, 2)) + list(range(50, 101, 5))
+train_range = list(range(10, 101, 10))
 
 SEED_TEST = 0
-n_runs = 20
+n_runs = 17
 
 
 def mp_worker(data):
     dim, det_weight, n_train = data
 
-    for train_seed in range(1683, 1683 + n_runs, 1):
+    for train_seed in range(1683+3, 1683+3 + n_runs, 1):
         checkpoint_dir = 'checkpoints/'
         checkpoint_dir += 'round2_detweight_range2/'
         checkpoint_dir += 'dim-{}_detweight-{}_ntrain-{}_seed-{}/'.format(dim, det_weight, n_train, train_seed)
