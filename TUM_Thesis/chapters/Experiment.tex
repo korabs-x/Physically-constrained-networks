@@ -86,8 +86,8 @@ The first and simplest version of the Penalty Method we apply is setting a fixed
 In addition, we also solve a series of minimization problems of the type above with exponentially increasing $\lambda$, but using the solution of the last iteration as a warm start for the next one. In particular, we introduce a multiplier $\mu > 1$ such that the weight of the physical loss in the i-th iteration is given by $\lambda_i = \mu^i \, \lambda_0$. Each minimization is stopped as soon as the norm of the gradient is below a certain threshold.
 
 \subsubsection{Augmented Lagrangian Method}
-
-As we do for the Penalty Method, we apply also apply two different versions of the Augmented Lagrangian Method. Both versions minimize a fixed number of problems and update the weights of the linear constraint terms according to \textit{insert equation reference here}. However, the first one only computes a fixed number of epochs with a constant weight $\lambda$ for the physical loss.\\
+\label{exp:alm}
+As we do for the Penalty Method, we apply also apply two different versions of the Augmented Lagrangian Method. Both versions minimize a fixed number of problems and update the weights of the linear constraint terms according to \textit{insert equation reference here}. However, the first one only computes a fixed number of epochs with a constant weight $\lambda$ for the physical loss for each minimization problem.\\
 \indent The second version was suggested by Bertsekas in \cite{Yurkiewicz1985ConstrainedOA}. In addition to increasing the weight of the squared constraint term, he proposes to stop the minimization of the k-th problem as soon as the norm of the gradient is smaller than a threshold $\tau_k$ computed according to the following equation:
 \[\tau_k = \min(\epsilon_k, \gamma_k ||c(x_k)||), \]
 where $\{\epsilon_k\}$ and $\{\gamma_k \}$ are two sequences decreasing to 0 and $c(x_k)$ is the value of the constraint violation at the current solution. In our experiment, $c(x_k)$ is the difference of the norms / determinants of the predicted points / rotation matrices and one. Intuitively, this approach spends more ressources on minimizing a problem if the predictions of the current solution already align well with the physical constraints and otherwise tries to focuses on learning the constraints first.
@@ -103,7 +103,7 @@ For the determinant, we only divide the matrix by the $d$-th root of the determi
 Since matrices with negative determinants are far away from the true rotation matrix, they should not occur often or if so, be corrected by solely training on the MSE-Loss of the predicted and the target point. 
 
 \subsection{Statistical measurements}
-Each experiment will be tested on 20 different seeds used to generate the training data (if not specified otherwise). If not otherwise specified, we compare the models' performances according to the mean of the MSEs of the individual runs. We prefer the mean over the median, because we are also interested in the performance of outliers that lead to poor results. The test set on which each model's performance is calculated consinsts of 4096 data points sampled in the same manner as the training dataset.\\
+Each experiment will be tested on 20 different seeds used to generate the training data, with a few exceptions due to time limitations. If not otherwise specified, we compare the models' performances according to the mean of the MSEs of the individual runs. We prefer the mean over the median, because we are also interested in the performance of outliers that lead to poor results. The test set on which each model's performance is calculated consinsts of 4096 data points sampled in the same manner as the training dataset.\\
 
 
 
