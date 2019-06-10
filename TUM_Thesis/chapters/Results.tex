@@ -48,7 +48,7 @@ In general, we can say that it is difficult finding a successful set of paramete
 
 \begin{figure}[H]
 	\includegraphics[width=\linewidth]{pnly_dyn}
-	\caption{Different weights $\lambda$ for $\mathcal{L}_{DET}$ compared with dynamically increasing $\lambda$}
+	\caption{Different weights $\lambda$ for $\mathcal{L}_{DET}$ compared with dynamically increasing $\lambda$, averaged over 10 different training datasets.}
 	\label{fig:pnly_dyn}
 \end{figure}
 
@@ -72,7 +72,7 @@ Furthermore, Figure \ref{fig:aug_lag} depicts the results of applying the second
 \end{figure}
 
 As expected knowing the statistical performance of the methods, the deviations from the physical constraints are significantly smaller when we apply one of the proposed methods compared to the original training. Similar to the Penalty Method, both versions of the Augmented Lagragian Method lead to no constraint violations at points where training data is present. While the fixed ALM in this case generalizes the physical constraints significantly better than the Penalty Method, the dynamic version achieves only comparable results. Despite, an interesting observation is the high MSE Loss average of the dynamic ALM, which exceeds with a value of 0.033 the error of all other methods significantly. Even the original model achieves an overall average of the MSE Loss of 0.21. However, this is only due to the performance in the range of angles between 0 and 2, for the extrapolation of angles higher than 2.5, it performs much better than the original model. This is the case even though the determinant in the difficult region is much closer to one than the determinant of the prediction of the original model. This indicates that the ALM focused too much on learning the determinant constraint, since it is able to generalize the determinant only at cost of the performance of the predictions.\\
-\indent Furthermore, we want to point out that finding a good condition when to stop the training process is difficult. The test performance throughout the training process for different randomly generated training datasets is depcited in Figure \ref{fig:test_training}. When comparing the performance of the Penalty Method (left) with the Dynamic ALM (right), we can instantly see much higher deviations when using the latter method. For example, the test performance colored in blue reaches a test MSE Loss of less than $0.7\times 10^{-4}$, but only achieves an error of more than $3\times 10^{-2}$ when training has ended. In contrast, most of the test errors of using the Penalty Method converge and following epochs only lead to slight overfitting. This in turn indicates the high potential of ALM as well. As we can see, the best performance achieved often exceeds the final performance significantly. More sophisticated methods used to determine the hyperparameters of ALM  might therefore lead to much higher improvements compared to what we achieve with the current parameters.
+\indent Furthermore, we want to point out that finding a good condition when to stop the training process is difficult. The test performance throughout the training process for different randomly generated training datasets is depcited in Figure \ref{fig:test_training}. When comparing the performance of the Penalty Method (left) with the Dynamic ALM (right), we can instantly see much higher deviations when using the latter method. For example, the test performance colored in blue reaches a test MSE Loss of less than $0.7\times 10^{-4}$, but only achieves an error of more than $3\times 10^{-2}$ when training has ended. In contrast, most of the test errors of using the Penalty Method converge and following epochs only lead to slight overfitting. This in turn indicates the high potential of ALM as well. As we can see, the best performance achieved often exceeds the final performance significantly. More sophisticated methods used to determine the hyperparameters of ALM  might therefore lead to much higher improvements compared to what we achieve with the current parameters. For three dimensions, we were not able to find a set of parameters leading to any improvements compared to the original model.
 \begin{figure}
 	\centering
 	\begin{subfigure}{.5\textwidth}
@@ -88,6 +88,22 @@ As expected knowing the statistical performance of the methods, the deviations f
 	\caption{Test error throughout the training process, each color represents a different training dataset.}
 	\label{fig:test_training}
 \end{figure}
+
+
+
+
+
+
+\subsection{Failed experiments}
+
+\subsubsection{Norm physical loss}
+As we did for the physical constraint \ref{eq:constraint_det} of the determinant being equal to one, we also tried to incorporate the constraint \ref{eq:constraint_norm}, which says that the norm of the predicted point is supposed to be one. In contrast to what we expected and what we achieved incorporating the determinant constraint, we were not able to improve the performance of our model using the Penalty Method on the violation of the norm constraint. The results for different weights for $\mathcal{L}_{NORM}$ in the training loss for two and three dimensions are shown in Figure \ref{fig:pnlny_norm} in the appendix.
+
+\subsubsection{Physical Projection}
+As explained in \ref{sec:phys_proj}, we also tested an approach we call Physical Projection. We first applied it to the determinant constraint, thus scaling every predicted matrix with positive determinant according to Equation \ref{eq:norm_det}. Note that we detach the calculated scaling factor in order to not influence the gradient. Unfortunately, training using this procedure does not converge, an example is shown in Figure \ref{fig:normed_det_example} in the appendix.\\
+\indent When applying the Physical Projection to the norm constraint, we again detach the calculated norm and only determine training loss and its gradient on the error between the normed prediction and the true point. As we can see in Figure \ref{fig:normed_pred} in the appendix, this approach does not improve the performance for either two or three dimensions. When further investigating the reason for this behaviour, we noticed that the norm of the predictions before scaling differs for regions that lack training data between them. The illustration in Figure \ref{} shows this behaviour well: For $-\pi < \alpha < 0.5$, the determinant of the predicted rotation matrix is only $\frac{1}{10}$ of the predicted determinant for $2 < \alpha < 3$. Even though predictions after the projection align with the physical constraints, it adds complexity to the problem, since the model can not make use of the rule that the determinant or norm is consistent accross all angles.
+
+
 
 
 

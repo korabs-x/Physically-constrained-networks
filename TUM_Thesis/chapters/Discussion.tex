@@ -1,0 +1,18 @@
+% !TEX root = ../main.tex
+\label{section:discussion}
+\section{Discussion}
+
+To conclude this thesis, we summarise the main results of incorporating physical constraints into deep learning models. First of all, we empirically showed that the knowledge about scientific principles, when correctly maken use of, can improve overall performance significantly and also helps to make predictions more realistic. However, since this was only possible using the determinant and not with the norm constraint, we saw that there is no such guarantee for all physical constraints. One might reason that principles that reveal more complicated underlying structures of the process such as the determinant of a rotation matrix lead to higher improvements, since they are otherwise hard to learn. This is especially true when only few training data is available. We were also able to show that the proposed methods lead to smaller training error in regions where training data is sparse.\\
+\indent When comparing the Penalty Method to the Augmented Lagrangian Method, it is important to note that even though ALM leads to higher performance and showed high potential when terminating trainng at the right time, there are currently no known methods to the author that estimate hyperparameters well. Since the Penalty Method is easy to understand   and to implement, robust to the physical loss weight and requires less epochs, we advice to first apply this method and only search for good ALM hyperparameters once applying the Penalty Method has shown improvements. Furthermore, we were not able to yield improvements using the method of Physical Projections on any constraint.\\
+\indent For future studies, we suggest to explore ways to find better parameters for ALM leading to more consistent results and requiring less training iterations. Furthermore, one might train the model on simulated unsupervised data to align its predictions with physical constraints in regions where no training data exists.
+
+
+
+
+
+
+
+
+
+\clearpage
+

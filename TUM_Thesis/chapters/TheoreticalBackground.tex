@@ -1,16 +1,16 @@
 % !TEX root = ../main.tex
 \label{section:theoreticalBackground}
 \section{Theoretical Background}
-\subsection{Optimization problems}
-Optimization problems can be found in almost every field and researchers have come up with numerous algorithms to efficiently solve such tasks. Formally, an optimization problem can be described as 
+\subsection{Optimisation problems}
+Optimisation problems can be found in almost every field and researchers have come up with numerous algorithms to efficiently solve such tasks. Formally, an optimisation problem can be described as 
 \[\argmin_{x \in \mathbb{R}^n} f(x),\]
-where $f\colon \mathbb{R}^n\to \mathbb{R}$ is a smooth function to be minimized and $n \in \mathbb{N}$ is the input dimension.\\
-In \cite{NoceWrig06}, Nocedal et al. describe several different approaches to solve the minimization problem. According to them, all optimization algorithms start at a point $x_0 \in \mathbb{R}^n$ and generate a sequence $\{x_k\}_{k=0}^\infty$, terminating when finding a sufficiently good approximation of the solution or when they can not make any more progress. The core of the algorithms is the way they use information about $f$ at the points $x_0, x_1, ..., x_k$ to compute $x_{k+1}$. \\
-\indent Novedal et al. introduce two categories of optimization algorithms: Line search and trust region strategies. The former first determines a line on which the next iterate will be located, and then tries to find a point $x_{k+1}$ such that $f(x_{k+1}) < f(x_k)$. Finding such an iterate is much simpler than the original minimization problem, since a search has only performed along one dimension. The direction is often chosen to be the negative gradient, since it offers the locally steepest decent. 
+where $f\colon \mathbb{R}^n\to \mathbb{R}$ is a smooth function to be minimised and $n \in \mathbb{N}$ is the input dimension.\\
+In \cite{NoceWrig06}, Nocedal et al. describe several different approaches to solve the minimisation problem. According to them, all optimisation algorithms start at a point $x_0 \in \mathbb{R}^n$ and generate a sequence $\{x_k\}_{k=0}^\infty$, terminating when finding a sufficiently good approximation of the solution or when they can not make any more progress. The core of the algorithms is the way they use information about $f$ at the points $x_0, x_1, ..., x_k$ to compute $x_{k+1}$. \\
+\indent Novedal et al. introduce two categories of optimisation algorithms: Line search and trust region strategies. The former first determines a line on which the next iterate will be located, and then tries to find a point $x_{k+1}$ such that $f(x_{k+1}) < f(x_k)$. Finding such an iterate is much simpler than the original minimisation problem, since a search has only performed along one dimension. The direction is often chosen to be the negative gradient, since it offers the locally steepest decent. 
 \\ \indent In contrast, trust region strategies approximate the behaviour of the objective function $f$ inside a trust region $T$ around $x_k$ using a simpler model function $m_k$. The model function is often computed using the first terms of the Taylor expansion, that is \[m_k(x_k + p) = f(x_k) + p^T\Delta f(x_k) + \frac{1}{2}p^T\Delta^2 f(x_k) p \text{, \indent where } x_k + p \in T.\] Since the Hessian of the objective function can be hard to compute or not accessable, the Hessian $\Delta^2 f(x_k)$ can also be replaced by an approximation. The iterate $x_{k+1}$ is then set to be the solution of the simpler problem $x_{k+1} = \underset{x \in T}{\argmin }  \,\,m_k(x)$.
 
-\subsection{Constrained optimization problems}
-Constrained optimization problems are optimization problems for which a solution has to satisfy given constraints. Formally, they can be described as the following:\\
+\subsection{Constrained optimisation problems}
+Constrained optimisation problems are optimisation problems for which a solution has to satisfy given constraints. Formally, they can be described as the following:\\
 \begin{equation}
 	\label{constrained_min_problem}
 	\begin{aligned}
@@ -21,14 +21,34 @@ Constrained optimization problems are optimization problems for which a solution
 	\end{aligned}
 \end{equation}
 
-As before, $f\colon \mathbb{R}^n\to \mathbb{R}$ is our objective function and $n \in \mathbb{N}$ is the input dimension, whereas $c_i\colon \mathbb{R}^n\to \mathbb{R}, i \in \mathcal{I}$ are the inequality constraints. Both $f$ and all $c_i, i \in \mathcal{I}$ will be assumed to be smooth. Further, we will also assume that a solution for the given problem exists.\\
+As before, $f\colon \mathbb{R}^n\to \mathbb{R}$ is our objective function and $n \in \mathbb{N}$ is the input dimension, whereas $c_i\colon \mathbb{R}^n\to \mathbb{R}, i \in \mathcal{I}$ are the inequality constraints. Both $f$ and all $c_i, i \in \mathcal{I}$ will be assumed to be smooth. Further, we will also assume that a solution for the given problem exists. We will call any point where no constraint is violated \textit{feasable}. Thus the \textit{feasable set} is defined as follows:
+\[ \mathcal{F} := \{x \in \mathbb{R}^d \,|\, c_i(x) \geq 0, i\in \mathcal{I} \} \]
 
-\indent One approach to solve the constraint optimization problem is the so-called Lagrangian Relaxation \cite{Lemarechal:2000:LR:647776.734757}. This method creates an unconstrained optimization problem by penalizing constraint violations (and rewarding opposite?).\\
+\indent In contradiction to unconstrained optimisation, where every local minimum $x^*$ satisfies $\Delta f(x^*) = 0$ and $\Delta^2 f(x^*)$ being positive semidefinite, solutions $\overline{x}$ of the constrained minimisation problem can be located on the boundary of the feasable set and thus $\Delta f(\overline{x}) = 0$ does not necessarily hold \cite{NoceWrig06}. In order to resolve this issue, we introduce the Lagrangian Relaxation as given in \cite{Lemarechal:2000:LR:647776.734757}. The Lagrangian for the constrained optimisation problem \ref{constrained_min_problem} is defined as follows:
+\[ \mathcal{L}(x, \lambda) = f(x) - \sum_{i \in \mathcal{I}} \lambda_i c_i(x), \]
+where $\lambda > 0$ is the vector of Lagrangian multipliers. Intuitively, this means that constraint violations are penalised, and solutions aligning with constraints are rewarded, both linearly with a weight defined by the Lagrangien multipliers $\lambda$. Note that $\mathcal{L}(x, \lambda) \leq f(x)$ for $x \in \mathcal{F}$, thus the Lagrangian provides a lower bound for $f$ for all feasable points.
+This leads to the Dual of maximising the lower bound, that is,
+\[ \underset{\lambda}{\max}\,\, \underset{x}{\min}\,\, \mathcal{L}(x, \lambda). \]
+However, according to Boyd et al. as claimed in \cite{Boyd:2004:CO:993483}, there usually is a duality gap between the solution of minimising the constrained problem and its Lagrangian Dual problem. For convex problems, the authors provide necessary and sufficient conditions for a duality gap of zero given that $f$ and $c_i, i \in \mathcal{I}$ are convex.\\
+\indent Even though we have no guarantee to find the exact solution for problem \ref{constrained_min_problem} by solving the Lagrangian Dual, we introduce some optimality conditions which are more thoroughly explained in \cite{NoceWrig06}. First, we define a set of indices of the active constraints, that is
+\[ \mathcal{A}(x) = \{ i \in \mathcal{I} \,|\, c_i(x) = 0 \}. \]
+We further define the \textit{linear independence constraint qualification} (LICQ). It holds if the gradients of the active constraints $\{ \Delta c_i(x^*), i \in \mathcal{A}(x^*) \}$ are linearly independent. This ensures that no gradient of an active constraint is zero.
+\begin{theorem}[\textit{Karush-Kuhn-Tucker conditions - KKT}]$\,$\\
+	\label{theorem:kkt}
+Let $x^*$ be a solution of the constrained optimisation problem \ref{constrained_min_problem} for which LICQ holds. Then there exists a Lagrange multiplier vector $\lambda^*$, such that
+\begin{subequations}
+	\label{eq:kkt}
+	\begin{align}
+	\Delta_x \mathcal{L}(x^*, \lambda^*) &= 0,\\
+	c_i(x^*) &\geq 0, \qquad \forall i \in \mathcal{I},\\
+	\lambda^*_i &\geq 0, \qquad \forall i \in \mathcal{I},\\
+	\lambda^*_i  c_i(x^*) &= 0, \qquad \forall i \in \mathcal{I}.
+	\end{align}
+\end{subequations}
+\end{theorem}
 
-TODO: Wait for feedback which proofs to include\\
-TODO: Introduce lagrangian relaxation, easier to solve, tell that solution is not the solution of original problem, therefore introduce Theorem.\\
-TODO: Penalty method incl proof\\
-TODO: ALM (proof?)\\
+The proof to Theorem \ref{theorem:kkt} is quite complex and can be found in \cite{NoceWrig06}. However, this statement is powerful, since it implies that for the right Lagrangian multipliers $\lambda$, solutions of the constrained optimisation problem have a gradient of zero in the relaxed problem and can therefore be found by unconstrained optimisation solving methods. Moreover, it provides an optimality test for solutions that minimise the Lagrangian, since the KKT conditions (\ref{eq:kkt}) are necessary conditions for solutions of problem \ref{constrained_min_problem}.\\
+
 
 
 %\begin{theorem}
@@ -44,9 +64,64 @@ TODO: ALM (proof?)\\
 %\end{proof}
 
 \subsection{Solving strategies}
-In the following, we will present two strategies to solve constrained optimization problems. We will begin by discussing the Penalty Method and follow with the Augmented Lagrangian Method. Both methods are based on the previsouly introduced idea of Lagrangian Relaxation.
+In the following, we will present two strategies to solve constrained optimisation problems. We will begin by discussing the Penalty Method and follow with the Augmented Lagrangian Method. Both methods are based on the previsouly introduced idea of Lagrangian Relaxation.
 \subsubsection{Penalty Method}
+The first approach we introduce is the Penalty Method. As the name suggests, we penalise constraint violations, thus favoring feasable solutions. It differs from the Lagrangian Relaxation by not taking constraints into account that are satisfied, thus leaving the values of $f$ in the feasable region unchanged. Also it penalises constraint violations quadratically.\\
+\indent The approach is to solve a series of minimisation problems of the form
+\[\argmin_{x \in \mathbb{R}^n} Q(x, \lambda_k), \qquad Q(x, \lambda) := f(x) + \lambda \sum_{i \in \mathcal{I}} (c_i^{-}(x))^2\]
+where $\{\lambda_k\}_{k=1}^\infty$ is a monotonically increasing series of weights with $\lim_{k \to \infty} = \infty$ and $c_i^-(x) = \min(0, c_i(x))$. Intuitively, this means that only violated constraints are penalised and as $k$ goes to infinity, the penalty is so high that all constraints will be satisfied. 
+\begin{theorem}
+	Let $x_k = \argmin_{x \in \mathbb{R}^n} Q(x, \lambda_k)$. Then every limit point $x^* = \lim_{k \to \infty} x_k$ is a solution of the constrained minimisation problem \ref{constrained_min_problem}.
+\end{theorem}
+\begin{proof}
+	The proof is based on the proof given in \cite{NoceWrig06} with some adaptations to fit our problem formulation.\\
+	Let $\overline{x}$ be a solution of problem \ref{constrained_min_problem}. Thus the following holds: \[ f(\overline{x}) \leq f(x), \qquad \forall x \in \mathcal{F}\]
+	Since $x_k$ minimises $Q(x, \lambda_k)$, we have 
+	\begin{equation}
+	\label{eq:pnlty_ineq1}
+	f(x_k) + \lambda \sum_{i \in \mathcal{I}} (c_i^{-}(x_k))^2 \leq 
+	f(\overline{x}) + \lambda \sum_{i \in \mathcal{I}} (c_i^{-}(\overline{x}))^2 =
+	f(\overline{x})
+	\end{equation}
+	From this expression, we can now optain a upper limit on the constraint values, that is
+	\begin{equation}
+	\label{eq:pnlty_ineq2}
+	\sum_{i \in \mathcal{I}} (c_i^{-}(x_k))^2 \leq \frac{1}{\lambda} (f(\overline{x}) - f(x_k)).
+	\end{equation}
+	Let $x^*$ be a limit point of $\{x_k\}$, thus there is an infinite subsequence $\mathcal{K}$ with $\underset{k \in \mathcal{K}}{\lim} x_k = x^*$. Then we can obtain the following by applying the limit on both sides of the inequality \ref{eq:pnlty_ineq2}:
+	\[ 
+	\sum_{i \in \mathcal{I}} (c_i^{-}(x^*))^2 = 
+	\underset{k \in \mathcal{K}}{\lim} \sum_{i \in \mathcal{I}} (c_i^{-}(x_k))^2 \leq
+	\underset{k \in \mathcal{K}}{\lim} \frac{1}{\lambda} (f(\overline{x}) - f(x_k)) = 0,
+	 \]
+	 since $\lambda \to \infty$. This implies that all constraints are satisfied and we only need to show $f(x^*) \leq f(\overline{x})$, which follows from taking the limit $k \to \infty, k \in \mathcal{K}$ in inequality \ref{eq:pnlty_ineq1}:
+	 \[ f(x^*) \leq f(x^*) +  \underset{k \in \mathcal{K}}{\lim} \,\,\lambda_k \sum_{i \in \mathcal{I}} (c_i^{-}(x_k))^2 \leq f(\overline{x})\]
+\end{proof}
 
+In general, the Penalty Method allows us to solve the constrained optimisation problem using methods for unconstrained optimisation on a series of minimisation problems. However, as Nocedal et al. point out in \cite{NoceWrig06}, gradient based solving methods suffer from ill-conditioning when applied to $Q(x, \lambda)$ with large values for $\lambda$, which can not be avoided when trying to converge to a minimising and feasable solution.
+
+\subsubsection{Augmented Lagrangian Method}
+In the following, we introduce the Augmented Lagrangian Method (ALM). Formally it is defined as follows. It tackles the problem of ill-conditioning as it occurs in the Penalty Method by adding the linear constraint term of the Lagrangian Relaxation with explicit estimates of the Lagrangian multipliers. We explain the case of having only equality constraints, meaning the problem to solve is given by 
+\begin{equation}
+\label{constrained_min_problem_eq}
+\begin{aligned}
+& \underset{x \in \mathbb{R}^n}{\argmin}
+& & f(x) \\
+& \text{subject to}
+& & c_i(x) = 0, \; i \in \mathcal{E}.
+\end{aligned}
+\end{equation}
+The general case including inequalities can be solved by introducing slack variables; the interested reader is referred to \cite{NoceWrig06}.
+The Augmented Lagrangian Method tries to solve the problem \ref{constrained_min_problem_eq} by solving a series of minimsation problems of the form
+\[x_k = \argmin_{x \in \mathbb{R}^n} \mathcal{L}_A(x, \lambda_k, \mu_k), \qquad \mathcal{L}_A(x, \lambda, \mu) := f(x) - \frac{1}{2}\sum_{i \in \mathcal{E}} \lambda_i \,c_i(x) + \mu \sum_{i \in \mathcal{E}} c_i^2(x),\]
+where $\{\mu_k\}$ is an increasing series, and the Lagrangian multipliers are updated according to the formula
+\[ \lambda_i^{k+1} = \lambda_i^k - \mu_k\,c_i(x_k). \]
+This can be interpreted as a combination of the Lagrangian Relaxation and the Penalty Method and it is possible to show that convergence without increasing too large mu
+
+
+\subsection{Related work}
+Previously to this work, researches have published various approaches to incorporate knowledge about physical principles into deep learning models. \\
+TODO: List related work
 
 \clearpage
 
