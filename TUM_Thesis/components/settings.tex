@@ -5,6 +5,7 @@
 % Fonts and page setup
 %--------------------------------------------------
 
+\usepackage{booktabs}
 \usepackage{amsmath}
 \DeclareMathOperator*{\argmax}{argmax}
 \DeclareMathOperator*{\argmin}{argmin}
@@ -27,7 +28,16 @@
 \usepackage{scrpage2}
 \usepackage{scrhack}
 \pagestyle{scrheadings}
-\ifoot[\footertext]{\footertext} % \footertext set in INFO.TEX
+
+\automark[subsection]{section}
+\renewcommand{\sectionmark}[1]{\markboth{\sectionmarkformat #1}{}}%
+\renewcommand{\subsectionmark}[1]{\markright{#1}} %nur Titel ohne Nr.
+\ihead{\leftmark}
+\ohead{\rightmark}
+\cfoot{\pagemark} 
+\chead{}
+
+%\ifoot[\footertext]{\footertext} % \footertext set in INFO.TEX
 
 % Set the font for the section headings
 \renewcommand{\sectfont}{\normalfont \bfseries}

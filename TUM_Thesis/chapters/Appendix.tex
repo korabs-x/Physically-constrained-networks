@@ -2,7 +2,7 @@
 
 \label{appendix}
 
-\begin{figure}
+\begin{figure}[H]
 	\centering
 	\begin{subfigure}{.5\textwidth}
 		\centering
@@ -18,7 +18,7 @@
 	\label{fig:comp_lr_m3}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[H]
 	\centering
 	\begin{subfigure}{.5\textwidth}
 		\centering
@@ -35,21 +35,75 @@
 \end{figure}
 
 
-\begin{figure}[ht]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\linewidth]{pnlty_det_large}
 	\caption{Different weights $\lambda$ for $L_{DET}$ in 2D}
 	\label{fig:pnlty_det_large}
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\linewidth]{pnlty_det_dim3}
 	\caption{Different weights $\lambda$ for $L_{DET}$ in 3D}
 	\label{fig:pnlty_det_dim3}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\linewidth]{alm_fixed_training}
+\caption{Loss values during training of the fixed ALM in 2D for $N_{train} = 12$ and a single random seed.}
+\label{fig:alm_fixed_training}
+\end{figure}
+
+\begin{table}[H]
+\centering
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lrrrrrrrr}
+	\midrule
+	{} &  count &      mean &       std &       min &       25\% &       50\% &       75\% &       max \\ \midrule
+	Original ($\lambda = 0$)         &   10.0 &  0.083873 &  0.084808 &  0.017509 &  0.025126 &  0.051635 &  0.102614 &  0.258126 \\ \midrule
+	Penalty method ($\lambda = 0.1$) &   10.0 &  0.061773 &  0.089446 &  0.002449 &  0.006697 &  0.018631 &  0.095302 &  0.280234 \\ \midrule
+	ALM fixed                        &   10.0 &  0.036335 &  0.041466 &  0.001796 &  0.007078 &  0.014448 &  0.054447 &  0.119299 \\ \midrule
+	ALM dynamic                      &   10.0 &  0.028551 &  0.026700 &  0.005898 &  0.009325 &  0.017179 &  0.041241 &  0.079159 \\ \midrule
+\end{tabular}
+}
+\caption{Test MSE Loss statistics for 10 random training sets and $N_{train} = 10$}
+\label{table_stats_10}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\resizebox{\columnwidth}{!}{%
+		\begin{tabular}{lrrrrrrrr}
+			{} &  count &      mean &       std &       min &       25\% &       50\% &       75\% &       max \\ \midrule
+			Original ($\lambda = 0$)         &   10.0 &  0.012718 &  0.009706 &  0.000652 &  0.006690 &  0.010347 &  0.014473 &  0.032356 \\ \midrule
+			Penalty method ($\lambda = 0.1$) &   10.0 &  0.002330 &  0.001577 &  0.000174 &  0.001137 &  0.002370 &  0.003468 &  0.004632 \\ \midrule
+			ALM fixed                        &   10.0 &  0.001832 &  0.001621 &  0.000128 &  0.000656 &  0.001172 &  0.002869 &  0.004497 \\ \midrule
+			ALM dynamic                      &   10.0 &  0.001889 &  0.001693 &  0.000094 &  0.000804 &  0.001271 &  0.002364 &  0.005209 \\ \midrule
+		\end{tabular}
+	}
+	\caption{Test MSE Loss statistics for 10 random training sets and $N_{train} = 15$}
+	\label{table_stats_15}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\resizebox{\columnwidth}{!}{%
+		\begin{tabular}{lrrrrrrrr}
+			{} &  count &      mean &       std &       min &       25\% &       50\% &       75\% &       max \\ \midrule
+			Original ($\lambda = 0$)         &   10.0 &  0.002534 &  0.002381 &  0.000539 &  0.000931 &  0.001674 &  0.003141 &  0.007491 \\ \midrule
+			Penalty method ($\lambda = 0.1$) &   10.0 &  0.000703 &  0.000487 &  0.000154 &  0.000260 &  0.000686 &  0.000999 &  0.001665 \\ \midrule
+			ALM fixed                        &   10.0 &  0.000394 &  0.000422 &  0.000072 &  0.000140 &  0.000174 &  0.000511 &  0.001419 \\ \midrule
+			ALM dynamic                      &   10.0 &  0.000349 &  0.000332 &  0.000016 &  0.000072 &  0.000211 &  0.000564 &  0.000922 \\ \midrule
+		\end{tabular}
+	}
+	\caption{Test MSE Loss statistics for 10 random training sets and $N_{train} = 20$}
+	\label{table_stats_20}
+\end{table}
+
+
+\begin{figure}[H]
 	\centering
 	\begin{subfigure}{.5\textwidth}
 		\centering
@@ -66,14 +120,14 @@
 \end{figure}
 
 
-\begin{figure}[ht]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\linewidth]{normed_det_example}
 	\caption{Training for 2 dimensions and $N_{train} = 20$ using the original training and the Physical projection on the determinant with the same training dataset.}
 	\label{fig:normed_det_example}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[H]
 	\centering
 	\begin{subfigure}{.5\textwidth}
 		\centering
@@ -89,18 +143,12 @@
 	\label{fig:normed_pred}
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\linewidth]{normed_pred_example}
 	\caption{Analysis of the predictions of a model trained using Physical Projection on the norm compared to the original model. All determinants and norms are scaled such that their mean is equal to one.}
 	\label{fig:normed_pred_example}
 \end{figure}
-
-
-
-
-
-
 
 
 \clearpage

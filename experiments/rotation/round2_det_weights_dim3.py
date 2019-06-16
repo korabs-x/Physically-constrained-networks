@@ -23,13 +23,13 @@ det_weights = [0, 1e-3, 1e-2, 1e-1, 1e0]
 train_range = range(20, 201, 20)
 
 SEED_TEST = 0
-n_runs = 20
+n_runs = 4
 
 
 def mp_worker(data):
     dim, det_weight, n_train = data
 
-    for train_seed in range(1683, 1683 + n_runs, 1):
+    for train_seed in range(1683 + 16, 1683 + 16 + n_runs, 1):
         checkpoint_dir = 'checkpoints/'
         checkpoint_dir += 'round2_detweight3/'
         checkpoint_dir += 'dim-{}_detweight-{}_ntrain-{}_seed-{}/'.format(dim, det_weight, n_train, train_seed)
