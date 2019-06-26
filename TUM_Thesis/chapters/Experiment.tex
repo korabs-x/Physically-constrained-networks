@@ -10,7 +10,7 @@ Since it can be difficult to break down the effects utilising physical constrain
 \end{itemize}
 
 \subsection{Problem formulation}
-In order to show these improvements, we incorporate the knowledge about physical constraints into the problem of learning a rotation in two and three dimensions. We chose this problem, since it satisfies both the existence of physical constraints and the required simplicity to gain insights on the effects of the different methods of utilising physical constraints. Formally, a rotation maps a point and the rotation angles to a target point:
+In order to show these improvements, we incorporate the knowledge about physical constraints into the problem of learning a rotation in two and three dimensions. We chose this problem, since it satisfies both the existence of physical constraints and the required simplicity to gain insights on the effects of the different methods of utilising physical constraints. Formally, a rotation maps a point and rotation angles to a target point:
 \[rot: \mathbb{R}^{d} \times [- \pi, \pi] ^{d-1} \to \mathbb{R}^{d} \text{, where $d$ is the dimension of the domain space.} \]
 For example, the rotation in two dimension can be described in the following way:
 \[rot_{2D}: \mathbb{R}^{2} \times [- \pi, \pi]  \to \mathbb{R}^{2},\,\, rot_{2D}(x, \alpha) = R_{2D}(\alpha) \,x, \]
@@ -45,7 +45,7 @@ A commonly used loss function is the Mean Squared Error (MSE), which is calculat
 \indent All models will be trained using the MSE between the predictions and the target points. Minimising the MSE loss function fits well for our experiment, since it is closely related to the euclidian distance, except that distances are squared. This leads to high values for distant predictions and thus penalises higher variance of the errors of the predictions, which is desirable.\\ 
 
 \subsection{Performance evaluation}
-For the same reason we choose the MSE Loss as the training loss, we also evaluate the performance of the different models and methods according to the MSE. Despite the MSE being a good measure for the distance between the predictions and the target point, it does not measure how well the predictions of the model align with the given physical constraints. In order to check how realistic the predictions are, we explicitely compare their norms and determinants.\\
+For the same reason as we chose the MSE Loss as the training loss, we also evaluate the performance of the introduced models and methods according to the MSE. Despite the MSE being a good measure for the distance between the predictions and the target point, it does not measure how well the predictions of the model align with the given physical constraints. In order to check how realistic the predictions are, we explicitely compare their norms and determinants.\\
 
 \subsection{Network architectures}
 \label{ssec:network_architectures}
@@ -62,7 +62,7 @@ where $\alpha$ is the rotation angle and $x$ the point to be rotated.
 
 \paragraph{Model 3:} Similar to the previous model, we also try to solve the problem using an independent neural network for each of the $d \times d$ matrix entries. Each of these networks maps the rotation angles of size $d-1$ to a single real number, which is interpreted as a single matrix entry. For these networks, we use one hidden layer of size 50, again including bias and applying the Simoid activation function.\\
 
-\indent In order to achieve undistorted comparisons of the models, they were designed to each have between 600 and 650 parameters.
+\indent In order to achieve undistorted comparisons of the models, they were designed to have between 600 and 650 parameters each.
 
 \subsection{Hyperparameters}
 For all experiments, we choose to use the Adaptive Moment Estimator "Adam" as our optimiser, since it empirically appeared to perform well in practice and is favourable to other known adaptive learning-method algorithms \cite{DBLP:journals/corr/Ruder16}. Furthermore we will use a learning rate of $5\times 10^{-5}$ and train each model using $50000$ iterations. Both of these parameters are empirically estimated, a comparison of using different learning rates on Model 3 can be found in the appendix (\ref{fig:comp_lr_m3}). For all experiments, we use a batch size of 512 and shuffle the training set at the start of each epoch.
@@ -110,7 +110,7 @@ For the determinant, we only divide the matrix by the $d$-th root of the determi
 Since matrices with negative determinants are far away from the true rotation matrix, they should not occur often or if so, be corrected by solely training on the MSE-Loss for the prediction and the target point. 
 
 \subsection{Statistical measurements}
-Each experiment will be tested on 20 different seeds used to generate the training data, with a few exceptions due to time limitations. If not otherwise specified, we compare the models' performances according to the mean of the MSEs of the individual runs. We prefer the mean over the median, because we are also interested in the performance of outliers that lead to poor results. The test set on which each model's performance is calculated consinsts of 4096 data points sampled in the same manner as the training dataset.\\
+Each experiment will be tested on 20 different seeds used to generate the training data, with a few exceptions due to time limitations. If not otherwise specified, we compare the performance of the models according to the mean of the MSEs of the individual runs. We prefer the mean over the median, because we are also interested in the performance of outliers that lead to poor results. The test set on which each model's performance is calculated consinsts of 4096 data points sampled in the same manner as the training dataset.\\
 
 
 

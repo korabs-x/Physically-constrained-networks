@@ -65,7 +65,7 @@ The proof to Theorem \ref{theorem:kkt} is quite complex and can be found in \cit
 %\end{proof}
 
 \subsection{Solving strategies}
-In the following, we present two strategies to solve constrained optimisation problems. We begin with discussing the Penalty Method and follow with the Augmented Lagrangian Method. Both methods are based on the previsouly introduced idea of Lagrangian Relaxation.
+In the following, we present two strategies to solve constrained optimisation problems. We first discuss the Penalty Method and continue with the Augmented Lagrangian Method. Both methods are based on the previsouly introduced idea of Lagrangian Relaxation.
 \subsubsection{Penalty Method}
 The first approach we introduce is the Penalty Method. As the name suggests, we penalise constraint violations, thus favoring feasable solutions. It differs from the Lagrangian Relaxation by not taking constraints into account that are satisfied, thus leaving the values of $f$ in the feasable region unchanged. Also it penalises constraint violations quadratically.\\
 \indent The approach is to solve a series of minimisation problems of the form
@@ -85,7 +85,7 @@ In the following, we prove that the Penalty Method converges to an optimal solut
 	f(\overline{x}) + \lambda \sum_{i \in \mathcal{I}} (c_i^{-}(\overline{x}))^2 =
 	f(\overline{x})
 	\end{equation}
-	From this expression, we can now optain a upper bound on the constraint values, that is
+	From this expression, we can now optain an upper bound on the constraint values, that is
 	\begin{equation}
 	\label{eq:pnlty_ineq2}
 	\sum_{i \in \mathcal{I}} (c_i^{-}(x_k))^2 \leq \frac{1}{\lambda} (f(\overline{x}) - f(x_k)).
@@ -130,7 +130,7 @@ In general, the Augmented Lagrangian Method can be interpreted as a combination 
 \subsection{Related work}
 Previously to this work, researches have published various approaches to solve constrained optimisation problems using deep learning models. One intuitive method is the so-called Projected Gradient Descent (PGD). As the name indicates, it projects the current iterate $y_k$ to the closest feasable solution $x_k \in \mathcal{F}$. Thus in case of the Euclidean projection, it solves the following problem in each iteration:
 \[ x_k = \argmin_{x \in F} ||x - y_k||, \]
-where $y_k$ is calculated according to Gradient Descent with learning rate $\eta$, that is, $y_{k+1} = x_k - \eta \Delta f(x_{k})$ \cite{Chen}. This idea was also mixed with the Adam optimiser to keep the benefits of tracking momentum and adaptive learning rates by Marquez-Neila et al. in \cite{DBLP:journals/corr/Marquez-NeilaSF17}. Even though this procedure assures that all iterates are feasable and yields good results, projections are often hard to compute when solving constrained problems with nonlinear constraints. \\
+where $y_k$ is calculated according to Gradient Descent with learning rate $\eta$, that is, $y_{k+1} = x_k - \eta \Delta f(x_{k})$ \cite{Chen}. This idea was also mixed with the Adam optimiser to keep the benefits of tracking momentum and adaptive learning rates by Marquez-Neila et al. in \cite{DBLP:journals/corr/Marquez-NeilaSF17}. Even though this procedure assures that all iterates are feasable and it yields good results, projections are often hard to compute when solving constrained problems with nonlinear constraints. \\
 \indent As an alternative, Frank and Wolfe proposed an algorithm referred to as Conditional Gradients or Frank-Wolfe Algorithm in \cite{doi:10.1002/nav.3800030109}. Starting from the current iterate $x_k$ and a learning rate $\eta$, $x_{k+1}$ is obtained as follows:
 \begin{subequations}
 	\label{eq:frankwolfe}
@@ -139,7 +139,7 @@ where $y_k$ is calculated according to Gradient Descent with learning rate $\eta
 		x_{k+1} &= (1-\eta) x_k + \eta s_k.
 	\end{align}
 \end{subequations}
-This means that the direction is obtained by going towards the point in the feasable set which aligns with the negative gradient most. The algorithm was also extended to the stochastic setting by Reddi et al. in \cite{Reddi2016StochasticFM}. Moreover, it has already been successfully applied to Computer Vision tasks such as 3D human pose estimation from a single view in \cite{DBLP:journals/corr/abs-1803-06453}. Despite the fact that the Frank-Wolfe Algorithm is projection-free, the computation of $s_k$ as described in \ref{frankwolfe1} can again be difficult to solve when applied to a constrained problem with nonlinear constraints. Therefore, we focus our work on methods which do not incorporate hard constraints, but instead add soft constraints to the problems to be optimised.
+This means that the direction is obtained by going towards the point in the feasable set which aligns with the negative gradient most. The algorithm was also extended to the stochastic setting by Reddi et al. in \cite{Reddi2016StochasticFM}. Moreover, it has already been successfully applied to Computer Vision tasks such as 3D human pose estimation from a single view in \cite{DBLP:journals/corr/abs-1803-06453}. Despite the fact that the Frank-Wolfe Algorithm is projection-free, the computation of $s_k$ as described in equation \ref{frankwolfe1} can also be difficult to solve when applied to a constrained problem with nonlinear constraints. Therefore, we focus our work on methods which do not incorporate hard constraints, but instead add soft constraints to the problems to be optimised.
 
 
 \clearpage
