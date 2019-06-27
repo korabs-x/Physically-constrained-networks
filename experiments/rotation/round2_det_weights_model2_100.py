@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-#SBATCH --gpus=33
+#SBATCH --gpus=44
 #SBATCH --mem=12GB
 #SBATCH --time=120:00:00
 #SBATCH --mail-user=abstreik
@@ -18,7 +18,7 @@ import math
 import argparse
 from experiment import run_experiment
 
-det_weights = [0, 1e-2, 1e-1]
+det_weights = [1e-4, 1e-3, 1, 4]  # [0, 1e-2, 1e-1]
 
 train_range = range(10, 21, 1)
 
