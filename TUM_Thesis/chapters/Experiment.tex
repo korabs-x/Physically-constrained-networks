@@ -28,7 +28,7 @@ and $R_{y}(\alpha) = \begin{pmatrix} \cos(\alpha) & 0 & -\sin(\alpha)\\ 0 & 1 & 
 \label{eq:constraint_det}
 \end{equation}
 \begin{equation}
-||R(\alpha)x|| = ||x||, \qquad \forall \alpha \in [-\pi, \pi], \forall x \in \mathbb{R}^d, \forall R \in \{R_{2D}, R_z, R_y\}.
+||R(\alpha)x||_2 = ||x||_2, \qquad \forall \alpha \in [-\pi, \pi], \forall x \in \mathbb{R}^d, \forall R \in \{R_{2D}, R_z, R_y\}.
 \label{eq:constraint_norm}
 \end{equation}
 \end{subequations}
@@ -65,17 +65,17 @@ where $\alpha$ is the rotation angle and $x$ the point to be rotated.
 \indent In order to achieve undistorted comparisons of the models, they were designed to have between 600 and 650 parameters each.
 
 \subsection{Hyperparameters}
-For all experiments, we choose to use the Adaptive Moment Estimator "Adam" as our optimiser, since it empirically appeared to perform well in practice and is favourable to other known adaptive learning-method algorithms \cite{DBLP:journals/corr/Ruder16}. Furthermore we will use a learning rate of $5\times 10^{-5}$ and train each model using $50000$ iterations. Both of these parameters are empirically estimated, a comparison of using different learning rates on Model 3 can be found in the appendix (\ref{fig:comp_lr_m3}). For all experiments, we use a batch size of 512 and shuffle the training set at the start of each epoch.
+For all experiments, we choose to use the Adaptive Moment Estimator "Adam" as our optimiser, since it empirically appeared to perform well in practice and is favourable to other known adaptive learning-method algorithms \cite{DBLP:journals/corr/Ruder16}. Furthermore we will use a learning rate of $5\times 10^{-5}$ and train each model using $50\,000$ iterations. Both of these parameters are empirically estimated, a comparison of using different learning rates on Model 3 can be found in the appendix (\ref{fig:comp_lr_m3}). For all experiments, we use a batch size of 512 and shuffle the training set at the start of each epoch.
 
 \subsection{Physical loss}
 In order to train our models to learn the physical constraints, we use the following loss functions for the training process.
 \[\mathcal{L}(\theta, X_{train}, y_{train}) = \mathcal{L}_{MSE}(\hat{y}_\theta, y_{train}) + L_{PHY}(\hat{y}_\theta, g_\theta(X_{train})),\]
-where $\hat{y}_\theta$ is computed according to equation \ref{eq:rot_pred}. For Model 1, $g_\theta$ is ignored and $\hat{y}_\theta$ is the output of the neural network.\\
+where $\hat{y}_\theta$ is computed according to equation \eqref{eq:rot_pred}. For Model 1, $g_\theta$ is ignored and $\hat{y}_\theta$ is the output of the neural network.\\
 For the determinant, we use the following function as our physical loss:
 \[L_{DET}(\hat{y}, \hat{R}) = \frac{1}{N_{train}}\sum_{n = 1}^{N_{train}}(\det(\hat{R}_n) - 1)^2,\]
 where $\hat{R}$ are the predicted rotation matrices computed by applying $g_\theta$ to each element of $X_{train}$.\\
 In order to incorporate the norm constraint, the following physical loss function is applied:
-\[L_{NORM}(\hat{y}, \hat{R}) = \frac{1}{N_{train}}\sum_{n = 1}^{N_{train}}(||\hat{y}_n|| - 1)^2. \]
+\[L_{NORM}(\hat{y}, \hat{R}) = \frac{1}{N_{train}}\sum_{n = 1}^{N_{train}}(||\hat{y}_n||_2 - 1)^2. \]
 
 \subsection{Solving methods}
 In this section, we will introduce the methods we apply to incorporate the physical constraints into the models. As a baseline for comparisons, we train each model using solely the MSE Loss on the training data.
@@ -89,16 +89,16 @@ In addition, we also solve a series of minimisation problems of the type above w
 
 \subsubsection{Augmented Lagrangian Method}
 \label{exp:alm}
-As we do for the Penalty Method, we also apply two different versions of the Augmented Lagrangian Method. Both versions minimise a fixed number of problems and update the weights of the linear constraint terms according to rule \ref{eq:alm_update}. However, the first one only computes a fixed number of epochs with a constant weight $\lambda$ for the physical loss for each minimisation problem.\\
+As we do for the Penalty Method, we also apply two different versions of the Augmented Lagrangian Method. Both versions minimise a fixed number of problems and update the weights of the linear constraint terms according to rule \eqref{eq:alm_update}. However, the first one only computes a fixed number of epochs with a constant weight $\lambda$ for the physical loss for each minimisation problem.\\
 \indent The second version was suggested by Bertsekas in \cite{Yurkiewicz1985ConstrainedOA}. In addition to increasing the weight of the squared constraint term, he proposes to stop the minimisation of the k-th problem as soon as the norm of the gradient is smaller than a threshold $\tau_k$ computed according to the following equation:
-\[\tau_k = \min(\epsilon_k, \gamma_k ||c(x_k)||), \]
+\[\tau_k = \min(\epsilon_k, \gamma_k ||c(x_k)||_2), \]
 where $\{\epsilon_k\}$ and $\{\gamma_k \}$ are two sequences decreasing to 0 and $c(x_k)$ is the value of the constraint violation at the current solution. In our experiment, $c(x_k)$ is the difference of the norms / determinants of the predicted points / rotation matrices and one. Intuitively, this approach spends more ressources on minimising a problem if the predictions of the current solution already align well with the physical constraints and otherwise focuses on learning the constraints first.
 
 \subsubsection{Physical Projection}
 \label{sec:phys_proj}
 As a third approach, we apply the Physical Projection. In particular, each prediction in the training process is projected to the closest feasable prediction. When applying it to the norm loss, we divide the predicted point $\hat{y}$ by its norm and thus get a prediction $\hat{y}'$ located on the unit circle or unit sphere. Formally, predictions are calculated the following way:
 \begin{equation}
-\hat{y}' = \frac{\hat{y}}{||\hat{y}||}.
+\hat{y}' = \frac{\hat{y}}{||\hat{y}||_2}.
 \end{equation}
 
 For the determinant, we only divide the matrix by the $d$-th root of the determinant if the latter is positive, otherwise we do not change the matrix. Therefore any predicted rotation matrix with a positive determinant is projected to a new matrix with a determinant of one. Formally, we apply the following function to each predicted matrix $\hat{R}_n$:
