@@ -5,8 +5,8 @@ In this section, we begin with introducing the general problem of optimisation. 
 \subsection{Optimisation problems}
 Optimisation problems can be found in almost every field and researchers have come up with numerous algorithms to efficiently solve such tasks. Formally, an optimisation problem can be described as 
 \[\argmin_{x \in \mathbb{R}^n} f(x),\]
-where $f\colon \mathbb{R}^n\to \mathbb{R}$ is a smooth function to be minimised and $n \in \mathbb{N}$ is the input dimension.\\
-In \cite{NoceWrig06}, Nocedal et al. describe several different approaches to solve the minimisation problem. According to them, the general approach of an optimisation algorithm is to start at a point $x_0 \in \mathbb{R}^n$ and generate a sequence $\{x_k\}_{k=0}^\infty$, terminating when finding a sufficiently good approximation of the solution or when they can not make any more progress. The core of the algorithms is the way they use information about $f$ at the points $x_0, x_1, ..., x_k$ to compute $x_{k+1}$. \\
+where $f\colon \mathbb{R}^n\to \mathbb{R}$ is a smooth function to be minimised and $n \in \mathbb{N}$ is the input dimension. The objective function always has a set of local and global optima, where the latter are the ones we try to find.\\
+In \cite{NoceWrig06}, Nocedal et al. describe the main approach optimization algorithms take to solve this problem. Since there is no known method to analytically find the solutions that minimise the objective function in the general case, such algorithms start at a point $x_0 \in \mathbb{R}^n$ and generate a sequence $\{x_k\}_{k=0}^\infty$. They are usually designed to converge to a local minimum, but have no guarantee for approximating one of the global optima. The sequence is terminated once a sufficiently good approximation of the solution is found or when no more progress can be made. If no solution exists, meaning that no point minimises the objective function, the algorithm might not terminate, since for any iterate a point with a smaller objective value can be found. The core of the algorithms is the way they use information about $f$ at the points $x_0, x_1, ..., x_k$ to compute $x_{k+1}$. \\
 \indent Nocedal et al. introduce two categories of optimisation algorithms: Line search and trust region strategies. The former first determines a line on which the next iterate is located, and then tries to find a point $x_{k+1}$ such that $f(x_{k+1}) < f(x_k)$. Finding such an iterate is much simpler than the original minimisation problem, since a search only has to be performed along one dimension. The direction is often chosen to be the negative gradient, since it offers the locally steepest decent. 
 \\ \indent In contrast, trust region strategies approximate the behaviour of the objective function $f$ inside a trust region $T$ around $x_k$ using a simpler model function $m_k$. The model function is often computed using the first terms of the Taylor expansion, that is \[m_k(x_k + p) = f(x_k) + p^T\Delta f(x_k) + \frac{1}{2}p^T\Delta^2 f(x_k) p \text{, \indent where } x_k + p \in T.\] Since the Hessian $\Delta^2 f(x_k)$ of the objective function can be hard to compute or not accessable, it can also be replaced by an approximation. The iterate $x_{k+1}$ is then set to be the solution of the simpler problem $x_{k+1} = \underset{x \in T}{\argmin }  \,\,m_k(x)$.
 
@@ -22,21 +22,20 @@ Constrained optimisation problems are optimisation problems for which a solution
 	\end{aligned}
 \end{equation}
 
-As before, $f\colon \mathbb{R}^n\to \mathbb{R}$ is our objective function and $n \in \mathbb{N}$ is the input dimension, whereas $c_i\colon \mathbb{R}^n\to \mathbb{R}, i \in \mathcal{I}$ are the inequality constraints. Both $f$ and all $c_i, i \in \mathcal{I}$ are assumed to be smooth. Further, we also assume that a solution for the given problem exists. We call any point where no constraint is violated \textit{feasable}. Thus the \textit{feasable set} is defined as follows:
-\[ \mathcal{F} := \{x \in \mathbb{R}^d \,|\, c_i(x) \geq 0, i\in \mathcal{I} \} \]
+As before, $f\colon \mathbb{R}^n\to \mathbb{R}$ is our objective function and $n \in \mathbb{N}$ is the input dimension, whereas $c_i\colon \mathbb{R}^n\to \mathbb{R}, i \in \mathcal{I}$ are the inequality constraints with $\mathcal{I}$ denoting the set of all indices of the inequality constraints. Both $f$ and all $c_i, i \in \mathcal{I}$ are assumed to be smooth. Further, we also assume that a solution for the given problem exists. We call any point where no constraint is violated \textit{feasable}. Thus the \textit{feasable set} is defined as follows:
+\[ \mathcal{F} := \{x \in \mathbb{R}^n \,|\, c_i(x) \geq 0, i\in \mathcal{I} \} \]
 
-\indent In contradiction to unconstrained optimisation, where every local minimum $x^*$ satisfies $\Delta f(x^*) = 0$ and $\Delta^2 f(x^*)$ being positive semidefinite, solutions $\overline{x}$ of the constrained minimisation problem can be located on the boundary of the feasable set and thus $\Delta f(\overline{x}) = 0$ does not necessarily hold \cite{NoceWrig06}. In order to resolve this issue, we introduce the Lagrangian Relaxation as given in \cite{Lemarechal:2000:LR:647776.734757}. The Lagrangian for the constrained optimisation problem \ref{constrained_min_problem} is defined as follows:
+\indent In contradiction to unconstrained optimisation, where every local minimum $x^*$ satisfies $\Delta f(x^*) = 0$ and $\Delta^2 f(x^*)$ being positive semidefinite, solutions $\overline{x}$ of the constrained minimisation problem can be located on the boundary of the feasable set and thus $\Delta f(\overline{x}) = 0$ does not necessarily hold \cite{NoceWrig06}. In order to resolve this issue, we introduce the Lagrangian Relaxation as given in \cite{Lemarechal:2000:LR:647776.734757}. The Lagrangian for the constrained optimisation problem \eqref{constrained_min_problem} is defined as follows:
 \[ \mathcal{L}(x, \lambda) = f(x) - \sum_{i \in \mathcal{I}} \lambda_i c_i(x), \]
-where $\lambda > 0$ is the vector of Lagrangian multipliers. Intuitively, this means that constraint violations are penalised, and solutions aligning with constraints are rewarded, both linearly with a weight defined by the Lagrangien multipliers $\lambda$. Note that $\mathcal{L}(x, \lambda) \leq f(x)$ for $x \in \mathcal{F}$, thus the Lagrangian provides a lower bound for $f$ for all feasable points.
-This leads to the Dual of maximising the lower bound, that is,
+where $\lambda > 0$ is the vector of Lagrangian multipliers. This approach not only adds a bias towards feasable solutions, but more importantly allows the gradient on the boundary of the feasable region to equal zero in the direction of the constraint gradient if the Lagrangian multiplier is set correctly. Further, we have to note that $\mathcal{L}(x, \lambda) \leq f(x)$ for $x \in \mathcal{F}$, thus the Lagrangian provides a lower bound for $f$ for all feasable points. This leads to the Dual of maximising the lower bound, that is,
 \[ \underset{\lambda}{\max}\,\, \underset{x}{\min}\,\, \mathcal{L}(x, \lambda). \]
 However, according to Boyd et al. as claimed in \cite{Boyd:2004:CO:993483}, there usually is a duality gap between the solution of minimising the constrained problem and its Lagrangian Dual problem. For convex problems, the authors provide necessary and sufficient conditions for a duality gap of zero given that $f$ and $c_i, i \in \mathcal{I}$ are convex.\\
-\indent Even though we have no guarantee to find the exact solution for problem \ref{constrained_min_problem} by solving the Lagrangian Dual, we introduce some optimality conditions which are more thoroughly explained in \cite{NoceWrig06}. First, we define a set of indices of the active constraints, that is
+\indent Even though we have no guarantee to find the exact solution for problem \eqref{constrained_min_problem} by solving the Lagrangian Dual, we introduce some optimality conditions which are more thoroughly explained in \cite{NoceWrig06}. First, we define a set of indices of the active constraints, that is
 \[ \mathcal{A}(x) = \{ i \in \mathcal{I} \,|\, c_i(x) = 0 \}. \]
 We further define the \textit{linear independence constraint qualification} (LICQ). It holds if the gradients of the active constraints $\{ \Delta c_i(x^*), i \in \mathcal{A}(x^*) \}$ are linearly independent. This ensures that no gradient of an active constraint is zero.
 \begin{theorem}[\textit{Karush-Kuhn-Tucker conditions - KKT}]$\,$\\
 	\label{theorem:kkt}
-Let $x^*$ be a solution of the constrained optimisation problem \ref{constrained_min_problem} for which LICQ holds. Then there exists a Lagrange multiplier vector $\lambda^*$, such that
+Let $x^*$ be a solution of the constrained optimisation problem \eqref{constrained_min_problem} for which LICQ holds. Then there exists a Lagrange multiplier vector $\lambda^*$, such that
 \begin{subequations}
 	\label{eq:kkt}
 	\begin{align}
@@ -48,7 +47,7 @@ Let $x^*$ be a solution of the constrained optimisation problem \ref{constrained
 \end{subequations}
 \end{theorem}
 
-The proof to Theorem \ref{theorem:kkt} is quite complex and can be found in \cite{NoceWrig06}. However, this statement is powerful, since it implies that for the right Lagrangian multipliers $\lambda$, solutions of the constrained optimisation problem have a gradient of zero in the relaxed problem and can therefore be found by unconstrained optimisation solving methods. Moreover, it provides an optimality test for solutions that minimise the Lagrangian, since the KKT conditions (\ref{eq:kkt}) are necessary conditions for solutions of problem \ref{constrained_min_problem}.\\
+The proof to Theorem \ref{theorem:kkt} is quite complex and can be found in \cite{NoceWrig06}. However, this statement is powerful, since it implies that for the right Lagrangian multipliers $\lambda$, solutions of the constrained optimisation problem have a gradient of zero in the relaxed problem and can therefore be found by unconstrained optimisation solving methods. Moreover, it provides an optimality test for solutions that minimise the Lagrangian, since the KKT conditions \eqref{eq:kkt} are necessary conditions for solutions of problem \eqref{constrained_min_problem}.\\
 
 
 
@@ -67,43 +66,42 @@ The proof to Theorem \ref{theorem:kkt} is quite complex and can be found in \cit
 \subsection{Solving strategies}
 In the following, we present two strategies to solve constrained optimisation problems. We first discuss the Penalty Method and continue with the Augmented Lagrangian Method. Both methods are based on the previsouly introduced idea of Lagrangian Relaxation.
 \subsubsection{Penalty Method}
-The first approach we introduce is the Penalty Method. As the name suggests, we penalise constraint violations, thus favoring feasable solutions. It differs from the Lagrangian Relaxation by not taking constraints into account that are satisfied, thus leaving the values of $f$ in the feasable region unchanged. Also it penalises constraint violations quadratically.\\
-\indent The approach is to solve a series of minimisation problems of the form
+The first approach we introduce is the Penalty Method. As the name suggests, we penalise constraint violations, thus favoring feasable solutions. In particular, the values of each violated constraint is added quatratically to the objective function. This leads to a bias towards the feasable region. In contrast to the Lagrangian Relaxation, where the Lagrangian multipliers weight the constraints linearly to eliminate the gradients at the boundary, the Penalty Method does not take constraints into account that are satisfied at all. On the one hand, this leads to the advantage of leaving values of $f$ in the feasable region unchanged, on the other hand, gradients of solutions on the boundary of the feasable region are not manipulated either, which means that even solutions of the constraint optimisation problem on the boundary can have a gradient other than zero and are therefore no local minima. This problem is tackled by solving a series of minimisation problems while increasing the weight of the constraint penalisation, such that the global optimum of the function including the penalty converges to the global optimum of the objective function. Formally, each of the minimisation problems is of the following form:
 \[\argmin_{x \in \mathbb{R}^n} Q(x, \lambda_k), \qquad Q(x, \lambda) := f(x) + \lambda \sum_{i \in \mathcal{I}} (c_i^{-}(x))^2\]
-where $\{\lambda_k\}_{k=1}^\infty$ is a monotonically increasing series of weights with $\lim_{k \to \infty} x_k = \infty$ and $c_i^-(x) = \min(0, c_i(x))$. Intuitively, this means that only violated constraints are penalised and as $k$ goes to infinity, the penalty should become high enough for all constraints to be satisfied.\\
+where $\{\lambda_k\}_{k=1}^\infty$ is a monotonically increasing series of weights with $\lim_{k \to \infty} \lambda_k = \infty$ and $c_i^-(x) = \min(0, c_i(x))$. Intuitively, this means that only violated constraints are penalised and as the penalty weight $\lambda$ increases, feasable solutions are favoured even more with each iteration.\\
 In the following, we prove that the Penalty Method converges to an optimal solution.
 \begin{theorem}
-	Let $x_k = \argmin_{x \in \mathbb{R}^n} Q(x, \lambda_k)$. Then every limit point $x^* = \lim_{k \to \infty} x_k$ is a solution of the constrained minimisation problem \ref{constrained_min_problem}.
+	Let $x_k = \argmin_{x \in \mathbb{R}^n} Q(x, \lambda_k)$. Then every limit point $x^* = \lim_{k \to \infty} x_k$ is a solution of the constrained minimisation problem \eqref{constrained_min_problem}.
 \end{theorem}
 \begin{proof}
 	The proof is based on the proof given in \cite{NoceWrig06} with some adaptations to fit our problem formulation.\\
-	Let $\overline{x}$ be a solution of problem \ref{constrained_min_problem}. Thus the following holds: \[ f(\overline{x}) \leq f(x), \qquad \forall x \in \mathcal{F}\]
+	Let $\overline{x}$ be a solution of problem \eqref{constrained_min_problem}. Thus the following holds: \[ f(\overline{x}) \leq f(x), \qquad \forall x \in \mathcal{F}\]
 	Since $x_k$ minimises $Q(x, \lambda_k)$, we have 
 	\begin{equation}
 	\label{eq:pnlty_ineq1}
-	f(x_k) + \lambda \sum_{i \in \mathcal{I}} (c_i^{-}(x_k))^2 \leq 
-	f(\overline{x}) + \lambda \sum_{i \in \mathcal{I}} (c_i^{-}(\overline{x}))^2 =
+	f(x_k) + \lambda_k \sum_{i \in \mathcal{I}} (c_i^{-}(x_k))^2 \leq 
+	f(\overline{x}) + \lambda_k \sum_{i \in \mathcal{I}} (c_i^{-}(\overline{x}))^2 =
 	f(\overline{x})
 	\end{equation}
 	From this expression, we can now optain an upper bound on the constraint values, that is
 	\begin{equation}
 	\label{eq:pnlty_ineq2}
-	\sum_{i \in \mathcal{I}} (c_i^{-}(x_k))^2 \leq \frac{1}{\lambda} (f(\overline{x}) - f(x_k)).
+	\sum_{i \in \mathcal{I}} (c_i^{-}(x_k))^2 \leq \frac{1}{\lambda_k} (f(\overline{x}) - f(x_k)).
 	\end{equation}
-	Let $x^*$ be a limit point of $\{x_k\}$, thus there exists an infinite subsequence $\mathcal{K}$ with $\underset{k \in \mathcal{K}}{\lim} x_k = x^*$. Then we can obtain the following by applying the limit on both sides of the inequality \ref{eq:pnlty_ineq2}:
+	Let $x^*$ be a limit point of $\{x_k\}$, thus there exists an infinite subsequence $\mathcal{K}$ with $\underset{k \in \mathcal{K}}{\lim} x_k = x^*$. Then we can obtain the following by applying the limit on both sides of the inequality \eqref{eq:pnlty_ineq2}:
 	\[ 
 	\sum_{i \in \mathcal{I}} (c_i^{-}(x^*))^2 = 
 	\underset{k \in \mathcal{K}}{\lim} \sum_{i \in \mathcal{I}} (c_i^{-}(x_k))^2 \leq
-	\underset{k \in \mathcal{K}}{\lim} \frac{1}{\lambda} (f(\overline{x}) - f(x_k)) = 0,
+	\underset{k \in \mathcal{K}}{\lim} \frac{1}{\lambda_k} (f(\overline{x}) - f(x_k)) = 0,
 	 \]
-	 since $\lambda \to \infty$. This implies that all constraints are satisfied and we only need to show $f(x^*) \leq f(\overline{x})$, which follows from taking the limit $k \to \infty, k \in \mathcal{K}$ in inequality \ref{eq:pnlty_ineq1}:
+	 since $\lambda \to \infty$. This implies that all constraints are satisfied and we only need to show $f(x^*) \leq f(\overline{x})$, which follows from taking the limit $k \to \infty, k \in \mathcal{K}$ in inequality \eqref{eq:pnlty_ineq1}:
 	 \[ f(x^*) \leq f(x^*) +  \underset{k \in \mathcal{K}}{\lim} \,\,\lambda_k \sum_{i \in \mathcal{I}} (c_i^{-}(x_k))^2 \leq f(\overline{x})\]
 \end{proof}
 
-In general, the Penalty Method allows us to solve the constrained optimisation problem using methods for unconstrained optimisation on a series of minimisation problems. However, as Nocedal et al. point out in \cite{NoceWrig06}, gradient based solving methods suffer from ill-conditioning when applied to $Q(x, \lambda)$ with large values for $\lambda$, which can not be avoided when trying to converge to a minimising and feasable solution.
+In general, the Penalty Method allows us to solve the constrained optimisation problem using methods for unconstrained optimisation on a series of minimisation problems. However, despite the existence of an analytical proof, a numeric conversion to the optimum of the constrained optimisation problem is not guaranteed. As Nocedal et al. point out in \cite{NoceWrig06}, the reason for this is that gradient based solving methods suffer from ill-conditioning when applied to $Q(x, \lambda)$ with large values for $\lambda$, which can not be avoided when trying to converge to a minimising and feasable solution.
 
 \subsubsection{Augmented Lagrangian Method}
-In the following, we introduce the Augmented Lagrangian Method (ALM). It tackles the problem of ill-conditioning as it occurs in the Penalty Method by adding the linear constraint term of the Lagrangian Relaxation with explicit estimates of the Lagrangian multipliers. We explain the case of having only equality constraints, meaning the problem to solve is given by 
+In the following, we introduce the Augmented Lagrangian Method (ALM). It tackles the problem of ill-conditioning as it occurs in the Penalty Method by adding the linear constraint term of the Lagrangian Relaxation with explicit estimates of the Lagrangian multipliers. We explain the case of having only a set of equality constraints $c_i(x) = 0, i \in \mathcal{E}$, where $\mathcal{E}$ is the set of indices of the equality constraints. This means the problem to solve is given by 
 \begin{equation}
 \label{constrained_min_problem_eq}
 \begin{aligned}
@@ -114,32 +112,32 @@ In the following, we introduce the Augmented Lagrangian Method (ALM). It tackles
 \end{aligned}
 \end{equation}
 The general case including inequalities can be solved by introducing slack variables; the interested reader is referred to \cite{NoceWrig06}.
-The Augmented Lagrangian Method tries to solve the constrained problem \ref{constrained_min_problem_eq} by solving a series of minimsation problems of the form
+The Augmented Lagrangian Method tries to solve the constrained problem \eqref{constrained_min_problem_eq} by solving a series of minimsation problems of the form
 \[x_k = \argmin_{x \in \mathbb{R}^n} \mathcal{L}_A(x, \lambda_k, \mu_k), \qquad \mathcal{L}_A(x, \lambda, \mu) := f(x) - \frac{1}{2}\sum_{i \in \mathcal{E}} \lambda_i \,c_i(x) + \mu \sum_{i \in \mathcal{E}} c_i^2(x),\]
 where $\{\mu_k\}$ is an increasing series, and the Lagrangian multipliers are updated according to the formula
 \begin{equation}
 \lambda_i^{k+1} = \lambda_i^k - \mu_k\,c_i(x_k).
 \label{eq:alm_update}
 \end{equation}
-Assuming that the Lagrangian multipliers converge, we can see that the constraint values are now much smaller than $\mu_k$, since 
+Assuming that the Lagrangian multipliers converge, we can see that the constraint values are now much smaller than $\frac{1}{\mu_k}$, since 
 \[ c_i(x_k) = -\frac{1}{\mu_k}(\lambda_i^{k+1} - \lambda_i^k), \qquad i\in \mathcal{E}. \]
-This leads to less ill-conditioning than the Penalty Method, since the latter is conditioned proportional to $\mu$.
-In general, the Augmented Lagrangian Method can be interpreted as a combination of the Lagrangian Relaxation and the Penalty Method. However, it is possible to show that ALM converges without increasing $\mu$ to an extremely large value \cite{NoceWrig06}.
+This means that in order to decrease the constraint values to close to zero, we do not purely rely on increasing $\mu$, but also achieve smaller constraint violations due to the convergence of the Lagrangian multiplier estimates. This makes it possible to show that ALM converges without increasing $\mu$ to an extremely large value as it is required for the Penalty Method \cite{NoceWrig06}.
 
 
 \subsection{Related work}
-Previously to this work, researches have published various approaches to solve constrained optimisation problems using deep learning models. One intuitive method is the so-called Projected Gradient Descent (PGD). As the name indicates, it projects the current iterate $y_k$ to the closest feasable solution $x_k \in \mathcal{F}$. Thus in case of the Euclidean projection, it solves the following problem in each iteration:
-\[ x_k = \argmin_{x \in F} ||x - y_k||, \]
+Previously to this work, researches have published various approaches to solve constrained optimisation problems using deep learning models. One intuitive method is the so-called Projected Gradient Descent (PGD). As the name indicates, it projects the current iterate $y_k$ to the closest feasable solution $x_k \in \mathcal{F}$. Thus in case of the Euclidean orthogonal projection, it solves the following problem in each iteration:
+\[ x_k = \argmin_{x \in F} ||x - y_k||_2, \]
 where $y_k$ is calculated according to Gradient Descent with learning rate $\eta$, that is, $y_{k+1} = x_k - \eta \Delta f(x_{k})$ \cite{Chen}. This idea was also mixed with the Adam optimiser to keep the benefits of tracking momentum and adaptive learning rates by Marquez-Neila et al. in \cite{DBLP:journals/corr/Marquez-NeilaSF17}. Even though this procedure assures that all iterates are feasable and it yields good results, projections are often hard to compute when solving constrained problems with nonlinear constraints. \\
 \indent As an alternative, Frank and Wolfe proposed an algorithm referred to as Conditional Gradients or Frank-Wolfe Algorithm in \cite{doi:10.1002/nav.3800030109}. Starting from the current iterate $x_k$ and a learning rate $\eta$, $x_{k+1}$ is obtained as follows:
 \begin{subequations}
 	\label{eq:frankwolfe}
 	\begin{align}
 		s_k &= \argmax_{s \in \mathcal{F}} \langle s, -\Delta f(x_k) \rangle \label{frankwolfe1},\\
-		x_{k+1} &= (1-\eta) x_k + \eta s_k.
+		x_{k+1} &= (1-\eta) x_k + \eta s_k,
 	\end{align}
 \end{subequations}
-This means that the direction is obtained by going towards the point in the feasable set which aligns with the negative gradient most. The algorithm was also extended to the stochastic setting by Reddi et al. in \cite{Reddi2016StochasticFM}. Moreover, it has already been successfully applied to Computer Vision tasks such as 3D human pose estimation from a single view in \cite{DBLP:journals/corr/abs-1803-06453}. Despite the fact that the Frank-Wolfe Algorithm is projection-free, the computation of $s_k$ as described in equation \ref{frankwolfe1} can also be difficult to solve when applied to a constrained problem with nonlinear constraints. Therefore, we focus our work on methods which do not incorporate hard constraints, but instead add soft constraints to the problems to be optimised.
+where $\langle \cdot, \cdot \rangle$ denotes the inner product.\\
+This means that the direction is obtained by going towards the point in the feasable set which aligns with the negative gradient most. The algorithm was also extended to the stochastic setting by Reddi et al. in \cite{Reddi2016StochasticFM}. Moreover, it has already been successfully applied to Computer Vision tasks such as 3D human pose estimation from a single view in \cite{DBLP:journals/corr/abs-1803-06453}. Despite the fact that the Frank-Wolfe Algorithm is projection-free, the computation of $s_k$ as described in equation \eqref{frankwolfe1} can also be difficult to solve when applied to a constrained problem with nonlinear constraints. Therefore, we focus our work on methods which do not incorporate hard constraints, but instead add soft constraints to the problems to be optimised.
 
 
 \clearpage
