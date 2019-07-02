@@ -1,0 +1,18 @@
+Start iteration 0, after 0 iterations, sqweight=0.001
+Process Process-1:
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 249, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.5/multiprocessing/process.py", line 93, in run
+    self._target(*self._args, **self._kwargs)
+  File "/var/spool/slurmd/job106680/slurm_script", line 50, in mp_worker
+    iterations=config['iterations'])
+  File "/usr/stud/abstreik/BAThesis_abstreik/experiments/rotation/experiment.py", line 143, in run_experiment_augmented_lagrangian_auto
+    save_final=False, prints=False)
+  File "/usr/stud/abstreik/BAThesis_abstreik/experiments/rotation/solver.py", line 163, in train
+    loss_val = loss_dict['weight'] * loss_dict['loss_fn'](prediction, points_rotated, output_matrix)
+  File "/usr/stud/abstreik/BAThesis_abstreik/experiments/rotation/lossfn.py", line 31, in loss_fn
+    return torch.sum(weighted_constraint_vals(constraint_fn(pred, y, mat), weights))
+  File "/usr/stud/abstreik/BAThesis_abstreik/experiments/rotation/lossfn.py", line 26, in weighted_constraint_vals
+    return dets * weights
+RuntimeError: expected type torch.cuda.FloatTensor but got torch.FloatTensor
