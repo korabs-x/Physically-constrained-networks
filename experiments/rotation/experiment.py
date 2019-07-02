@@ -135,6 +135,7 @@ def run_experiment_augmented_lagrangian_auto(dim, n_train, train_seed, loss_fn, 
                 loss_fns += [{'loss_fn': lossfn.get_constrained_loss_linear(constraint_fn, constraint_ln_weights[i]),
                               'weight': -1, 'label': constraint_label + '_lin'}]
         solver.set_loss_fn_train(loss_fns)
+        solver.constraint_ln_weights = constraint_ln_weights
 
         # iterate until gradient norm is smaller than grad_norm_threshold
         for round in range(100):

@@ -12,8 +12,8 @@ from experiment import run_experiment_augmented_lagrangian_auto
 
 loss_fns = ['error']
 
-train_range = range(10, 21, 1)
-n_runs = 20
+train_range = range(12, 13, 1)
+n_runs = 1
 dims = [2]
 
 config = {'constraint_sq_weight': 0.001,
@@ -33,7 +33,7 @@ def mp_worker(data):
 
     for train_seed in range(1683, 1683 + n_runs, 1):
         checkpoint_dir = 'checkpoints/'
-        checkpoint_dir += 'round2_aug_lag_det/'
+        checkpoint_dir += 'round2_aug_lag_det_special/'
         checkpoint_dir += 'sqweight-{}_sqwmul-{}_eps-{}_gam-{}_decrate-{}_gradthresh-{}_it-{}/'.format(
             config['constraint_sq_weight'], config['constraint_sq_weight_multiplier'], config['eps'], config['gam'],
             config['eps_gam_decay_rate'], config['grad_threshold'], config['iterations'])

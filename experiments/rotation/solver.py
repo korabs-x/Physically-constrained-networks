@@ -42,13 +42,17 @@ class Solver:
         self.train_loss = torch.FloatTensor([10])
         self.idv_train_loss = {loss_dict['label']: torch.FloatTensor([10]) for loss_dict in loss_fn_train}
         self.start_time = None
+        self.constraint_ln_weights = None
 
         self.hist = {'epochs': [],
                      'iterations': [],
                      'gradient_norm': [],
                      'train_loss': [],
                      'individual_train_losses': {loss_dict['label']: [] for loss_dict in loss_fn_train},
+                     'individual_train_weights': {loss_dict['label']: [] for loss_dict in loss_fn_train},
+                     'constraint_ln_weights': [],
                      'test_loss': [],
+                     'individual_test_losses': {loss_dict['label']: [] for loss_dict in loss_fn_train},
                      'test_loss_no_fn': [],
                      'wall_times': []}
 
@@ -80,6 +84,7 @@ class Solver:
         with torch.no_grad():
             nr_samples = 0
             losses = [0] * len(self.loss_fn_test)
+            indv_losses = [0] * len(self.loss_fn_train)
             # losses_no_fn = [0] * len(self.loss_fn_test)
             for (points, angles, points_rotated) in loader:
                 points = points.to(self.device())
@@ -91,21 +96,27 @@ class Solver:
                 for i, loss_dict in enumerate(self.loss_fn_test):
                     losses[i] += loss_dict['weight'] * loss_dict['loss_fn'](prediction, points_rotated, output_matrix)
 
-                # output_matrix_, prediction_ = self.forward(angles, points, apply_fns=False)
-                # for i, loss_dict in enumerate(self.loss_fn_test):
-                #     losses_no_fn[i] += loss_dict['weight'] * loss_dict['loss_fn'](prediction_, points_rotated, output_matrix_)
+                for i, loss_dict in enumerate(self.loss_fn_train):
+                    if loss_dict['label'] != 'det_sq':
+                        continue
+                    indv_losses[i] += loss_dict['loss_fn'](prediction, points_rotated, output_matrix)
 
             score = sum([loss / nr_samples for loss in losses])
+            indv_losses = [l / nr_samples for l in indv_losses]
             # score_no_fn = sum([loss_no_fn / nr_samples for loss_no_fn in losses_no_fn])
             if len(self.hist['epochs']) == 0 or self.epoch != self.hist['epochs'][-1]:
                 self.hist['epochs'].append(self.epoch)
                 self.hist['iterations'].append(self.iteration)
                 self.hist['gradient_norm'].append(self.get_grad_norm())
                 self.hist['train_loss'].append(self.train_loss.item())
-                for loss_dict in self.loss_fn_train:
+                for i, loss_dict in enumerate(self.loss_fn_train):
                     if loss_dict['label'] in self.hist['individual_train_losses']:
                         self.hist['individual_train_losses'][loss_dict['label']].append(
                             self.idv_train_loss[loss_dict['label']].item())
+                        self.hist['individual_train_weights'][loss_dict['label']].append(loss_dict['weight'])
+                        if loss_dict['label'] == 'det_sq':
+                            self.hist['individual_test_losses'][loss_dict['label']].append(indv_losses[i].item())
+                self.hist['constraint_ln_weights'] = self.constraint_ln_weights
                 self.hist['test_loss'].append(score.item())
                 # self.hist['test_loss_no_fn'].append(score_no_fn.item())
                 self.hist['wall_times'].append(time.time() - self.start_time)
@@ -176,6 +187,9 @@ class Solver:
         self.loss_fn_train = loss_fn_train
         if self.iteration == 0:
             self.hist['individual_train_losses'] = {loss_dict['label']: [] for loss_dict in loss_fn_train}
+            self.hist['individual_train_weights'] = {loss_dict['label']: [] for loss_dict in loss_fn_train}
+            self.hist['individual_test_losses'] = {loss_dict['label']: [] for loss_dict in loss_fn_train}
+            self.hist['constraint_ln_weights'] = []
             self.idv_train_loss = {loss_dict['label']: torch.FloatTensor([10]) for loss_dict in loss_fn_train}
 
     def get_grad_norm(self):

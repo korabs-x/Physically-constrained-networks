@@ -2,6 +2,68 @@
 
 \label{appendix}
 
+\begin{proof}[Proof that the determinant of the rotation matrix in two dimensions equals one \eqref{eq:constraint_det}\\]$\,$\\
+	Let $\alpha \in [-\pi, \pi]$ be an arbitrary rotation angle. Then we have
+	\begin{equation}
+		\label{proof:det_one}
+		\begin{aligned}
+		 \det (R_{2D}(\alpha)) &= \det \begin{pmatrix} \cos(\alpha) & -\sin(\alpha) \\\sin(\alpha) & \cos(\alpha) \end{pmatrix} \\
+		&= \cos(\alpha)\cos(\alpha) - \sin(\alpha)(- \sin(\alpha))\\
+		&= \cos(\alpha)^2 + \sin(\alpha)^2\\
+		&= 1
+		\end{aligned}
+	\end{equation}
+\end{proof}
+
+\begin{proof}[Proof that the determinant of the rotation matrix in three dimensions equals one \eqref{eq:constraint_det}\\]$\,$\\
+	Let $\alpha \in [-\pi, \pi]^2$ be an arbitrary rotation angle. Then we have
+	\begin{equation}
+	\label{proof:det_one_dim3}
+	\begin{aligned}
+	\det (R_{3D}(x, \alpha)) &= \det(R_{y}(\alpha_2) R_{z}(\alpha_1)) \\
+	&= \det \left( \begin{pmatrix} \cos(\alpha_2) & -\sin(\alpha_2) & 0\\\sin(\alpha_2) & \cos(\alpha_2) & 0\\ 0 & 0 & 1\end{pmatrix} \begin{pmatrix} \cos(\alpha_1) & 0 & -\sin(\alpha_1)\\ 0 & 1 & 0\\\sin(\alpha_1) & 0 & \cos(\alpha_1)\end{pmatrix} \right)\\
+	&= \det \begin{pmatrix} \cos(\alpha_2) & -\sin(\alpha_2) & 0\\\sin(\alpha_2) & \cos(\alpha_2) & 0\\ 0 & 0 & 1\end{pmatrix} \cdot \det \begin{pmatrix} \cos(\alpha_1) & 0 & -\sin(\alpha_1)\\ 0 & 1 & 0\\\sin(\alpha_1) & 0 & \cos(\alpha_1)\end{pmatrix}\\
+	&= (\cos(\alpha_2)^2 + \sin(\alpha_2)^2) \cdot (\cos(\alpha_1)^2 + \sin(\alpha_1)^2)\\
+	&= 1
+	\end{aligned}
+	\end{equation}
+\end{proof}
+
+\begin{proof}[Proof for the norm preservation by the rotation in two dimensions \eqref{eq:constraint_norm}\\]$\,$\\
+	Let $p = \begin{pmatrix}x \\y \\\end{pmatrix}$ be any input vector with $x, y \in \mathbb{R}$ and $\alpha \in [-\pi, \pi]$ an arbitrary rotation angle. Then we have
+	\begin{equation}
+	\label{proof:norm_preservation}
+	\begin{aligned}
+	||rot_{2D}(p, \alpha)||_2 &= \left\Vert \begin{pmatrix} \cos(\alpha) & -\sin(\alpha) \\\sin(\alpha) & \cos(\alpha) \end{pmatrix} \begin{pmatrix}x \\y \\\end{pmatrix} \right\Vert_2 \\
+	&= \sqrt{(\cos(\alpha)x - \sin(\alpha)y)^2 + (\sin(\alpha)x + \cos(\alpha)y)^2}\\
+	&= (\cos(\alpha)^2x^2 -2\cos(\alpha)x\sin(\alpha)y \sin(\alpha)^2y^2 + \sin(\alpha)^2y^2\\ &\,\,\,\,\,\,\,\,\,+ \sin(\alpha)^2x^2 + 2\sin(\alpha)x\cos(\alpha)y + \cos(\alpha)^2y^2)^\frac{1}{2}\\
+	&= \sqrt{(\cos(\alpha)^2 + \sin(\alpha)^2)x^2 + (\sin(\alpha)^2 + \cos(\alpha)^2)y^2}\\
+	&= \sqrt{x^2 + y^2}\\
+	&= ||p||_2
+	\end{aligned}
+	\end{equation}
+\end{proof}
+
+\begin{proof}[Proof for the norm preservation by the rotation in three dimensions \eqref{eq:constraint_norm}\\]$\,$\\
+	Let $p = \begin{pmatrix}x \\y \\z \\\end{pmatrix}$ be any input vector with $x, y, z \in \mathbb{R}$ and $\alpha \in [-\pi, \pi]^2$ an arbitrary rotation angle. Then we have
+	\begin{equation}
+	\label{proof:norm_preservation_dim3}
+	\begin{aligned}
+	||rot_{3D}(p, \alpha)||_2 &= \left\Vert R_{y}(\alpha_2) R_{z}(\alpha_1) p \right\Vert_2 \\
+	&= \left\Vert \begin{pmatrix} \cos(\alpha_2) & -\sin(\alpha_2) & 0\\\sin(\alpha_2) & \cos(\alpha_2) & 0\\ 0 & 0 & 1\end{pmatrix} \begin{pmatrix} \cos(\alpha_1) & 0 & -\sin(\alpha_1)\\ 0 & 1 & 0\\\sin(\alpha_1) & 0 & \cos(\alpha_1)\end{pmatrix} \begin{pmatrix}x \\y \\z \\\end{pmatrix} \right\Vert_2 \\
+	&= \left\Vert \begin{pmatrix} \cos(\alpha_2) & -\sin(\alpha_2) & 0\\\sin(\alpha_2) & \cos(\alpha_2) & 0\\ 0 & 0 & 1\end{pmatrix} \begin{pmatrix}\cos(\alpha_1)x - \sin(\alpha_1)z \\y \\\sin(\alpha_1)x + \cos(\alpha_1)z \\\end{pmatrix} \right\Vert_2 \\
+	&= \left\Vert \begin{pmatrix}\cos(\alpha_2)(\cos(\alpha_1)x - \sin(\alpha_1)z) - \sin(\alpha_2)y \\
+	\sin(\alpha_2)(\cos(\alpha_1)x - \sin(\alpha_1)z) + \cos(\alpha_2)y \\
+	\sin(\alpha_1)x + \cos(\alpha_1)z \\\end{pmatrix} \right\Vert_2 \\
+	&= ( (\cos(\alpha_2)^2 + \sin(\alpha_2)^2)(\cos(\alpha_1)x - \sin(\alpha_1)z)^2 + \sin(\alpha_2)^2y^2 + \cos(\alpha_2)^2y^2 \\ 
+	&\,\,\,\,\,\,\,\,\,+ \sin(\alpha_1)^2x^2 + 2\sin(\alpha_1)x\cos(\alpha_1)z + \cos(\alpha_1)^2z^2)^\frac{1}{2}\\
+	&= \sqrt{\cos(\alpha_1)^2x^2 + \sin(\alpha_1)^2z^2 + y^2 + \sin(\alpha_1)^2x^2 + \cos(\alpha_1)^2z^2}\\
+	&= \sqrt{x^2 + y^2 + z^2}\\
+	&= ||p||_2
+	\end{aligned}
+	\end{equation}
+\end{proof}
+
 \begin{figure}[H]
 	\centering
 	\begin{subfigure}{.5\textwidth}
