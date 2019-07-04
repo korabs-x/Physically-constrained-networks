@@ -1,28 +1,60 @@
 % !TEX root = ../main.tex
 \label{section:experiment}
 \section{Experiment}
-In general, a learning problem is to approximate a function $f: X \to Y$ that maps given inputs of the domain $X$ to the corresponding output in the codomain $Y$. As visualised in Figure \ref{fig:f_map}, the set of feasable solutions $F$ is a subset of $Y$. Since $f$ only maps to feasable outputs, the set of output values $\hat{Y} = \{f(x) | x \in X\}$ is a subset of $F$, which means that $\hat{Y} \subseteq F \subseteq Y$. By incorporating physical constraints, we try to reduce the distance between the model predictions $y_{pred} \in Y$ and the correct values $\hat{y}_{true} \in \hat{Y}$ by training the model to output values in or close to the feasable region $F$.
 \begin{figure}[H]
 	\includegraphics[width=\linewidth]{f_map}
-	\caption{Visualisation of a function $f$ mapping from $X$ to $Y$. $F$ denotes the physically feasable set and $\hat{Y}$ the output values of $f$.}
+	\caption{Visualisation of a function $f$ mapping from $X$ to $Y$. $F$ denotes the physically feasible set and $\hat{Y}$ the output values of $f$.}
 	\label{fig:f_map}
 \end{figure}
-Since it can be difficult to break down the effects utilising physical constraints has on a deep learning model, the previously introduced methods have to be applied to a simple, yet not trivial problem. Because we want to measure how well predictions align with the given constraints, we introduce the term \textit{realistic} to describe predictions with no or small constraint violations. By analysing the behaviour of our model, we aim to show that incorporating physical constraints contributes in the following ways:
+In general, a learning problem is to approximate a function $f: X \to \hat{Y}$ that maps given inputs of the domain $X$ to the corresponding output in the codomain $\hat{Y}$, as visualised in Figure \ref{fig:f_map}. Since we know that any output of $f$ satisfies all constraints, the set of outputs $\hat{Y}$ of $f$ is a subset of the feasible points $F$, meaning that $\hat{Y} \subseteq F$. However, when trying to learn the function $f: X \to \hat{Y}$, we usually do not know the set of ouputs $\hat{Y}$. Therefore, we start with the representation $f: X \to Y$, where $Y$ is a much larger space for which we know that $\hat{Y} \subseteq F \subseteq Y$. To give an example, we look at the following function:
+
+\begin{equation}
+\label{example_fn}
+\begin{aligned}
+g: &[0, \pi] \to [0, 1]\\
+&x \mapsto \sin(x)
+\end{aligned}
+\end{equation}
+Even though the function $g$ only maps values of the domain space $X = [0, \pi]$ to $\hat{Y} = [0, 1]$, feasible solutions contain all values between $-1$ and $1$, namely $F = [-1, 1]$, since we know that the function $\sin$ only outputs values in this range. Furthermore, when trying to learn $g$ without any prior knowledge about the function, we start by assuming that $g$ maps to the real numbers $Y = \mathbb{R}$.\\
+\indent By incorporating physical constraints into the training process of deep learning models, we try to reduce the distance between the predictions $y_{pred} \in Y$ and the correct values $\hat{y}_{true} \in \hat{Y}$ by training the model to output values in or close to the feasable region $F$.\\
+\indent Since it can be difficult to break down the effects utilising physical constraints has on a deep learning model, the previously introduced methods have to be applied to a simple, yet not trivial problem. Because we want to measure how well predictions align with the given constraints, we introduce the term \textit{realistic} to describe predictions with no or small constraint violations. By analysing the behaviour of our model, we aim to show that incorporating physical constraints contributes in the following ways:
 \begin{itemize}
 	\item Improve model performance,
 	\item Create more realistic predictions,
 	\item Decrease required amount of learning data.
 \end{itemize}
-A well fitting problem that satisfies both simplicity and the existence of physical constraints is provided by the task of learning a rotation. A rotation is a function that takes coordinates of a point together with rotation angles as input and outputs the coordinates of the rotated point.  Rotations are invariant with respect to the L2-norm, meaning that the norm of the rotated point equals the norm of the input point. In addition, the determinant of the rotation matrix equals one. These two properties serve as physical constraints. Since the rotation problem satisfies the required characteristics, we use it to evaluate the previously introduced methods for incorporating physical constraints. The rotation problem itself is explained in more detail in the following section.
+A well fitting problem that satisfies both simplicity and the existence of physical constraints is provided by the task of learning a rotation. A rotation is a function that takes coordinates of a point together with rotation angles as input and outputs the coordinates of the rotated point.  The function can be described as a multiplication of a rotation matrix, which only depends on the rotation angle, and the point to be rotated. Rotations are invariant with respect to the L2-norm, meaning that the norm of the rotated point equals the norm of the input point. In addition, the determinant of the rotation matrix equals one. These two properties serve as physical constraints. Since the rotation problem satisfies the required characteristics, we use it to evaluate the previously introduced methods for incorporating physical constraints. The rotation problem itself is explained in more detail in the following section.
 
 \subsection{Problem formulation}
 In order to show the desired improvements, we apply the introduced methods to the rotation problem in both two and three dimensions. Formally, a rotation function maps a point and rotation angles to a target point:
-\[rot: \mathbb{R}^{d} \times [- \pi, \pi] ^{d-1} \to \mathbb{R}^{d} \text{, where $d$ is the dimension of the domain space.} \]
-For example, the rotation in two dimension can be described in the following way:
-\[rot_{2D}: \mathbb{R}^{2} \times [- \pi, \pi]  \to \mathbb{R}^{2},\,\, rot_{2D}(x, \alpha) = R_{2D}(\alpha) \,x, \]
+\begin{equation}
+\label{rot_fn}
+\begin{aligned}
+rot: \,\,&\mathbb{R}^{d} \times [- \pi, \pi] ^{d-1} \to \mathbb{R}^{d}\\
+&(\vec{x}, \vec{\alpha}) \mapsto rot(\vec{x}, \vec{\alpha}) = \vec{y}
+\end{aligned}
+\end{equation}
+
+, where $d$ is the dimension of the domain space. For example, the rotation in two dimension can be described in the following way:
+\begin{equation}
+\label{rot_fn_dim2}
+\begin{aligned}
+rot_{2D}: \,\,& \mathbb{R}^{2} \times [- \pi, \pi]  \to \mathbb{R}^{2}\\
+&(\vec{x}, \vec{\alpha}) \mapsto rot_{2D}(\vec{x}, \vec{\alpha}) = R_{2D}(\vec{\alpha}) \,\vec{x}
+\end{aligned}
+\end{equation}
 \[\text{where} \,\,R_{2D}(\alpha) = \begin{pmatrix} \cos(\alpha) & -\sin(\alpha) \\\sin(\alpha) & \cos(\alpha) \end{pmatrix}.\]
-\indent For three dimensions, we will consecutively apply a rotation around the z-axis and the y-axis, both counterclockwise when looking towards the origin. This means that the rotation function is the following:
-\[rot_{3D}: \mathbb{R}^{3} \times [- \pi, \pi]^2 \to \mathbb{R}^{3},\,\, rot_{3D}(x, \alpha) = R_{3D}(\alpha)\,x = R_{y}(\alpha_2) R_{z}(\alpha_1) \,x, \]
+\indent For three dimensions, we will consecutively apply a rotation around the z-axis and the y-axis, both counterclockwise when looking towards the origin. This means that the rotation function maps the point $x$ and the rotation angles $\vec{\alpha} = \begin{pmatrix}
+\alpha_1\\
+\alpha_2
+\end{pmatrix}$:
+\begin{equation}
+\label{rot_fn_dim3}
+\begin{aligned}
+rot_{3D}: \,\,& \mathbb{R}^{3} \times [- \pi, \pi]^2  \to \mathbb{R}^{3}\\
+&(\vec{x}, \vec{\alpha}) \mapsto rot_{3D}(\vec{x}, \vec{\alpha}) = R_{3D}(\vec{\alpha})\,\vec{x} = R_{y}(\alpha_2) R_{z}(\alpha_1) \,\vec{x}
+\end{aligned}
+\end{equation}
 where $R_{z}(\alpha) = \begin{pmatrix} \cos(\alpha) & -\sin(\alpha) & 0\\\sin(\alpha) & \cos(\alpha) & 0\\ 0 & 0 & 1\end{pmatrix}$
 and $R_{y}(\alpha) = \begin{pmatrix} \cos(\alpha) & 0 & -\sin(\alpha)\\ 0 & 1 & 0\\\sin(\alpha) & 0 & \cos(\alpha)\end{pmatrix}$.\\
 \\
@@ -30,18 +62,18 @@ and $R_{y}(\alpha) = \begin{pmatrix} \cos(\alpha) & 0 & -\sin(\alpha)\\ 0 & 1 & 
 
 \begin{subequations}
 \begin{equation}
-\det (R(\alpha)) = 1, \qquad \forall \alpha \in [-\pi, \pi], \forall R \in \{R_{2D}, R_{3D}\}
+\det (R(\vec{\alpha})) = 1, \qquad \forall \vec{\alpha} \in [-\pi, \pi]^d, \forall R \in \{R_{2D}, R_{3D}\}
 \label{eq:constraint_det}
 \end{equation}
 \begin{equation}
-||R(\alpha)x||_2 = ||x||_2, \qquad \forall \alpha \in [-\pi, \pi], \forall x \in \mathbb{R}^d, \forall R \in \{R_{2D}, R_{3D}\}.
+||R(\vec{\alpha})\vec{x}||_2 = ||\vec{x}||_2, \qquad \forall \vec{\alpha} \in [-\pi, \pi]^d, \forall \vec{x} \in \mathbb{R}^d, \forall R \in \{R_{2D}, R_{3D}\}.
 \label{eq:constraint_norm}
 \end{equation}
 \end{subequations}\\
 The proofs for the determinant and norm constraint for two (resp., three) dimensions can be found in the Appendix in \eqref{proof:det_one} (resp., \eqref{proof:det_one_dim3}) and \eqref{proof:norm_preservation} (resp., \eqref{proof:norm_preservation_dim3}), respectively.
 
 \subsection{Training the Deep Learning Model}
-\indent Using a deep learning model, we can now approximate the rotation function $rot$ with the use of training data. Since the available training data is the biggest limitation for real life applications, we focus on improving the performance of neural networks using training datasets of limited sizes with prior knowledge about physical constraints. Therefore, we are mainly interested in the performance of our deep learning models with respect to the number of training datapoints. By comparing the model trained solely on the training data with the ones utilising the previously introduced methods, we try to show that incorporating the knowledge about physical principles increases both the performance and how well the predictions align with the physical constraints for limited amounts of training data. \\
+\indent Using a deep learning model, we can now learn the rotation function $rot$ as defined in equation \eqref{rot_fn} with the use of training data. Since the available training data is the biggest limitation for real life applications, we focus on improving the performance of neural networks using training datasets of limited sizes with prior knowledge about physical constraints. Therefore, we are mainly interested in the performance of our deep learning models with respect to the number of training datapoints. By comparing the model trained solely on the training data with the ones utilising the previously introduced methods, we try to show that incorporating the knowledge about physical principles increases both the performance and how well the predictions align with the physical constraints for limited amounts of training data. \\
 \indent In the following, we explain technical details about the training dataset creation and the training process. For the remainder of this thesis, $N_{train}$ denotes the number of points included in our training dataset. The training data itself is denoted $X_{train}$. It contains $N_{train}$ elements of the set $\mathbb{R}^{d} \times [- \pi, \pi] ^{d-1}$. The corresponding correct target points are denoted $y_{train}$.\\
 \indent The points to be rotated for the $2D$- and $3D$-Rotation are drawn uniformly from the unit circle and the unit sphere, respectively. The rotation angles are chosen uniformly from the set $[-\pi, \pi]^{d-1}$. Note that for three dimensions, this leads to a bias towards the poles, meaning that the target point is more likely to be either close to the original point or to the point located exactly on the opposite side of the sphere.\\
 \indent When training a neural network to learn the rotation function, we solve the following minimisation problem:
@@ -60,10 +92,10 @@ For the same reason as we chose the MSE Loss as the training loss, we also evalu
 
 \subsection{Network architectures}
 \label{ssec:network_architectures}
-In the following, we introduce three different model architectures to learn the rotation problem. The most important characteristics are depicted in Table \ref{table:model_archs}.
+In the following, we introduce three different model architectures parameterised with weights $\theta$ to learn the rotation function. The most important characteristics are depicted in Table \ref{table:model_archs}.
 \begin{table}[H]
 	\centering
-	\caption{Model architectures for two dimensions. $\alpha$ is the rotation angle, $p_1$ and $p_2$ denote the coordinates of the input point and $\hat{y}$ is the predicted point.}
+	\caption{Model architectures for two dimensions. $\alpha$ is the rotation angle, $p_1$ and $p_2$ denote the coordinates of the input point and $\hat{y}$ is the predicted point. The operator \protect\includegraphics[height=8pt]{dotoperator} represents matrix-vector multiplication.}
 	\label{table:model_archs}
 	\begin{tabular}{ |c|c|c|c| } 
 		\hline
@@ -82,7 +114,7 @@ In the following, we introduce three different model architectures to learn the 
 		Layer sizes & 
 		$3 \to 16 \to 16 \to 16 \to 2$ &
 		$1 \to 100 \to 4$ &
-		$1 \to 50 \to 1$ \\
+		$[1 \to 50 \to 1] \times 4$ \\
 		\hline
 		Activation & 
 		Tanh &
@@ -106,9 +138,9 @@ For \textbf{Model 2} and \textbf{Model 3}, we make use of the knowledge that a r
 \end{equation}
 where $\alpha \in [-\pi, \pi]^{d-1}$ is the rotation angle and $p \in \mathbb{R}^d$ the point to be rotated.
 
-\paragraph{Model 2:} Based on this approach, the second model predicts the rotation matrix. In particular, it maps $d-1$ input angles to a matrix of size $d \times d$. This is done using one hidden layer of size 100 and applying the Sigmoid activation function. 
+\paragraph{Model 2:} Based on this approach, the second model predicts the rotation matrix. In particular, it maps $d-1$ input angles to a matrix of size $d \times d$. This is done using one hidden layer of size 100 with Sigmoid activation function. 
 
-\paragraph{Model 3:} Similar to the previous model, we also try to solve the problem using an independent neural network for each of the $d \times d$ matrix entries. Each of these networks maps the rotation angles of size $d-1$ to a single real number, which is interpreted as a single matrix entry. For these networks, we use one hidden layer of size 50, again applying the Sigmoid activation function.\\
+\paragraph{Model 3:} Similar to the previous model, we also try to solve the problem using an independent neural network for each of the $d \times d$ matrix entries. Each of these networks maps the rotation angles of size $d-1$ to a single real number, which is interpreted as a single matrix entry. For these networks, we use one hidden layer of size 50 with the Sigmoid activation function.\\
 
 \subsection{Hyperparameters}
 All layers of the neural networks include bias and we do not apply dropout. In order to achieve undistorted comparisons of the models, they were designed to have between 600 and 650 parameters each for the two-dimensional problem. For all experiments, we decide to use the Adaptive Moment Estimator "Adam" as our optimiser, since it empirically appeared to perform well in practice and is favourable to other known adaptive learning-method algorithms \cite{DBLP:journals/corr/Ruder16}. Furthermore, we use a learning rate of $5\times 10^{-5}$ and train each model using $50\,000$ iterations. Both of these parameters are empirically estimated, a comparison of using different learning rates on Model 3 can be found in the appendix (\ref{fig:comp_lr_m3}). For all experiments, we use a batch size of 512 and shuffle the training set at the start of each epoch.
