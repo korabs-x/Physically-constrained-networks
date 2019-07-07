@@ -22,6 +22,7 @@ Requirements:
 - solver.py: Functions for training and testing a model and to save and load checkpoints
 - experiment.py: Functions that were used for calculating experiments for the thesis. Includes functions to execute the Augmented Lagrangian Method.
 - run_*.py: Files that calculate results for different hyperparameters for direct comparison. These were the only files executed to calculate the results of the thesis.
+- plots.ipynb: Contains the code to reproduce all plots included in the thesis. Check functions used in this file to see how to access results and calculate e.g. Physical Loss of a trained model on test data 
 
 ### Reproduce results
 An example to calculate the results of applying the Penalty Method on the determinant constraint with different physical loss weights is given in the file experiments/rotation/run_det_weights.py. We additionally give a simple example to train a model with a determinant loss weight of 0 (baseline) and 0.1 for a single seed with 12 training data points. We assume that the code is executed in the directory experiments/rotation/:
