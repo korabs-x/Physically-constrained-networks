@@ -1,6 +1,0 @@
-Traceback (most recent call last):
-  File "/var/spool/slurmd/job95081/slurm_script", line 55, in <module>
-    mp_handler()
-  File "/var/spool/slurmd/job95081/slurm_script", line 49, in mp_handler
-    for train_seed in range(1683, 1683+n_runs, 1):
-NameError: name 'n_runs' is not defined
