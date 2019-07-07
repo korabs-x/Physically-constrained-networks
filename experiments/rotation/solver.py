@@ -116,9 +116,8 @@ class Solver:
                         self.hist['individual_train_weights'][loss_dict['label']].append(loss_dict['weight'])
                         if loss_dict['label'] == 'det_sq':
                             self.hist['individual_test_losses'][loss_dict['label']].append(indv_losses[i].item())
-                self.hist['constraint_ln_weights'].append(np.copy(self.constraint_ln_weights[0].detach().numpy()))
-                print('--------------------------------------------------------------------')
-                print(self.constraint_ln_weights[0].detach().numpy()[0])
+                if self.constraint_ln_weights is not None and len(self.constraint_ln_weights) > 0:
+                    self.hist['constraint_ln_weights'].append(np.copy(self.constraint_ln_weights[0].detach().numpy()))
                 self.hist['test_loss'].append(score.item())
                 # self.hist['test_loss_no_fn'].append(score_no_fn.item())
                 self.hist['wall_times'].append(time.time() - self.start_time)
