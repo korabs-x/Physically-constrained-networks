@@ -1,4 +1,4 @@
-# BAThesis_abstreik
+# Physically constrained networks
 
 This repository contains all of the implementation and results of the Bachelor's thesis "Physically constrained networks" written at the Technical University of Munich. The thesis can be found at [TUM_Thesis/main.pdf](TUM_Thesis/main.pdf).
 
